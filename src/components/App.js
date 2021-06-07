@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import cookie from "react-cookies";
 
 import {
   Navbar,
@@ -18,8 +19,9 @@ import {
 class App extends Component {
   constructor(props) {
     super(props);
-
     this._isMounted = false;
+    const expires = new Date();
+    expires.setDate(Date.now() + 20000);
 
     this.state = {
       login: false,
@@ -30,8 +32,8 @@ class App extends Component {
   componentDidMount() {
     this._isMounted = true;
     if (this._isMounted) {
-      const token = localStorage.getItem("token");
-      let loginAs = localStorage.getItem("loginAs");
+      const token = cookie.load("token");
+      let loginAs = cookie.load("loginAs");
       if (token) {
         this.setState({
           login: true,
@@ -59,6 +61,7 @@ class App extends Component {
           <Navbar login={this.state.login} handleUpdate={this.handleUpdate} />
 
           <Switch>
+            {/* FOR STUDENT ROUTES */}
             {this.state.loginAs == "student" && (
               <Route
                 exact={true}
@@ -74,6 +77,7 @@ class App extends Component {
                 }}
               />
             )}
+            {/* FOR TEACHER ROUTES */}
             {/* {this.state.loginAs=="teacher"&&} */}
             <Route
               exact={true}

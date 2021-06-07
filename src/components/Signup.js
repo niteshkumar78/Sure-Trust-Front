@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
+import cookie from "react-cookies";
 
 class Signup extends Component {
   constructor(props) {
@@ -93,7 +94,8 @@ class Signup extends Component {
 
     const { login } = this.props;
 
-    var loginAs2 = localStorage.getItem("loginAs");
+    // var loginAs2 = localStorage.getItem("loginAs");
+    var loginAs2 = cookie.load("loginAs");
 
     if (loginAs2 === "teacher") {
       loginAs2 = "teacher";
@@ -120,6 +122,12 @@ class Signup extends Component {
           <div className="signup-form">
             <form onSubmit={this.handleSubmit}>
               <h2>Create an Account</h2>
+              <br></br>
+              <br></br>
+              <br></br>
+              <br></br>
+
+              {/*
               <p className="hint-text">
                 Sign up with your social media account or email address
               </p>
@@ -136,7 +144,7 @@ class Signup extends Component {
               </div>
               <div className="or-seperator">
                 <b>or</b>
-              </div>
+              </div> */}
               {this.state.error && (
                 <div className="alert alert-danger" role="alert">
                   {this.state.errorType}

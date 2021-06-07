@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import cookie from "react-cookies";
 
 function Home(props) {
-  let loginAs = localStorage.getItem("loginAs");
+  // let loginAs = localStorage.getItem("loginAs");
+  let loginAs = cookie.load("loginAs");
   return (
     <div>
       <div style={{ height: "520px" }}>

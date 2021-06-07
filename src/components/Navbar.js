@@ -2,11 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class Navbar extends Component {
-  handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("loginAs");
-    this.props.handleUpdate(false);
-  };
   componentWillUnmount() {
     console.log("Navbar");
   }
