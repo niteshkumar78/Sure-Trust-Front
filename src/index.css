@@ -1,13 +1,236 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+body,
+p {
+  font-family: "Cantarell", Arial, sans-serif;
+  font-weight: 400;
+}
+.toptxt {
+  font-size: 20px;
+  letter-spacing: 0.126em;
+}
+.topbox,
+.footer {
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  text-align: center;
+  line-height: 22.5px;
+  box-sizing: border-box;
+}
+.svgcls {
+  width: 30px;
+  box-sizing: inherit;
+  display: inline;
+  animation-name: spin;
+  letter-spacing: normal;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+.navi {
+  font-family: "Cantarell", Arial, sans-serif;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.214em;
+}
+.nav-link {
+  text-decoration: none;
+  color: rgb(255, 254, 254);
+}
+.hero {
+  text-transform: uppercase;
+  letter-spacing: 0.664px;
+  font-size: 28px;
+}
+.txt {
+  font-size: 28px;
+  overflow-wrap: break-word;
+  letter-spacing: normal;
+}
+.footer {
+  font-size: 15px;
+  color: rgb(89, 89, 89);
+  font-weight: 400;
+  letter-spacing: 1.245;
+}
+#logo {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.btn hover {
+  background: rgba(59, 143, 197);
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.login-tab {
+  margin-top: 30px;
+}
+
+.login-tab > li > button {
+  color: black;
+}
+
+.page404 {
+  height: 420px;
+}
+
+.form-controlInput {
+  font-size: 16px;
+  transition: all 0.4s;
+  box-shadow: none;
+}
+.form-controlInput:focus {
+  border-color: #0d6efd;
+}
+.form-controlInput,
+.btn {
+  border-radius: 50px;
+  outline: none !important;
+}
+.signup-form {
+  width: 480px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+.signup-form form {
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background: #fff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+}
+.signup-form a {
+  color: #0d6efd;
+}
+.signup-form h2 {
+  text-align: center;
+  font-size: 34px;
+  margin: 10px 0 15px;
+}
+.signup-form .hint-text {
+  color: #999;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.signup-form .form-group {
+  margin-bottom: 20px;
+}
+.signup-form .btn {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+  text-align: center;
+}
+.signup-btn {
+  text-align: center;
+  border-color: #0d6efd;
+  transition: all 0.4s;
+}
+.signup-btn:hover {
+  background: #0d6efd;
+  opacity: 0.8;
+}
+.or-seperator {
+  margin: 50px 0 15px;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+.or-seperator b {
+  padding: 0 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 40px;
+  background: #fff;
+  display: inline-block;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  position: relative;
+  top: -22px;
+  z-index: 1;
+}
+.social-btn .btn {
+  color: #fff;
+  margin: 10px 0 0 15px;
+  font-size: 15px;
+  border-radius: 50px;
+  font-weight: normal;
+  border: none;
+  transition: all 0.4s;
+}
+.social-btn .btn:first-child {
+  margin-left: 0;
+}
+.social-btn .btn:hover {
+  opacity: 0.8;
+}
+.social-btn .btn-primary {
+  background: #507cc0;
+}
+.social-btn .btn-info {
+  background: #64ccf1;
+}
+.social-btn .btn-danger {
+  background: #df4930;
+}
+.social-btn .btn i {
+  float: left;
+  margin: 3px 10px;
+  font-size: 20px;
 }
