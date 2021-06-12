@@ -78,7 +78,13 @@ function TrainerBatches(props) {
               className="collapse"
               id={"course-" + props.course_id + "batch" + data.id}
             >
-              {props.tab == "students" && <StudentsTab key={data.id} />}
+              {props.tab == "students" && (
+                <StudentsTab
+                  batch_id={data.id}
+                  course_id={props.course_id}
+                  key={data.id}
+                />
+              )}
               {props.tab == "courses" && (
                 <TrainerPosts batch_id={data.id} key={data.id} />
               )}
