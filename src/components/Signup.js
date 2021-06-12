@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import cookie from "react-cookies";
 
+import { SignupApi } from "../apis/allApis";
+
 class Signup extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +26,7 @@ class Signup extends Component {
       loginButton: false,
     });
     if (this.state.password === this.state.confirm_password) {
-      fetch("http://suretrustplatform.herokuapp.com/users/", {
+      fetch(SignupApi, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

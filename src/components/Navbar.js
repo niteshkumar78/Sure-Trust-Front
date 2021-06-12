@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import cookie from "react-cookies";
 
 class Navbar extends Component {
   componentWillUnmount() {
@@ -7,7 +8,7 @@ class Navbar extends Component {
   }
 
   render() {
-    const { login } = this.props;
+    const { login, loginAs } = this.props;
     return (
       <div
         className="container-fluid text-center text-white"
@@ -249,9 +250,45 @@ class Navbar extends Component {
                 </li>
                 {login ? (
                   <li className="nav-item">
-                    <Link className="nav-link" to="/logout">
-                      LOG OUT
-                    </Link>
+                    <ul className="navbar-nav">
+                      <li className="nav-item">
+                        <Link className="nav-link" to="/logout">
+                          LOG OUT
+                        </Link>
+                      </li>
+                      {loginAs == "teacher" && (
+                        <li className="nav-item dropdown">
+                          <a
+                            className="nav-link dropdown-toggle"
+                            href="#"
+                            id="navbarDropdownMenuLink"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            Profile
+                          </a>
+                          <ul
+                            className="dropdown-menu shadow"
+                            aria-labelledby="navbarDropdownMenuLink"
+                          >
+                            <li>
+                              <Link className="dropdown-item" to="/teacher">
+                                Dashboard
+                              </Link>
+                            </li>
+                            <li>
+                              <Link
+                                className="dropdown-item"
+                                to="/teacher/profile"
+                              >
+                                Profile
+                              </Link>
+                            </li>
+                          </ul>
+                        </li>
+                      )}
+                    </ul>
                   </li>
                 ) : (
                   <li className="nav-item">

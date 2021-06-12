@@ -13,7 +13,7 @@ import {
   Student,
   Signup,
   Signupsuccess,
-  Courses,
+  TeacherProfile,
 } from "./index";
 
 class App extends Component {
@@ -58,17 +58,37 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Navbar login={this.state.login} handleUpdate={this.handleUpdate} />
+          <Navbar
+            login={this.state.login}
+            loginAs={this.state.loginAs}
+            handleUpdate={this.handleUpdate}
+          />
 
           <Switch>
             {/* FOR STUDENT ROUTES */}
-            {this.state.loginAs == "student" && (
+            {/* {this.state.loginAs == "student" && (
               <Route
                 exact={true}
-                path="/student/courses"
+                path="/student/profile"
                 render={(props) => {
                   return (
-                    <Courses
+                    <TeacherProfile
+                      {...props}
+                      login={this.state.login}
+                      handleUpdate={this.handleUpdate}
+                    />
+                  );
+                }}
+              />
+            )} */}
+            {/* FOR TEACHER ROUTES */}
+            {this.state.loginAs == "teacher" && (
+              <Route
+                exact={true}
+                path="/teacher/profile"
+                render={(props) => {
+                  return (
+                    <TeacherProfile
                       {...props}
                       login={this.state.login}
                       handleUpdate={this.handleUpdate}
@@ -77,8 +97,6 @@ class App extends Component {
                 }}
               />
             )}
-            {/* FOR TEACHER ROUTES */}
-            {/* {this.state.loginAs=="teacher"&&} */}
             <Route
               exact={true}
               path="/"

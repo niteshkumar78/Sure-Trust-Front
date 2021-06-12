@@ -8,11 +8,11 @@ class Logout extends Component {
     // localStorage.removeItem("loginAs");
     cookie.remove("token", { path: "/" });
     cookie.remove("loginAs", { path: "/" });
+    cookie.remove("teacherId", { path: "/" });
     this.props.handleUpdate(false);
   }
 
   render() {
-    // const { login } = this.props;
     return <Redirect to="/login" />;
   }
 }

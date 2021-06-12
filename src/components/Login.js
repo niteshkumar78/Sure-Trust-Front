@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import cookie from "react-cookies";
 
+import { LoginApi } from "../apis/allApis";
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -29,7 +31,7 @@ class Login extends Component {
       loginButton: false,
     });
     if (this.state.loginAs != "") {
-      fetch("http://suretrustplatform.herokuapp.com/users/get-token/", {
+      fetch(LoginApi, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,15 +44,12 @@ class Login extends Component {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log("data", data);
+          console.log("Login data", data);
+          this.setState({
+            loginButton: true,
+          });
           if (typeof data.token != "undefined") {
-            const now = new Date();
-
-            const item = {
-              value: data.token,
-              expiry: now.getTime() + 20000,
-            };
-            cookie.save("token", data.token, { maxAge: 500 });
+            cookie.save("token", data.token, { maxAge: 604800 });
             // localStorage.setItem("", JSON.stringify(item));
             this.setState({
               login: true,
@@ -62,7 +61,8 @@ class Login extends Component {
             } else {
               LoginAs = "teacher";
             }
-            cookie.save("loginAs", LoginAs, { maxAge: 500 });
+            cookie.save("teacherId", data.teacher_id, { maxAge: 604800 });
+            cookie.save("loginAs", LoginAs, { maxAge: 604800 });
             // localStorage.setItem("loginAs", LoginAs);
           } else {
             this.setState({
@@ -70,9 +70,6 @@ class Login extends Component {
               errorType: data.error,
             });
           }
-          this.setState({
-            loginButton: true,
-          });
         })
         .catch((error) => {
           this.setState({
@@ -86,7 +83,7 @@ class Login extends Component {
     } else {
       this.setState({
         error: true,
-        errorType: "Please Login Type",
+        errorType: "Please Enter Login Type",
         loginButton: true,
       });
     }
@@ -100,22 +97,6 @@ class Login extends Component {
     });
   };
 
-  // handleLoginAsStudent = (e) => {
-  //   this.setState({
-  //     login_as: "student",
-  //     email: "",
-  //     password: "",
-  //   });
-  // };
-
-  // handleLoginAsTeacher = (e) => {
-  //   this.setState({
-  //     login_as: "teacher",
-  //     email: "",
-  //     password: "",
-  //   });
-  // };
-
   componentWillUnmount() {
     console.log("Login");
   }
@@ -123,7 +104,7 @@ class Login extends Component {
   render() {
     const { login } = this.props;
 
-    console.log(this.state);
+    // console.log(this.state);
 
     return (
       <div>
@@ -233,132 +214,6 @@ class Login extends Component {
                 New to SureTrust <Link to="/signup">Create an Account</Link>
               </div>
             </div>
-            {/* <ul
-              className="nav nav-pills mb-3 justify-content-center login-tab"
-              id="pills-tab"
-              role="tablist"
-            >
-              <li className="nav-item" role="presentation">
-                <button
-                  className="nav-link active"
-                  id="pills-home-tab"
-                  data-bs-toggle="pill"
-                  data-bs-target="#pills-home"
-                  type="button"
-                  role="tab"
-                  aria-controls="pills-home"
-                  aria-selected="true"
-                  onClick={this.handleLoginAsStudent}
-                >
-                  Login as Student
-                </button>
-              </li>
-              <li className="nav-item" role="presentation">
-                <button
-                  className="nav-link"
-                  id="pills-profile-tab"
-                  data-bs-toggle="pill"
-                  data-bs-target="#pills-profile"
-                  type="button"
-                  role="tab"
-                  aria-controls="pills-profile"
-                  aria-selected="false"
-                  onClick={this.handleLoginAsTeacher}
-                >
-                  Login as Teacher
-                </button>
-              </li>
-            </ul>
-            <div className="tab-content" id="pills-tabContent">
-              <div
-                className="tab-pane fade show active"
-                id="pills-home"
-                role="tabpanel"
-                aria-labelledby="pills-home-tab"
-              ></div>
-              <div
-                className="tab-pane fade"
-                id="pills-profile"
-                role="tabpanel"
-                aria-labelledby="pills-profile-tab"
-              >
-                <div className="signup-form">
-                  <form onSubmit={this.handleSubmit}>
-                    <h2>SignIn as Teacher</h2>
-                    <p className="hint-text">
-                      Sign Ip with your social media account or email address
-                    </p>
-                    <div className="social-btn text-center">
-                      <a href="#" className="btn btn-primary btn-lg">
-                        <i className="fa fa-facebook"></i> Facebook
-                      </a>
-                      <a href="#" className="btn btn-info btn-lg">
-                        <i className="fa fa-twitter"></i> Twitter
-                      </a>
-                      <a href="#" className="btn btn-danger btn-lg">
-                        <i className="fa fa-google"></i> Google
-                      </a>
-                    </div>
-                    <div className="or-seperator">
-                      <b>or</b>
-                    </div>
-                    {this.state.error && (
-                      <div className="alert alert-danger" role="alert">
-                        {this.state.errorType}
-                      </div>
-                    )}
-                    <div className="form-group">
-                      <input
-                        type="email"
-                        className="form-control form-controlInput input-lg"
-                        name="email"
-                        placeholder="Email Address"
-                        required="required"
-                        onChange={this.handleChange}
-                      ></input>
-                    </div>
-                    <div className="form-group">
-                      <input
-                        type="password"
-                        className="form-control form-controlInput input-lg"
-                        name="password"
-                        placeholder="Password"
-                        required="required"
-                        onChange={this.handleChange}
-                      ></input>
-                    </div>
-
-                    <div className="form-group">
-                      {this.state.loginButton ? (
-                        <button
-                          type="submit"
-                          className="btn btn-primary btn-lg btn-block signup-btn"
-                        >
-                          Sign In
-                        </button>
-                      ) : (
-                        <button
-                          type="submit"
-                          className="btn btn-secondary btn-lg btn-block "
-                          disabled
-                        >
-                          Signing...&nbsp;&nbsp;&nbsp;&nbsp;
-                          <div
-                            className="spinner-border text-dark"
-                            role="status"
-                          >
-                            <span className="visually-hidden">Loading...</span>
-                          </div>
-                        </button>
-                      )}
-                    </div>
-                  </form>
-                  <div className="text-center">
-                    New to SureTrust <Link to="/signup">Create an Account</Link>
-                  </div>
-                </div>
-              </div>
-            </div> */}
           </div>
         )}
       </div>

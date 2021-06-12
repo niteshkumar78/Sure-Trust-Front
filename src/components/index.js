@@ -8,7 +8,12 @@ import Home from "./Home";
 import Student from "./Student";
 import Signup from "./Signup";
 import Signupsuccess from "./Signupsuccess";
-import Courses from "./Courses";
+import TeacherProfile from "./TeacherProfile";
+import TrainerCourses from "./TrainerCourses";
+import TrainerBatches from "./TrainerBatches";
+import StudentsTab from "./StudentsTab";
+import TrainerPosts from "./TrainerPosts";
+import GradesTab from "./GradesTab";
 
 export {
   Navbar,
@@ -21,5 +26,10 @@ export {
   Student,
   Signup,
   Signupsuccess,
-  Courses,
+  TeacherProfile,
+  TrainerCourses,
+  TrainerBatches,
+  StudentsTab,
+  TrainerPosts,
+  GradesTab,
 };
