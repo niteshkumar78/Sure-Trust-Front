@@ -20,7 +20,7 @@ function Teacher(props) {
   // var state = {
   //   courses: courses.value,
   // };
-  console.log("courses", courses);
+  // console.log("courses", courses);
   useEffect(() => {
     loader.setValue(true);
     // var myHeaders = new Headers();
@@ -37,9 +37,9 @@ function Teacher(props) {
     fetch(TeacherCourseListApi, requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        loader.setValue(false);
         courses.setValue(result);
-        console.log("batches", result);
+        loader.setValue(false);
+        // console.log("batches", result);
       })
       .catch((error) => console.log("error", error));
   }, []);

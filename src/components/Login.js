@@ -165,7 +165,7 @@ class Login extends Component {
                 </div>
                 <div className="form-group">
                   <select
-                    class="form-select"
+                    className="form-select"
                     aria-label="Default select example"
                     value={this.state.loginAs}
                     name="loginAs"

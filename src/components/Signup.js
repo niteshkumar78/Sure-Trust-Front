@@ -159,8 +159,9 @@ class Signup extends Component {
                   name="email"
                   placeholder="Email Address"
                   required="required"
-                  onChange={this.handleChange}
                   value={this.state.email}
+                  onChange={this.handleChange}
+                  
                 ></input>
               </div>
               <div className="form-group">
@@ -170,8 +171,9 @@ class Signup extends Component {
                   name="password"
                   placeholder="Password"
                   required="required"
-                  onChange={this.handleChange}
                   value={this.state.password}
+                  onChange={this.handleChange}
+                 
                 ></input>
               </div>
               <div className="form-group">
@@ -181,8 +183,9 @@ class Signup extends Component {
                   name="confirm_password"
                   placeholder="Confirm Password"
                   required="required"
-                  onChange={this.handleChange}
                   value={this.state.confirm_password}
+                  onChange={this.handleChange}
+                  
                 ></input>
               </div>
               <div className="form-group">
@@ -192,8 +195,9 @@ class Signup extends Component {
                   name="name"
                   placeholder="Name"
                   required="required"
-                  onChange={this.handleChange}
                   value={this.state.name}
+                  onChange={this.handleChange}
+                  
                 ></input>
               </div>
               <div className="form-group form-control form-controlInput">
@@ -234,8 +238,9 @@ class Signup extends Component {
                   name="phone"
                   placeholder="Number"
                   required="required"
-                  onChange={this.handleChange}
                   value={this.state.phone}
+                  onChange={this.handleChange}
+                  
                 ></input>
               </div>
               <div className="form-group">

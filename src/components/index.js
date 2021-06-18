@@ -14,6 +14,9 @@ import TrainerBatches from "./TrainerBatches";
 import StudentsTab from "./StudentsTab";
 import TrainerPosts from "./TrainerPosts";
 import GradesTab from "./GradesTab";
+import Discussion from "./Discussion";
+import GradesList from "./GradesList";
+import Studentgrades from "./Studentgrades";
 
 export {
   Navbar,
@@ -32,4 +35,7 @@ export {
   StudentsTab,
   TrainerPosts,
   GradesTab,
+  Discussion,
+  GradesList,
+  Studentgrades,
 };

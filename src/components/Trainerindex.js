@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import cookie from "react-cookies";
 
 import { context } from "./Teacher";
-import { TrainerCourses } from "./index";
+import { TrainerCourses, Discussion } from "./index";
 import { TeacherDetailsApi } from "../apis/allApis";
 
 function useInput(initialValue) {
@@ -18,7 +18,7 @@ function Traineeindex(props) {
   const trainerNav = useInput("");
 
   const value = React.useContext(context);
-  console.log("context", value.courses.value);
+  // console.log("context", value.courses.value);
 
   const courses = value.courses.value;
 
@@ -82,7 +82,7 @@ function Traineeindex(props) {
             </a>
             <hr />
             <ul className="nav nav-pills flex-column mb-auto">
-              <li>
+              <li key="coursePost">
                 <a
                   className="nav-link active"
                   id="cousrepost-tab"
@@ -97,7 +97,7 @@ function Traineeindex(props) {
                   Course Posts
                 </a>
               </li>
-              <li>
+              <li key="students">
                 <a
                   className="nav-link "
                   id="trainerStudent-tab"
@@ -112,7 +112,7 @@ function Traineeindex(props) {
                   Students
                 </a>
               </li>
-              <li>
+              <li key="grades">
                 <a
                   className="nav-link text-dark"
                   id="grade-tab"
@@ -127,7 +127,7 @@ function Traineeindex(props) {
                   Grades
                 </a>
               </li>
-              <li>
+              <li key="recordings">
                 <a
                   className="nav-link text-dark"
                   id="recoding-tab"
@@ -142,7 +142,7 @@ function Traineeindex(props) {
                   Recording
                 </a>
               </li>
-              <li className="nav-item">
+              <li className="nav-item" key="discussion">
                 <a
                   className="nav-link text-dark"
                   id="Discussion-tab"
@@ -159,7 +159,7 @@ function Traineeindex(props) {
               </li>
             </ul>
             <hr />
-            <div className="dropdown">
+            {/* <div className="dropdown">
               <a
                 href="#"
                 className="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
@@ -167,13 +167,6 @@ function Traineeindex(props) {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                {/* <img
-                  src="https://github.com/mdo.png"
-                  alt=""
-                  width="32"
-                  height="32"
-                  className="rounded-circle me-2"
-                /> */}
                 <strong>+ POST</strong>
               </a>
               <ul
@@ -196,16 +189,16 @@ function Traineeindex(props) {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
-          <div className="trainerNav col-lg-9 col-sm-12 bg-white rounded pt-3 d-inline-block">
+          <div className=" trainerNav col-lg-9 col-sm-12 bg-white rounded pt-3 d-inline-block">
             <div className="teacherTopnav">
               <ul
                 className="nav nav-tabs shadow p-2 bg-white"
                 id="myTab"
                 role="tablist"
               >
-                <li className="nav-item" role="presentation">
+                <li className="nav-item" role="presentation" key="coursePost2">
                   <button
                     className="nav-link text-dark active"
                     id="cousrepost-tab"
@@ -220,7 +213,7 @@ function Traineeindex(props) {
                     Course Posts
                   </button>
                 </li>
-                <li className="nav-item" role="presentation">
+                <li className="nav-item" role="presentation" key="students2">
                   <button
                     className="nav-link text-dark"
                     id="trainerStudent-tab"
@@ -235,7 +228,7 @@ function Traineeindex(props) {
                     Students
                   </button>
                 </li>
-                <li className="nav-item" role="presentation">
+                <li className="nav-item" role="presentation" key="grades2">
                   <button
                     className="nav-link text-dark"
                     id="grade-tab"
@@ -250,7 +243,7 @@ function Traineeindex(props) {
                     Grades
                   </button>
                 </li>
-                <li className="nav-item" role="presentation">
+                <li className="nav-item" role="presentation" key="recording2">
                   <button
                     className="nav-link text-dark"
                     id="recoding-tab"
@@ -265,7 +258,7 @@ function Traineeindex(props) {
                     Recording
                   </button>
                 </li>
-                <li className="nav-item" role="presentation">
+                <li className="nav-item" role="presentation" key="discussion2">
                   <button
                     className="nav-link text-dark"
                     id="Discussion-tab"
@@ -281,7 +274,7 @@ function Traineeindex(props) {
                   </button>
                 </li>
 
-                <li className="nav-item dropdown ml-auto mr-2 bg-sure">
+                {/* <li className="nav-item dropdown ml-auto mr-2 bg-sure">
                   <a
                     className="nav-link dropdown-toggle "
                     data-bs-toggle="dropdown"
@@ -314,7 +307,7 @@ function Traineeindex(props) {
                       </a>
                     </li>
                   </ul>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div className="tab-content p-3" id="myTabContent">
@@ -382,7 +375,7 @@ function Traineeindex(props) {
                 role="tabpanel"
                 aria-labelledby="recording-tab"
               >
-                {/* {trainerNav.value === "recording" && <RecordingTab />} */}
+                {/* {trainerNav.value === "discussion" && <DisscussionTab />} */}
               </div>
               <div
                 className="tab-pane fade dispaly-5"
@@ -390,7 +383,9 @@ function Traineeindex(props) {
                 role="tabpanel"
                 aria-labelledby="Discussion-tab"
               >
-                {/* {trainerNav.value === "discussion" && <DisscussionTab />} */}
+                {trainerNav.value === "discussion" && (
+                  <TrainerCourses tab="discussion" />
+                )}
               </div>
             </div>
           </div>
