@@ -41,7 +41,7 @@ function TeacherProfile(props) {
       });
   }, []);
 
-  console.log(cookie.load("teacherId"));
+  console.log(cookie.load("userId"));
 
   return (
     <div>

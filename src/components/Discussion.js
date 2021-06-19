@@ -19,15 +19,29 @@ function Discussion(props) {
 
   console.log(comment.value);
 
+  console.log("user Id", cookie.load("userId"));
+
   function fetchComments() {
     // loader.setValue(true);
-    var requestOptions = {
-      method: "GET",
-      headers: {
+    var head;
+
+    if (props.user === "teacher") {
+      head = {
         Authorization: `Token ${cookie.load("token")}`,
         "batch-id": props.batch_id,
         "Content-Type": "application/json",
-      },
+      };
+    } else {
+      head = {
+        Authorization: `Token ${cookie.load("token")}`,
+        "course-id": props.batch_id,
+        "Content-Type": "application/json",
+      };
+    }
+
+    var requestOptions = {
+      method: "GET",
+      headers: head,
 
       redirect: "follow",
     };
@@ -55,17 +69,30 @@ function Discussion(props) {
 
   function handleCommentSubmit(e) {
     loader.setValue(true);
+
+    var commentsSubmitHead;
+
+    if (props.user === "teacher") {
+      commentsSubmitHead = JSON.stringify({
+        comment: comment.value,
+        user: cookie.load("userId"),
+        batch: props.batch_id,
+      });
+    } else {
+      commentsSubmitHead = JSON.stringify({
+        comment: comment.value,
+        user: cookie.load("userId"),
+        // course-id: props.batch_id,
+      });
+    }
+
     var requestOptions = {
       method: "POST",
       headers: {
         Authorization: `Token ${cookie.load("token")}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        comment: comment.value,
-        user: cookie.load("teacherId"),
-        batch: props.batch_id,
-      }),
+      body: commentsSubmitHead,
       redirect: "follow",
     };
 

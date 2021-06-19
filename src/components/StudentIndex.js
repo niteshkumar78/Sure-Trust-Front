@@ -1,9 +1,7 @@
-import React, { useEffect, useState, useContext } from "react";
-import cookie from "react-cookies";
+import React, { useState, useEffect } from "react";
+import { context } from "./Student";
 
-import { context } from "./Teacher";
-import { TrainerCourses, Discussion } from "./index";
-import { TeacherDetailsApi } from "../apis/allApis";
+import { StudentCourses } from "./index";
 
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
@@ -13,7 +11,7 @@ function useInput(initialValue) {
   };
 }
 
-function Traineeindex(props) {
+function StudentIndex(props) {
   // const teacherDetails = useInput({});
   const trainerNav = useInput("");
 
@@ -30,33 +28,12 @@ function Traineeindex(props) {
     <div>
       <div className="container-fluid sure-bg main">
         <div className="row dashsboard">
-          {/* <div className="col-lg-3 col-sm-12 rounded h-50 d-inline-block">
-            <div className="rounded w-100 bg-white text-center text-dark p-5 shadow-lg">
-              <img
-                className="center border rounded-circle w-100"
-                src={teacherDetails.value.profice_pic}
-                alt="no image"
-                height="50%"
-              />
-              <div className="container w-100 h-auto mx-auto p-3 color1 profilepic">
-                <br />
-                <div className="mytxt1 p-1 mt-3 h3">
-                  {teacherDetails.value.name}
-                </div>
-                <div className="mytxt2 p-1">
-                  {teacherDetails.value.qualification}
-                </div>
-              </div>
-            </div>
-          </div> */}
           <div className=" flex-column  bg-light sideNav">
             <a
               href="/"
               className=" align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
             >
-              <svg className="bi me-2" width="40" height="32">
-                {/* <use xlink:href="#bootstrap" /> */}
-              </svg>
+              <svg className="bi me-2" width="40" height="32"></svg>
               <span className="fs-4">Dashboard</span>
             </a>
             <hr />
@@ -76,21 +53,7 @@ function Traineeindex(props) {
                   Course Posts
                 </a>
               </li>
-              <li key="students">
-                <a
-                  className="nav-link "
-                  id="trainerStudent-tab"
-                  data-bs-toggle="tab"
-                  data-bs-target="#trainerStudent"
-                  type="button"
-                  role="tab"
-                  aria-controls="trainerStudent"
-                  aria-selected="false"
-                  onClick={() => handleNavClick("students")}
-                >
-                  Students
-                </a>
-              </li>
+
               <li key="grades">
                 <a
                   className="nav-link text-dark"
@@ -138,37 +101,6 @@ function Traineeindex(props) {
               </li>
             </ul>
             <hr />
-            {/* <div className="dropdown">
-              <a
-                href="#"
-                className="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
-                id="dropdownUser2"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <strong>+ POST</strong>
-              </a>
-              <ul
-                className="dropdown-menu text-small shadow"
-                aria-labelledby="dropdownUser2"
-              >
-                <li>
-                  <a className="dropdown-item" href="#">
-                    POST A MATERIAL
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    POST AN ASSIGNMENT
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    POST AN ANNOUNCEMENT
-                  </a>
-                </li>
-              </ul>
-            </div> */}
           </div>
           <div className=" trainerNav col-lg-9 col-sm-12 bg-white rounded pt-3 d-inline-block">
             <div className="teacherTopnav">
@@ -192,21 +124,7 @@ function Traineeindex(props) {
                     Course Posts
                   </button>
                 </li>
-                <li className="nav-item" role="presentation" key="students2">
-                  <button
-                    className="nav-link text-dark"
-                    id="trainerStudent-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#trainerStudent"
-                    type="button"
-                    role="tab"
-                    aria-controls="trainerStudent"
-                    aria-selected="false"
-                    onClick={() => handleNavClick("students")}
-                  >
-                    Students
-                  </button>
-                </li>
+
                 <li className="nav-item" role="presentation" key="grades2">
                   <button
                     className="nav-link text-dark"
@@ -252,57 +170,22 @@ function Traineeindex(props) {
                     Discussion
                   </button>
                 </li>
-
-                {/* <li className="nav-item dropdown ml-auto mr-2 bg-sure">
-                  <a
-                    className="nav-link dropdown-toggle "
-                    data-bs-toggle="dropdown"
-                    href="#"
-                    role="button"
-                    aria-expanded="false"
-                  >
-                    + POST
-                  </a>
-                  <ul className="dropdown-menu">
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        POST A MATERIAL
-                      </a>
-                    </li>
-                    <li>
-                      <hr className="dropdown-divider" />
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        POST AN ASSIGNMENT
-                      </a>
-                    </li>
-                    <li>
-                      <hr className="dropdown-divider" />
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        POST A NOTICE
-                      </a>
-                    </li>
-                  </ul>
-                </li> */}
               </ul>
             </div>
             <div className="tab-content p-3" id="myTabContent">
               {/* {trainerNav.value === "" && (
-                <div className="tab-pane fade show active" role="tabpanel">
-                  <div style={{ height: "300px" }}>
-                    <div className=" h-100 d-flex justify-content-center align-items-center">
-                      <div>
-                        <h1 style={{ marginLeft: "15px" }}>
-                          Welcome To Sure Trust Trainer Dashboard
-                        </h1>
-                      </div>
-                    </div>
-                  </div>
+          <div className="tab-pane fade show active" role="tabpanel">
+            <div style={{ height: "300px" }}>
+              <div className=" h-100 d-flex justify-content-center align-items-center">
+                <div>
+                  <h1 style={{ marginLeft: "15px" }}>
+                    Welcome To Sure Trust Trainer Dashboard
+                  </h1>
                 </div>
-              )} */}
+              </div>
+            </div>
+          </div>
+        )} */}
 
               <div
                 className="tab-pane fade show active"
@@ -312,7 +195,7 @@ function Traineeindex(props) {
               >
                 {trainerNav.value !== "" ? (
                   trainerNav.value === "coursePost" && (
-                    <TrainerCourses tab="courses" />
+                    <StudentCourses tab="posts" />
                   )
                 ) : (
                   <div className="tab-pane fade show active" role="tabpanel">
@@ -320,7 +203,7 @@ function Traineeindex(props) {
                       <div className=" h-100 d-flex justify-content-center align-items-center">
                         <div>
                           <h1 style={{ marginLeft: "15px" }}>
-                            Welcome To Sure Trust Trainer Dashboard
+                            Welcome To Sure Trust Student Dashboard
                           </h1>
                         </div>
                       </div>
@@ -328,25 +211,16 @@ function Traineeindex(props) {
                   </div>
                 )}
               </div>
-              <div
-                className="tab-pane fade h-6"
-                id="trainerStudent"
-                role="tabpanel"
-                aria-labelledby="trainerStudent-tab active"
-              >
-                {trainerNav.value === "students" && (
-                  <TrainerCourses tab="students" />
-                )}
-              </div>
+
               <div
                 className="tab-pane fade dispaly-5"
                 id="grade"
                 role="tabpanel"
                 aria-labelledby="grade-tab"
               >
-                {trainerNav.value === "grades" && (
-                  <TrainerCourses tab="grades" />
-                )}
+                {/* {trainerNav.value === "grades" && (
+            <TrainerCourses tab="grades" />
+          )} */}
               </div>
               <div
                 className="tab-pane fade dispaly-5"
@@ -363,7 +237,7 @@ function Traineeindex(props) {
                 aria-labelledby="Discussion-tab"
               >
                 {trainerNav.value === "discussion" && (
-                  <TrainerCourses tab="discussion" />
+                  <StudentCourses tab="discussion" />
                 )}
               </div>
             </div>
@@ -374,4 +248,4 @@ function Traineeindex(props) {
   );
 }
 
-export default Traineeindex;
+export default StudentIndex;

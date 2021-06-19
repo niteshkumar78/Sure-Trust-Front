@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import cookie, { load } from "react-cookies";
 
-import { TrainerPosts, StudentsTab, GradesTab, Discussion } from "./index";
+import { Posts, StudentsTab, GradesTab, Discussion } from "./index";
 import { BatchesApi } from "../apis/allApis";
 
 function useInput(initialValue) {
@@ -93,13 +93,17 @@ function TrainerBatches(props) {
                     <StudentsTab batch_id={data.id} key={data.id} />
                   )}
                   {props.tab == "courses" && (
-                    <TrainerPosts batch_id={data.id} key={data.id} />
+                    <Posts id={data.id} key={data.id} user="teacher" />
                   )}
                   {props.tab == "grades" && (
                     <GradesTab batch_id={data.id} key={data.id} />
                   )}
                   {props.tab == "discussion" && (
-                    <Discussion batch_id={data.id} key={data.id} />
+                    <Discussion
+                      batch_id={data.id}
+                      key={data.id}
+                      user="teacher"
+                    />
                   )}
                 </div>
               )}

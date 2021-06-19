@@ -12,11 +12,13 @@ import TeacherProfile from "./TeacherProfile";
 import TrainerCourses from "./TrainerCourses";
 import TrainerBatches from "./TrainerBatches";
 import StudentsTab from "./StudentsTab";
-import TrainerPosts from "./TrainerPosts";
+import Posts from "./Posts";
 import GradesTab from "./GradesTab";
 import Discussion from "./Discussion";
 import GradesList from "./GradesList";
 import Studentgrades from "./Studentgrades";
+import StudentIndex from "./StudentIndex";
+import StudentCourses from "./StudentCourses";
 
 export {
   Navbar,
@@ -33,9 +35,11 @@ export {
   TrainerCourses,
   TrainerBatches,
   StudentsTab,
-  TrainerPosts,
+  Posts,
   GradesTab,
   Discussion,
   GradesList,
   Studentgrades,
+  StudentIndex,
+  StudentCourses,
 };

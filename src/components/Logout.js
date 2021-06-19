@@ -8,7 +8,7 @@ class Logout extends Component {
     // localStorage.removeItem("loginAs");
     cookie.remove("token", { path: "/" });
     cookie.remove("loginAs", { path: "/" });
-    cookie.remove("teacherId", { path: "/" });
+    cookie.remove("userId", { path: "/" });
     this.props.handleUpdate(false);
   }
 

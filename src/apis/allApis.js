@@ -8,8 +8,7 @@ const BatchesApi = "https://suretrustplatform.herokuapp.com/courses/batch/";
 const TeacherDetailsApi = `https://suretrustplatform.herokuapp.com/teacher/${cookie.load(
   "teacherId"
 )}/`;
-const TeacherPostsApi =
-  "https://suretrustplatform.herokuapp.com/courses/posts/";
+const PostsApi = "https://suretrustplatform.herokuapp.com/courses/posts/";
 const StudentsApi =
   "https://suretrustplatform.herokuapp.com/courses/students-of-batch/";
 
@@ -31,7 +30,7 @@ export {
   TeacherCourseListApi,
   BatchesApi,
   TeacherDetailsApi,
-  TeacherPostsApi,
+  PostsApi,
   StudentsApi,
   DiscussionComments,
   GradesAssignment,

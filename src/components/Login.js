@@ -58,10 +58,12 @@ class Login extends Component {
             let LoginAs;
             if (typeof data.regno != "undefined") {
               LoginAs = "student";
+              cookie.save("userId", data.user_id, { maxAge: 604800 });
             } else {
               LoginAs = "teacher";
+              cookie.save("userId", data.teacher_id, { maxAge: 604800 });
             }
-            cookie.save("teacherId", data.teacher_id, { maxAge: 604800 });
+
             cookie.save("loginAs", LoginAs, { maxAge: 604800 });
             // localStorage.setItem("loginAs", LoginAs);
           } else {
