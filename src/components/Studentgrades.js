@@ -49,7 +49,7 @@ function Studentgrades(props) {
     };
 
     fetch(
-      `http://suretrustplatform.herokuapp.com/courses/grades/${value.id}/`,
+      `https://suretrustplatform.herokuapp.com/courses/grades/${value.id}/`,
       requestOptions
     )
       .then((response) => response.json())
