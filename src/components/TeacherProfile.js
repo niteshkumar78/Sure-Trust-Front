@@ -16,11 +16,11 @@ function useInput(initialValue) {
 
 function TeacherProfile(props) {
   const teacherDetails = useInput({});
-  const loader = useInput(false);
+  const loader = useInput(true);
 
   console.log("state ", teacherDetails);
   useEffect(() => {
-    loader.setValue(true);
+    // loader.setValue(true);
     var requestOptions = {
       method: "GET",
       headers: {
@@ -33,8 +33,8 @@ function TeacherProfile(props) {
     fetch(`${TeacherDetailsApi}${cookie.load("userId")}/`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        loader.setValue(false);
         teacherDetails.setValue(result);
+        loader.setValue(false);
         console.log("teacher", result);
       })
       .catch((error) => {
@@ -60,7 +60,7 @@ function TeacherProfile(props) {
                       <div className="user-profile">
                         <div className="user-avatar">
                           <img
-                            src={teacherDetails.value.profice_pic}
+                            src={teacherDetails.value.profile_pic}
                             alt="Maxwell Admin"
                           />
                         </div>

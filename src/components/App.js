@@ -112,7 +112,7 @@ class App extends Component {
             {console.log("2", cookie.load("loginAs"))}
 
             {/* FOR STUDENT ROUTES */}
-            {cookie.load("loginAs") === "student" && (
+            {this.state.loginAs === "student" && (
               <Route
                 exact={true}
                 path="/student/profile"
@@ -129,7 +129,7 @@ class App extends Component {
               />
             )}
             {/* FOR TEACHER ROUTES */}
-            {cookie.load("loginAs") === "teacher" && (
+            {this.state.loginAs === "teacher" && (
               <Route
                 exact={true}
                 path="/teacher/profile"

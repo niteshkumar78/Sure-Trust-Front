@@ -23,7 +23,7 @@ function Teacher(props) {
   // };
   // console.log("courses", courses);
   useEffect(() => {
-    loader.setValue(true);
+    // loader.setValue(true);
     // var myHeaders = new Headers();
     // myHeaders.append("Authorization", `Token ${cookie.load("token")}`);
 

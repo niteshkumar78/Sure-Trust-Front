@@ -35,6 +35,9 @@ function CoursesList(props) {
       .then((result) => {
         courseDetails.setValue(result);
         console.log(result);
+      })
+      .catch((error)=>{
+        console.log("error", error);
       });
   }, [ParamsId]);
 
@@ -57,7 +60,12 @@ function CoursesList(props) {
     e.preventDefault();
   };
 
+  console.log("paramss", ParamsId);
+
+  
+
   return (
+    ParamsId!==undefined?
     <div
       className="courseContainer"
       //   style={{ backgroundColor: "rgb(59, 143, 197)", color: "white" }}
@@ -68,6 +76,8 @@ function CoursesList(props) {
         </h1>
         <p className="ml-auto p-2">
           <b>{courseDetails.value.date}</b>
+         
+          
         </p>
       </div>
       <h2>
@@ -98,7 +108,7 @@ function CoursesList(props) {
           <embed
             // src="https://www.tutorialrepublic.com"
             src={
-              "https://suretrustplatform.herokuapp.com/" +
+              "https://suretrustplatform.herokuapp.com" +
               courseDetails.value.syllabus
             }
             width="100%"
@@ -106,9 +116,10 @@ function CoursesList(props) {
           ></embed>
         </div>
       </div>
-    </div>
-    // <div>Courses</div>
+    </div>:
+    <Redirect to="/"/>
   );
+          
 }
 
 export default CoursesList;

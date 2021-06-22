@@ -25,7 +25,7 @@ function StudentProfile(props) {
   // const regno = localStorage.getItem("regno");
 
   useEffect(() => {
-    loader.setValue(true);
+    // loader.setValue(true);
     var requestOptions = {
       method: "GET",
       headers: {
@@ -97,7 +97,7 @@ function StudentProfile(props) {
                       <div className="user-profile">
                         <div className="user-avatar">
                           <img
-                            src={studentDetails.value.profice_pic}
+                            src={studentDetails.value.profile_pic}
                             alt="Maxwell Admin"
                           />
                         </div>

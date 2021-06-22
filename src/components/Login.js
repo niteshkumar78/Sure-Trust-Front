@@ -53,17 +53,13 @@ class Login extends Component {
           if (typeof data.token != "undefined") {
             cookie.save("token", data.token, { maxAge: 604800 });
             // localStorage.setItem("token", data.token);
-            this.setState({
-              login: true,
-            });
-            this.props.handleUpdate(true);
             let LoginAs;
             if (typeof data.regno != "undefined") {
               LoginAs = "student";
               cookie.save("loginAs", "student", { maxAge: 604800 });
-              this.props.handleUpdateLoginAs(LoginAs);
               cookie.save("userId", data.user_id, { maxAge: 604800 });
               cookie.save("regno", data.regno, { maxAge: 604800 });
+              this.props.handleUpdateLoginAs(LoginAs);
               // localStorage.setItem("userId", data.user_id);
               // localStorage.setItem("regno", LoginAs);
             } else {
@@ -73,6 +69,12 @@ class Login extends Component {
               cookie.save("userId", data.teacher_id, { maxAge: 604800 });
               // localStorage.setItem("userId", data.teacher_id);
             }
+            this.props.handleUpdate(true);
+
+            this.setState({
+              login: true,
+            });
+            
 
             // cookie.save("loginAs", LoginAs, { maxAge: 604800 });
             // localStorage.setItem("loginAs", LoginAs);
