@@ -28,7 +28,10 @@ function Traineeindex(props) {
 
   return (
     <div>
-      <div className="container-fluid sure-bg main">
+      <div
+        className="container-fluid sure-bg main"
+        // style={{ paddingTop: "0px" }}
+      >
         <div className="row dashsboard">
           {/* <div className="col-lg-3 col-sm-12 rounded h-50 d-inline-block">
             <div className="rounded w-100 bg-white text-center text-dark p-5 shadow-lg">
@@ -289,7 +292,7 @@ function Traineeindex(props) {
                 </li> */}
               </ul>
             </div>
-            <div className="tab-content p-3" id="myTabContent">
+            <div className="tab-content " id="myTabContent">
               {/* {trainerNav.value === "" && (
                 <div className="tab-pane fade show active" role="tabpanel">
                   <div style={{ height: "300px" }}>

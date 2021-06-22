@@ -1,0 +1,22 @@
+.courseContainer {
+  background-color: rgb(59, 143, 197);
+  color: white;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.courseContainer > h2 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.courseContainerMain {
+  display: flex;
+}
+
+.courseContainerMain > div {
+  width: 50%;
+  min-height: 500px;
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import cookie, { load } from "react-cookies";
 
-import { Posts, StudentsTab, GradesTab, Discussion } from "./index";
+import { Posts, StudentsTab, GradesTab, Discussion, Loader } from "./index";
 import { BatchesApi } from "../apis/allApis";
 
 function useInput(initialValue) {
@@ -52,18 +52,7 @@ function TrainerBatches(props) {
   return (
     <div>
       {loader.value ? (
-        <div className="containerLoader" style={{ minHeight: "50vh" }}>
-          <svg
-            className="loader"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 340 340"
-          >
-            <circle cx="170" cy="170" r="160" stroke="#0d6efd" />
-            <circle cx="170" cy="170" r="135" stroke="#404041" />
-            <circle cx="170" cy="170" r="110" stroke="#0d6efd" />
-            <circle cx="170" cy="170" r="85" stroke="#404041" />
-          </svg>
-        </div>
+        <Loader />
       ) : (
         // <div></div>
         batches.value.map((data) => (
@@ -96,7 +85,11 @@ function TrainerBatches(props) {
                     <Posts id={data.id} key={data.id} user="teacher" />
                   )}
                   {props.tab == "grades" && (
-                    <GradesTab batch_id={data.id} key={data.id} />
+                    <GradesTab
+                      batch_id={data.id}
+                      key={data.id}
+                      user="teacher"
+                    />
                   )}
                   {props.tab == "discussion" && (
                     <Discussion

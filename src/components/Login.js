@@ -11,7 +11,8 @@ class Login extends Component {
     // let loginAs = localStorage.getItem("loginAs");
     let loginAs = cookie.load("loginAs");
 
-    if (cookie.load("loginAs") == null) {
+    console.log(loginAs);
+    if (loginAs == null) {
       loginAs = "";
     }
     this.state = {
@@ -27,6 +28,7 @@ class Login extends Component {
   }
 
   handleSubmit = (e) => {
+    console.log("login1");
     this.setState({
       loginButton: false,
     });
@@ -50,7 +52,7 @@ class Login extends Component {
           });
           if (typeof data.token != "undefined") {
             cookie.save("token", data.token, { maxAge: 604800 });
-            // localStorage.setItem("", JSON.stringify(item));
+            // localStorage.setItem("token", data.token);
             this.setState({
               login: true,
             });
@@ -58,13 +60,21 @@ class Login extends Component {
             let LoginAs;
             if (typeof data.regno != "undefined") {
               LoginAs = "student";
+              cookie.save("loginAs", "student", { maxAge: 604800 });
+              this.props.handleUpdateLoginAs(LoginAs);
               cookie.save("userId", data.user_id, { maxAge: 604800 });
+              cookie.save("regno", data.regno, { maxAge: 604800 });
+              // localStorage.setItem("userId", data.user_id);
+              // localStorage.setItem("regno", LoginAs);
             } else {
               LoginAs = "teacher";
+              cookie.save("loginAs", "teacher", { maxAge: 604800 });
+              this.props.handleUpdateLoginAs(LoginAs);
               cookie.save("userId", data.teacher_id, { maxAge: 604800 });
+              // localStorage.setItem("userId", data.teacher_id);
             }
 
-            cookie.save("loginAs", LoginAs, { maxAge: 604800 });
+            // cookie.save("loginAs", LoginAs, { maxAge: 604800 });
             // localStorage.setItem("loginAs", LoginAs);
           } else {
             this.setState({

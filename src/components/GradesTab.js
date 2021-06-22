@@ -22,6 +22,18 @@ function GradesTab(props) {
 
   function postFetch() {
     // loader.setValue(true);
+
+    var raw;
+    if (props.user === "teacher") {
+      raw = JSON.stringify({
+        batch_id: props.batch_id,
+      });
+    } else {
+      raw = JSON.stringify({
+        course_id: props.batch_id,
+      });
+    }
+
     var requestOptions = {
       method: "POST",
       headers: {
@@ -29,9 +41,7 @@ function GradesTab(props) {
         // "batch-id": props.batch_id,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        batch_id: props.batch_id,
-      }),
+      body: raw,
 
       redirect: "follow",
     };
@@ -114,7 +124,11 @@ function GradesTab(props) {
                   id={"batch" + props.batch_id + "Assignment" + data.id}
                 >
                   {/* Write here */}
-                  <GradesList post_id={data.id} />
+                  <GradesList
+                    content={data.content}
+                    post_id={data.id}
+                    user={props.user}
+                  />
                 </div>
               </div>
             )}

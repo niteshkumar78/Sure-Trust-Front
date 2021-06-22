@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import cookie from "react-cookies";
 
 import { GradesStudentsList } from "../apis/allApis";
-import { Studentgrades } from "./index";
+import { TeacherStudentgrades, StudentGrades, Loader } from "./index";
 
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
@@ -16,10 +16,12 @@ function useInput(initialValue) {
 function GradesList(props) {
   const { post_id } = props;
   const studentsList = useInput([]);
-  const loader = useInput(false);
+  const loader = useInput(true);
+
+  console.log("post Id", post_id);
 
   useEffect(() => {
-    loader.setValue(true);
+    // loader.setValue(true);
     var requestOptions = {
       method: "GET",
       headers: {
@@ -34,9 +36,9 @@ function GradesList(props) {
     fetch(GradesStudentsList, requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        loader.setValue(false);
         studentsList.setValue(result);
         console.log("Grades Students List", result);
+        loader.setValue(false);
       })
       .catch((error) => {
         loader.setValue(false);
@@ -47,19 +49,8 @@ function GradesList(props) {
   return (
     <div>
       {loader.value ? (
-        <div className="containerLoader" style={{ minHeight: "20vh" }}>
-          <svg
-            className="loader"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 340 340"
-          >
-            <circle cx="170" cy="170" r="160" stroke="#0d6efd" />
-            <circle cx="170" cy="170" r="135" stroke="#404041" />
-            <circle cx="170" cy="170" r="110" stroke="#0d6efd" />
-            <circle cx="170" cy="170" r="85" stroke="#404041" />
-          </svg>
-        </div>
-      ) : (
+        <Loader />
+      ) : props.user === "teacher" ? (
         <table class="table">
           <thead>
             <tr>
@@ -74,10 +65,19 @@ function GradesList(props) {
 
           <tbody>
             {studentsList.value.map((value) => (
-              <Studentgrades value={value} post_id={post_id} />
+              <TeacherStudentgrades value={value} post_id={post_id} />
             ))}
           </tbody>
         </table>
+      ) : (
+        <div>
+          <StudentGrades
+            studentDetails={studentsList.value[0]}
+            studentSet={studentsList}
+            post_id={post_id}
+            content={props.content}
+          />
+        </div>
       )}
     </div>
   );

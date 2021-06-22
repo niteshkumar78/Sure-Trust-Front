@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { context } from "./Student";
 
-import { Posts, Discussion } from "./index";
+import { Posts, Discussion, GradesTab } from "./index";
 
 function StudentCourses(props) {
   const value = React.useContext(context);
@@ -48,6 +48,9 @@ function StudentCourses(props) {
             )}
             {props.tab === "discussion" && (
               <Discussion batch_id={data.id} user="student" />
+            )}
+            {props.tab === "grades" && (
+              <GradesTab user="student" batch_id={data.id} />
             )}
           </div>
         ))}

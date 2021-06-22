@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import Traineeindex from "./Trainerindex";
 import cookie from "react-cookies";
 import { TeacherCourseListApi } from "../apis/allApis";
+import { Loader } from "./index";
 
 const context = React.createContext();
 
@@ -16,7 +17,7 @@ function useInput(initialValue) {
 
 function Teacher(props) {
   const courses = useInput([]);
-  const loader = useInput(false);
+  const loader = useInput(true);
   // var state = {
   //   courses: courses.value,
   // };
@@ -48,18 +49,7 @@ function Teacher(props) {
     return (
       <context.Provider value={{ courses }}>
         {loader.value ? (
-          <div className="containerLoader">
-            <svg
-              className="loader"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 340 340"
-            >
-              <circle cx="170" cy="170" r="160" stroke="#0d6efd" />
-              <circle cx="170" cy="170" r="135" stroke="#404041" />
-              <circle cx="170" cy="170" r="110" stroke="#0d6efd" />
-              <circle cx="170" cy="170" r="85" stroke="#404041" />
-            </svg>
-          </div>
+          <Loader />
         ) : (
           <div>
             <Traineeindex />

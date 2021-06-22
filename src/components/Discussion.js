@@ -70,31 +70,37 @@ function Discussion(props) {
   function handleCommentSubmit(e) {
     loader.setValue(true);
 
-    var commentsSubmitHead;
+    var requestOptions;
 
     if (props.user === "teacher") {
-      commentsSubmitHead = JSON.stringify({
-        comment: comment.value,
-        user: cookie.load("userId"),
-        batch: props.batch_id,
-      });
+      requestOptions = {
+        method: "POST",
+        headers: {
+          Authorization: `Token ${cookie.load("token")}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          comment: comment.value,
+          user: cookie.load("userId"),
+          batch: props.batch_id,
+        }),
+        redirect: "follow",
+      };
     } else {
-      commentsSubmitHead = JSON.stringify({
-        comment: comment.value,
-        user: cookie.load("userId"),
-        // course-id: props.batch_id,
-      });
+      requestOptions = {
+        method: "POST",
+        headers: {
+          Authorization: `Token ${cookie.load("token")}`,
+          "Content-Type": "application/json",
+          "course-id": props.batch_id,
+        },
+        body: JSON.stringify({
+          comment: comment.value,
+          user: cookie.load("userId"),
+        }),
+        redirect: "follow",
+      };
     }
-
-    var requestOptions = {
-      method: "POST",
-      headers: {
-        Authorization: `Token ${cookie.load("token")}`,
-        "Content-Type": "application/json",
-      },
-      body: commentsSubmitHead,
-      redirect: "follow",
-    };
 
     fetch(SendNewComment, requestOptions)
       .then((response) => response.json())

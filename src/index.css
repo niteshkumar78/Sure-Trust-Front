@@ -319,18 +319,6 @@ button[data-bs-toggle="pill"]:hover {
   display: none;
 }
 
-@media (max-width: 915px) {
-  .sideNav {
-    display: none;
-  }
-  .teacherTopnav {
-    display: block;
-  }
-  .trainerNav {
-    width: 100%;
-  }
-}
-
 /* @media (max-width: 1456px) {
   .trainerNav {
     width: 83%;
@@ -416,4 +404,39 @@ button[data-bs-toggle="pill"]:hover {
 
 .studentsTableData {
   width: 25%;
+}
+
+.studentPostContent {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid rgb(199, 198, 198);
+}
+
+@media (max-width: 700px) {
+  .trainerNav {
+    width: 100%;
+    padding: 0px;
+  }
+  #myTabContent {
+    width: 100%;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 915px) {
+  .sideNav {
+    display: none;
+  }
+  .teacherTopnav {
+    display: block;
+  }
+  .trainerNav {
+    width: 100%;
+  }
+  .dashsboard {
+    margin: 0px;
+  }
+  .main {
+    padding: 0px;
+  }
 }

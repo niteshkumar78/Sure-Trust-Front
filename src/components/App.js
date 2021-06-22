@@ -14,6 +14,8 @@ import {
   Signup,
   Signupsuccess,
   TeacherProfile,
+  CoursesList,
+  StudentProfile,
 } from "./index";
 
 class App extends Component {
@@ -26,6 +28,7 @@ class App extends Component {
     this.state = {
       login: false,
       loginAs: "",
+      courseId: undefined,
     };
   }
 
@@ -34,6 +37,8 @@ class App extends Component {
     if (this._isMounted) {
       const token = cookie.load("token");
       let loginAs = cookie.load("loginAs");
+      // const token = localStorage.getItem("token");
+      // let loginAs = localStorage.getItem("loginAs");
       if (token) {
         this.setState({
           login: true,
@@ -54,7 +59,20 @@ class App extends Component {
     });
   };
 
+  handleUpdateLoginAs = (res) => {
+    this.setState({
+      loginAs: res,
+    });
+  };
+
+  handleCourseIdUpdate = (res) => {
+    this.setState({
+      courseId: res,
+    });
+  };
+
   render() {
+    console.log("App LoginAs", this.state.loginAs);
     return (
       <Router>
         <div>
@@ -62,27 +80,56 @@ class App extends Component {
             login={this.state.login}
             loginAs={this.state.loginAs}
             handleUpdate={this.handleUpdate}
+            handleCourseIdUpdate={this.handleCourseIdUpdate}
           />
 
           <Switch>
+            <Route
+              exact={true}
+              path="/"
+              render={(props) => {
+                return <Home {...props} login={this.state.login} />;
+              }}
+            />
+
+            {console.log("1", cookie.load("loginAs"))}
+
+            <Route
+              exact={true}
+              path="/course"
+              render={(props) => {
+                return (
+                  <CoursesList
+                    {...props}
+                    login={this.state.login}
+                    courseId={this.state.courseId}
+                    handleUpdate={this.handleUpdate}
+                  />
+                  // <div>hello</div>
+                );
+              }}
+            />
+            {console.log("2", cookie.load("loginAs"))}
+
             {/* FOR STUDENT ROUTES */}
-            {/* {this.state.loginAs == "student" && (
+            {cookie.load("loginAs") === "student" && (
               <Route
                 exact={true}
                 path="/student/profile"
                 render={(props) => {
                   return (
-                    <TeacherProfile
+                    <StudentProfile
                       {...props}
                       login={this.state.login}
                       handleUpdate={this.handleUpdate}
                     />
+                    // <div>Student Profile</div>
                   );
                 }}
               />
-            )} */}
+            )}
             {/* FOR TEACHER ROUTES */}
-            {this.state.loginAs == "teacher" && (
+            {cookie.load("loginAs") === "teacher" && (
               <Route
                 exact={true}
                 path="/teacher/profile"
@@ -98,10 +145,10 @@ class App extends Component {
               />
             )}
             <Route
-              exact={true}
-              path="/"
+              exact
+              path="/test"
               render={(props) => {
-                return <Home {...props} login={this.state.login} />;
+                return <div>dwefjew</div>;
               }}
             />
 
@@ -169,6 +216,7 @@ class App extends Component {
                     {...props}
                     login={this.state.login}
                     handleUpdate={this.handleUpdate}
+                    handleUpdateLoginAs={this.handleUpdateLoginAs}
                   />
                 );
               }}
@@ -182,6 +230,7 @@ class App extends Component {
                     {...props}
                     login={this.state.login}
                     handleUpdate={this.handleUpdate}
+                    handleUpdateLoginAs={this.handleUpdateLoginAs}
                   />
                 );
               }}

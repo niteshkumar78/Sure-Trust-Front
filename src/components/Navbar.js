@@ -1,21 +1,41 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import cookie from "react-cookies";
+import { CoursesList } from "../apis/allApis";
 
 class Navbar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      courses: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch(CoursesList)
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        this.setState({
+          courses: result,
+        });
+      });
+  }
+
   componentWillUnmount() {
     console.log("Navbar");
   }
 
   render() {
     const { login, loginAs } = this.props;
+    // const loginAs = cookie.load("loginAs");
+    console.log("Check Refresh", loginAs);
+
     return (
-      <div
-        className="container-fluid text-center text-white"
-        style={{ background: "rgba(59, 143, 197)" }}
-      >
+      <div className="container-fluid text-center text-white">
         <div>
-          <div className="row p-2">
+          <div className="row p-2" style={{ background: "rgba(59, 143, 197)" }}>
             <div className="col mt-auto mb-auto">
               <svg
                 data-ux="SVG"
@@ -50,12 +70,22 @@ class Navbar extends Component {
         </div>
         <div>
           <div className="mt-5 mb-3 text-center">
-            <img className="d-block mx-auto" src="" alt=""></img>
+            <img
+              className="d-block mx-auto"
+              // src="https://img1.wsimg.com/isteam/ip/6f038646-2052-4598-8c4e-ed7fea8124d5/SURE%20INITIATIVE%20LOGO.png/:/rs=h:200,cg:true,m/qt=q:95"
+
+              alt=""
+            ></img>
           </div>
         </div>
         <nav
           className="navi navbar navbar-expand-lg navbar-white text-dark rounded"
           aria-label="Twelfth navbar example"
+          style={{
+            backgroundColor: "#f8f9fa",
+            // borderTop: "1px solid black",
+            // borderBottom: "1px solid black",
+          }}
         >
           <div className="container-fluid">
             <button
@@ -109,96 +139,22 @@ class Navbar extends Component {
                     aria-labelledby="dropdown08"
                     style={{ height: 250 + "px" }}
                   >
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        DBMS
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        AI,ML
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        PYTHON
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        DBMS
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        AI,ML
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        PYTHON
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        DBMS
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        AI,ML
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        PYTHON
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        DBMS
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        AI,ML
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        PYTHON
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        DBMS
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        AI,ML
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        PYTHON
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        DBMS
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        AI,ML
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        PYTHON
-                      </a>
-                    </li>
+                    {this.state.courses.map((data) => (
+                      <li style={{ color: "black" }} id={data.id}>
+                        <Link
+                          className="dropdown-item"
+                          to={{
+                            pathname: `/course`,
+                            courseData: data,
+                          }}
+                          onClick={() => {
+                            this.props.handleCourseIdUpdate(data.id);
+                          }}
+                        >
+                          <span>{data.id}</span>. &nbsp;{data.course_name}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </li>
                 <li className="nav-item">
@@ -281,6 +237,38 @@ class Navbar extends Component {
                               <Link
                                 className="dropdown-item"
                                 to="/teacher/profile"
+                              >
+                                Profile
+                              </Link>
+                            </li>
+                          </ul>
+                        </li>
+                      )}
+                      {loginAs === "student" && (
+                        <li className="nav-item dropdown">
+                          <a
+                            className="nav-link dropdown-toggle"
+                            href="#"
+                            id="navbarDropdownMenuLink"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            Profile
+                          </a>
+                          <ul
+                            className="dropdown-menu shadow"
+                            aria-labelledby="navbarDropdownMenuLink"
+                          >
+                            <li>
+                              <Link className="dropdown-item" to="/student">
+                                Dashboard
+                              </Link>
+                            </li>
+                            <li>
+                              <Link
+                                className="dropdown-item"
+                                to="/student/profile"
                               >
                                 Profile
                               </Link>

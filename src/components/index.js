@@ -16,9 +16,15 @@ import Posts from "./Posts";
 import GradesTab from "./GradesTab";
 import Discussion from "./Discussion";
 import GradesList from "./GradesList";
-import Studentgrades from "./Studentgrades";
+import TeacherStudentgrades from "./TeacherStudentgrades";
 import StudentIndex from "./StudentIndex";
 import StudentCourses from "./StudentCourses";
+import StudentRecording from "./StudentRecording";
+import TeacherRecording from "./TeacherRecording";
+import StudentGrades from "./StudentGrades";
+import CoursesList from "./CoursesList";
+import StudentProfile from "./StudentProfile";
+import Loader from "./Loader";
 
 export {
   Navbar,
@@ -39,7 +45,13 @@ export {
   GradesTab,
   Discussion,
   GradesList,
-  Studentgrades,
+  TeacherStudentgrades,
   StudentIndex,
   StudentCourses,
+  StudentRecording,
+  TeacherRecording,
+  StudentGrades,
+  CoursesList,
+  StudentProfile,
+  Loader,
 };

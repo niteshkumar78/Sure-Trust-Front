@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { context } from "./Student";
 
-import { StudentCourses } from "./index";
+import { StudentCourses, StudentRecording } from "./index";
 
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
@@ -16,7 +16,7 @@ function StudentIndex(props) {
   const trainerNav = useInput("");
 
   const value = React.useContext(context);
-  // console.log("context", value.courses.value);
+  console.log("context", value.courses.value);
 
   const courses = value.courses.value;
 
@@ -26,7 +26,10 @@ function StudentIndex(props) {
 
   return (
     <div>
-      <div className="container-fluid sure-bg main">
+      <div
+        className="container-fluid sure-bg main"
+        // style={{ paddingTop: "0px" }}
+      >
         <div className="row dashsboard">
           <div className=" flex-column  bg-light sideNav">
             <a
@@ -172,7 +175,7 @@ function StudentIndex(props) {
                 </li>
               </ul>
             </div>
-            <div className="tab-content p-3" id="myTabContent">
+            <div className="tab-content " id="myTabContent">
               {/* {trainerNav.value === "" && (
           <div className="tab-pane fade show active" role="tabpanel">
             <div style={{ height: "300px" }}>
@@ -218,9 +221,9 @@ function StudentIndex(props) {
                 role="tabpanel"
                 aria-labelledby="grade-tab"
               >
-                {/* {trainerNav.value === "grades" && (
-            <TrainerCourses tab="grades" />
-          )} */}
+                {trainerNav.value === "grades" && (
+                  <StudentCourses tab="grades" />
+                )}
               </div>
               <div
                 className="tab-pane fade dispaly-5"
@@ -228,7 +231,7 @@ function StudentIndex(props) {
                 role="tabpanel"
                 aria-labelledby="recording-tab"
               >
-                {/* {trainerNav.value === "discussion" && <DisscussionTab />} */}
+                {trainerNav.value === "recording" && <StudentRecording />}
               </div>
               <div
                 className="tab-pane fade dispaly-5"
