@@ -21,7 +21,7 @@ import StudentIndex from "./StudentIndex";
 import StudentCourses from "./StudentCourses";
 import StudentRecording from "./StudentRecording";
 import TeacherRecording from "./TeacherRecording";
-import StudentGrades from "./StudentGrades";
+// import StudentGrades from "./StudentGrades";
 import CoursesList from "./CoursesList";
 import StudentProfile from "./StudentProfile";
 import Loader from "./Loader";
@@ -50,7 +50,7 @@ export {
   StudentCourses,
   StudentRecording,
   TeacherRecording,
-  StudentGrades,
+  // StudentGrades,
   CoursesList,
   StudentProfile,
   Loader,

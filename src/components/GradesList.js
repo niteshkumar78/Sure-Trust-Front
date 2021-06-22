@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import cookie from "react-cookies";
 
 import { GradesStudentsList } from "../apis/allApis";
-import { TeacherStudentgrades, StudentGrades, Loader } from "./index";
+import { TeacherStudentgrades, Loader } from "./index";
+
+import StudentGrades from "./StudentGrades";
 
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
