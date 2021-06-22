@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link, Redirect } from "react-router-dom";
 
 import cookie from "react-cookies";
-import syllabus1 from "./SureTrusttest.pdf";
 import "../courseList.css";
 import { AddToCourse } from "../apis/allApis";
 
