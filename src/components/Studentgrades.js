@@ -9,7 +9,7 @@ function useInput(initialValue) {
   };
 }
 
-function Studentgrades(props) {
+function StudentGrades(props) {
   const assignment = useInput();
 
   console.log("Student Details", props.studentDetails);
@@ -97,4 +97,4 @@ function Studentgrades(props) {
   );
 }
 
-export default Studentgrades;
+export default StudentGrades;
