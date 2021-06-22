@@ -22,6 +22,7 @@ function CoursesList(props) {
   const loginAs = cookie.load("loginAs");
   console.log("params", ParamsId);
 
+  // console.log(courseDetails.value.syllabus);
   // useEffect(() => {
   //   this.props.handleCourseIdUpdate(ParamsId);
   // }, []);
@@ -96,8 +97,10 @@ function CoursesList(props) {
         <div>
           <embed
             // src="https://www.tutorialrepublic.com"
-            src="https://suretrustplatform.herokuapp.com/media/syllabus_files/durga_resume_JsYpbgO.pdf"
-            // src={syllabus1}
+            src={
+              "https://suretrustplatform.herokuapp.com/" +
+              courseDetails.value.syllabus
+            }
             width="100%"
             height="500p"
           ></embed>
