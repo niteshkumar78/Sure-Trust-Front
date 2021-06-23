@@ -98,6 +98,13 @@ function TrainerBatches(props) {
                       user="teacher"
                     />
                   )}
+                   {props.tab == "recording" && (
+                    <Discussion
+                      batch_id={data.id}
+                      key={data.id}
+                      user="teacher"
+                    />
+                  )}
                 </div>
               )}
             </div>

@@ -15,17 +15,22 @@ function useInput(initialValue) {
 
 function CoursesList(props) {
   const courseDetails = useInput({});
-  const ApplySuccess = useInput(false);
-  // const ParamsId = useParams().id;
+  const teachers = useInput([]);
   const ParamsId = props.courseId;
-  // const ParamsId = props.location.courseData.id;
   const loginAs = cookie.load("loginAs");
   console.log("params", ParamsId);
 
-  // console.log(courseDetails.value.syllabus);
-  // useEffect(() => {
-  //   this.props.handleCourseIdUpdate(ParamsId);
-  // }, []);
+  useEffect(() => {
+    fetch(
+      `https://suretrustplatform.herokuapp.com/courses/get-course-teachers/${ParamsId}/`
+    )
+      .then((res) => res.json())
+      .then((result) => {
+        teachers.setValue(result);
+        console.log("teacher", result);
+      })
+      .catch((err) => console.log("error", err));
+  }, [ParamsId]);
 
   useEffect(() => {
     fetch(
@@ -36,7 +41,7 @@ function CoursesList(props) {
         courseDetails.setValue(result);
         console.log(result);
       })
-      .catch((error)=>{
+      .catch((error) => {
         console.log("error", error);
       });
   }, [ParamsId]);
@@ -54,7 +59,6 @@ function CoursesList(props) {
       .then((response) => response.text())
       .then((result) => {
         console.log("Apply Course", result);
-        // ApplySuccess.setValue(true);
       })
       .catch((error) => console.log("error", error));
     e.preventDefault();
@@ -62,22 +66,14 @@ function CoursesList(props) {
 
   console.log("paramss", ParamsId);
 
-  
-
-  return (
-    ParamsId!==undefined?
-    <div
-      className="courseContainer"
-      //   style={{ backgroundColor: "rgb(59, 143, 197)", color: "white" }}
-    >
+  return ParamsId !== undefined ? (
+    <div className="courseContainer">
       <div className="d-flex">
         <h1 className="mr-auto p-2">
           <b>Course Details</b>
         </h1>
         <p className="ml-auto p-2">
           <b>{courseDetails.value.date}</b>
-         
-          
         </p>
       </div>
       <h2>
@@ -87,6 +83,30 @@ function CoursesList(props) {
         <div className=" h-100 d-flex justify-content-center align-items-center">
           <div style={{ textAlign: "center" }}>
             <h4>prerequisites: {courseDetails.value.prerequisites}</h4>
+            <section className="column">
+              {teachers.value.map((teacher) => {
+                console.log(teacher);
+                const { id, name, profile_pic, qualification, phone } = teacher;
+                return (
+                  <article key={id} style={{ marginTop: "5rem" }}>
+                    <img
+                      src={`https://suretrustplatform.herokuapp.com${profile_pic}`}
+                      alt=""
+                      style={{ width: "100px", height: "100px" }}
+                    />
+                    <h3>
+                      Name : <span>{name}</span>
+                    </h3>
+                    <p>
+                      Qualification : <span>{qualification}</span>
+                    </p>
+                    <p>
+                      Phone : <span>{phone}</span>
+                    </p>
+                  </article>
+                );
+              })}
+            </section>
             {loginAs === "student" && (
               <div>
                 <form onSubmit={handleApplyCourse}>
@@ -103,10 +123,8 @@ function CoursesList(props) {
             )}
           </div>
         </div>
-        {/* <h1>Syllabus: </h1> */}
         <div>
           <embed
-            // src="https://www.tutorialrepublic.com"
             src={
               "https://suretrustplatform.herokuapp.com" +
               courseDetails.value.syllabus
@@ -116,10 +134,10 @@ function CoursesList(props) {
           ></embed>
         </div>
       </div>
-    </div>:
-    <Redirect to="/"/>
+    </div>
+  ) : (
+    <Redirect to="/" />
   );
-          
 }
 
 export default CoursesList;

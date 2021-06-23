@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import cookie from "react-cookies";
 
 import { context } from "./Teacher";
-import { TrainerCourses, Discussion } from "./index";
+import { TrainerCourses, Discussion, TeacherRecording } from "./index";
 import { TeacherDetailsApi } from "../apis/allApis";
 
 function useInput(initialValue) {
@@ -109,21 +109,21 @@ function Traineeindex(props) {
                   Grades
                 </a>
               </li>
-              <li key="recordings">
-                <a
-                  className="nav-link text-dark"
-                  id="recoding-tab"
-                  data-bs-toggle="tab"
-                  data-bs-target="#recording"
-                  type="button"
-                  role="tab"
-                  aria-controls="recording"
-                  aria-selected="false"
-                  onClick={() => handleNavClick("recording")}
-                >
-                  Recording
-                </a>
-              </li>
+              <li className="nav-item" role="presentation" key="recording2">
+                  <button
+                    className="nav-link text-dark"
+                    id="recording1-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#recording"
+                    type="button"
+                    role="tab"
+                    aria-controls="recording"
+                    aria-selected="false"
+                    onClick={() => handleNavClick("recording")}
+                  >
+                    Recording
+                  </button>
+                </li>
               <li className="nav-item" key="discussion">
                 <a
                   className="nav-link text-dark"
@@ -228,7 +228,7 @@ function Traineeindex(props) {
                 <li className="nav-item" role="presentation" key="recording2">
                   <button
                     className="nav-link text-dark"
-                    id="recoding-tab"
+                    id="recording1-tab"
                     data-bs-toggle="tab"
                     data-bs-target="#recording"
                     type="button"
@@ -355,9 +355,12 @@ function Traineeindex(props) {
                 className="tab-pane fade dispaly-5"
                 id="recording"
                 role="tabpanel"
-                aria-labelledby="recording-tab"
+                aria-labelledby="recording1-tab"
               >
-                {/* {trainerNav.value === "discussion" && <DisscussionTab />} */}
+                hello
+                {/* {trainerNav.value === "recording" && (
+                  <TrainerCourses tab="recording" />
+                )} */}
               </div>
               <div
                 className="tab-pane fade dispaly-5"
@@ -365,6 +368,7 @@ function Traineeindex(props) {
                 role="tabpanel"
                 aria-labelledby="Discussion-tab"
               >
+                
                 {trainerNav.value === "discussion" && (
                   <TrainerCourses tab="discussion" />
                 )}

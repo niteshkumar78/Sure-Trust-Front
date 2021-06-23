@@ -137,7 +137,7 @@ class Navbar extends Component {
                   <ul
                     className="dropdown-menu overflow-auto shadow"
                     aria-labelledby="dropdown08"
-                    style={{ height: 250 + "px" }}
+                    style={{ height: 350 + "px" }}
                   >
                     {this.state.courses.map((data) => (
                       <li style={{ color: "black" }} id={data.id}>
