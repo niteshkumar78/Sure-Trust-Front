@@ -214,6 +214,7 @@ function Discussion(props) {
                       class="write_msg"
                       placeholder="Type a message"
                       onChange={handleCommentChange}
+                      autocomplete="off"
                     />
                     <button class="msg_send_btn" type="submit">
                       &#x2708;
