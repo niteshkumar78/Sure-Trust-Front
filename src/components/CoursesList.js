@@ -16,6 +16,8 @@ function useInput(initialValue) {
 function CoursesList(props) {
   const courseDetails = useInput({});
   const teachers = useInput([]);
+  const error = useInput(0);
+  const errorMessage = useInput("");
   const ParamsId = props.courseId;
   const loginAs = cookie.load("loginAs");
   console.log("params", ParamsId);
@@ -56,9 +58,16 @@ function CoursesList(props) {
     };
 
     fetch(`${AddToCourse}${ParamsId}/`, requestOptions)
-      .then((response) => response.text())
+      .then((response) => response.json())
       .then((result) => {
         console.log("Apply Course", result);
+        if (result.error !== undefined) {
+          error.setValue(1);
+          errorMessage.setValue(result.error);
+        } else {
+          error.setValue(2);
+          errorMessage.setValue(result.success);
+        }
       })
       .catch((error) => console.log("error", error));
     e.preventDefault();
@@ -67,71 +76,85 @@ function CoursesList(props) {
   console.log("paramss", ParamsId);
 
   return ParamsId !== undefined ? (
-    <div className="courseContainer">
-      <div className="d-flex">
-        <h1 className="mr-auto p-2">
-          <b>Course Details</b>
-        </h1>
-        <p className="ml-auto p-2">
-          <b>{courseDetails.value.date}</b>
-        </p>
-      </div>
-      <h2>
-        <b>{courseDetails.value.course_name}</b>
-      </h2>
-      <div className="courseContainerMain">
-        <div className=" h-100 d-flex justify-content-center align-items-center">
-          <div style={{ textAlign: "center" }}>
-            <h4>prerequisites: {courseDetails.value.prerequisites}</h4>
-            <section className="column">
-              {teachers.value.map((teacher) => {
-                console.log(teacher);
-                const { id, name, profile_pic, qualification, phone } = teacher;
-                return (
-                  <article key={id} style={{ marginTop: "5rem" }}>
-                    <img
-                      src={`https://suretrustplatform.herokuapp.com${profile_pic}`}
-                      alt=""
-                      style={{ width: "100px", height: "100px" }}
-                    />
-                    <h3>
-                      Name : <span>{name}</span>
-                    </h3>
-                    <p>
-                      Qualification : <span>{qualification}</span>
-                    </p>
-                    <p>
-                      Phone : <span>{phone}</span>
-                    </p>
-                  </article>
-                );
-              })}
-            </section>
-            {loginAs === "student" && (
-              <div>
-                <form onSubmit={handleApplyCourse}>
-                  <button className="btn btn-secondary" id="liveToastBtn">
-                    Enroll now
-                  </button>
-                </form>
-              </div>
-            )}
-            {loginAs === undefined && (
-              <Link className="btn btn-secondary" to="/login">
-                Enroll now
-              </Link>
-            )}
+    <div className="courseMainContainer">
+      <div className="courseContainer">
+        {error.value === 1 && (
+          <div class="alert alert-warning" role="alert">
+            {errorMessage.value}
           </div>
+        )}
+        {error.value === 2 && (
+          <div class="alert alert-success" role="alert">
+            {errorMessage.value}
+          </div>
+        )}
+        <div className="d-flex">
+          <h1 className="mr-auto p-2">
+            <b>Course Details</b>
+          </h1>
+          <p className="ml-auto p-2">
+            <b>{courseDetails.value.date}</b>
+          </p>
         </div>
-        <div>
-          <embed
-            src={
-              "https://suretrustplatform.herokuapp.com" +
-              courseDetails.value.syllabus
-            }
-            width="100%"
-            height="500p"
-          ></embed>
+        <h2>
+          <b>{courseDetails.value.course_name}</b>
+        </h2>
+        <div className="courseContainerMain">
+          <div className=" h-100 d-flex justify-content-center align-items-center">
+            <div style={{ textAlign: "center" }}>
+              <h4>prerequisites: {courseDetails.value.prerequisites}</h4>
+
+              {loginAs === "student" && (
+                <div>
+                  <form onSubmit={handleApplyCourse}>
+                    <button className="btn btn-secondary" id="liveToastBtn">
+                      Enroll now
+                    </button>
+                  </form>
+                </div>
+              )}
+              {loginAs === undefined && (
+                <Link className="btn btn-secondary" to="/login">
+                  Enroll now
+                </Link>
+              )}
+              <section className="column">
+                {teachers.value.map((teacher) => {
+                  console.log(teacher);
+                  const { id, name, profile_pic, qualification, phone } =
+                    teacher;
+                  return (
+                    <article key={id} style={{ marginTop: "5rem" }}>
+                      <img
+                        src={`https://suretrustplatform.herokuapp.com${profile_pic}`}
+                        alt=""
+                        style={{ width: "100px", height: "100px" }}
+                      />
+                      <h3>
+                        Name : <span>{name}</span>
+                      </h3>
+                      <p>
+                        Qualification : <span>{qualification}</span>
+                      </p>
+                      <p>
+                        Phone : <span>{phone}</span>
+                      </p>
+                    </article>
+                  );
+                })}
+              </section>
+            </div>
+          </div>
+          <div>
+            <embed
+              src={
+                "https://suretrustplatform.herokuapp.com" +
+                courseDetails.value.syllabus
+              }
+              width="100%"
+              height="500p"
+            ></embed>
+          </div>
         </div>
       </div>
     </div>
