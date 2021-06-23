@@ -118,7 +118,7 @@ function CoursesList(props) {
                   Enroll now
                 </Link>
               )}
-              <section className="column">
+              <section className="courseColumn">
                 {teachers.value.map((teacher) => {
                   console.log(teacher);
                   const { id, name, profile_pic, qualification, phone } =
