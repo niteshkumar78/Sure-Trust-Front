@@ -16,6 +16,10 @@ import {
   TeacherProfile,
   CoursesList,
   StudentProfile,
+  KnowMore,
+  AboutSure,
+  ContactPoint,
+  ResearchPage,
 } from "./index";
 
 class App extends Component {
@@ -149,6 +153,37 @@ class App extends Component {
               path="/test"
               render={(props) => {
                 return <div>dwefjew</div>;
+              }}
+            />
+
+            <Route
+              exact
+              path="/knowMore"
+              render={(props) => {
+                return <KnowMore />;
+              }}
+            />
+
+            <Route
+              exact
+              path="/aboutSureInitiative"
+              render={(props) => {
+                return <AboutSure />;
+              }}
+            />
+
+            <Route
+              exact
+              path="/ContactPoint"
+              render={(props) => {
+                return <ContactPoint />;
+              }}
+            />
+            <Route
+              exact
+              path="/researchPage"
+              render={(props) => {
+                return <ResearchPage />;
               }}
             />
 

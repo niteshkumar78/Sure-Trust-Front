@@ -109,21 +109,21 @@ function Traineeindex(props) {
                   Grades
                 </a>
               </li>
-              <li className="nav-item" role="presentation" key="recording2">
-                  <button
-                    className="nav-link text-dark"
-                    id="recording1-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#recording"
-                    type="button"
-                    role="tab"
-                    aria-controls="recording"
-                    aria-selected="false"
-                    onClick={() => handleNavClick("recording")}
-                  >
-                    Recording
-                  </button>
-                </li>
+              <li className="nav-item" key="recording2">
+                <a
+                  className="nav-link text-dark"
+                  id="recording1-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#recording"
+                  type="button"
+                  role="tab"
+                  aria-controls="recording"
+                  aria-selected="false"
+                  onClick={() => handleNavClick("recording")}
+                >
+                  Recording
+                </a>
+              </li>
               <li className="nav-item" key="discussion">
                 <a
                   className="nav-link text-dark"
@@ -357,7 +357,7 @@ function Traineeindex(props) {
                 role="tabpanel"
                 aria-labelledby="recording1-tab"
               >
-                hello
+                <h1>Comming Soon....</h1>
                 {/* {trainerNav.value === "recording" && (
                   <TrainerCourses tab="recording" />
                 )} */}
@@ -368,7 +368,6 @@ function Traineeindex(props) {
                 role="tabpanel"
                 aria-labelledby="Discussion-tab"
               >
-                
                 {trainerNav.value === "discussion" && (
                   <TrainerCourses tab="discussion" />
                 )}

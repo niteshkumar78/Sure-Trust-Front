@@ -286,6 +286,8 @@ img {
   margin: 0;
   padding: 5px 10px 5px 12px;
   width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 .time_date {
   color: #747474;
@@ -302,7 +304,7 @@ img {
   margin: 8px 0 0;
 }
 .received_withd_msg {
-  width: 57%;
+  width: 60%;
 }
 .mesgs {
   float: left;
@@ -318,14 +320,15 @@ img {
   color: #fff;
   padding: 5px 10px 5px 12px;
   width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 .outgoing_msg {
   overflow: hidden;
-  margin: 26px 0 26px;
 }
 .sent_msg {
   float: right;
-  width: 46%;
+  width: 57%;
 }
 .input_msg_write input {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;

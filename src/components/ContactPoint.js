@@ -1,187 +1,24 @@
 import React from "react";
 import "../ContactPoint.css";
-
 const ContactPoint = () => {
   return (
     <>
-      <section>
-        <div className="container-fluid logo_part">
-          <div id="myNav" className="overlay">
-            <a
-              href="javascript:void(0)"
-              className="closebtn "
-              onclick="closeNav()"
-            >
-              <i className="fas fa-bars menu_bar"></i>
-            </a>
-            <ul className="nav flex-column small_nav">
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  HOME
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  data-toggle="dropdown"
-                  href="#"
-                >
-                  COURSE OFFERED
-                </a>
-                <div className="dropdown-menu">
-                  <a className="dropdown-item" href="#">
-                    1. ROBOTICS
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    2. INTERNET OF THINGS
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    3. CYBER SECURITY AND HACKING
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    4. CLOUD COMPUTING
-                  </a>
-                </div>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link " href="#">
-                  KNOW MORE
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  RESEARCH AND GUIDANCE
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  data-toggle="dropdown"
-                  href="#"
-                >
-                  MORE
-                </a>
-                <div className="dropdown-menu">
-                  <a className="dropdown-item" href="#">
-                    ABOUT SURE INITIATIVE
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    STUDENT CORNER
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    VOLUNTEER TO BE TRAINER?
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    CONTACT POINT
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <span
-            // style="font-size:30px;cursor:pointer"
-            className="openNav"
-            // onclick={openNav()}
-          >
-            &#9776;{" "}
-          </span>
-          <div id="logo">
-            <img src="logo.png" alt="" />
-          </div>
-
-          <hr />
-          <hr />
-          <nav className="mynav ">
-            <ul className="nav">
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  HOME
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  data-toggle="dropdown"
-                  href="#"
-                >
-                  COURSE OFFERED
-                </a>
-                <div className="dropdown-menu">
-                  <a className="dropdown-item" href="#">
-                    1. ROBOTICS
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    2. INTERNET OF THINGS
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    3. CYBER SECURITY AND HACKING
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    4. CLOUD COMPUTING
-                  </a>
-                </div>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link " href="#">
-                  KNOW MORE
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  RESEARCH AND GUIDANCE
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  data-toggle="dropdown"
-                  href="#"
-                >
-                  MORE
-                </a>
-                <div className="dropdown-menu">
-                  <a className="dropdown-item" href="#">
-                    ABOUT SURE INITIATIVE
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    STUDENT CORNER
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    VOLUNTEER TO BE TRAINER?
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    CONTACT POINT
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </nav>
-          <hr
-            aria-hidden="true"
-            role="separator"
-            data-ux="HR"
-            className="separation"
-          />
-        </div>
-      </section>
-      <section className=" container-fluid mid">
+      <section className=" container-fluid mid1">
         <h2>CONTACT THE TEAM</h2>
-        <div className="box">
-          <div className="row">
-            <div className="column">
+        <div className="boxKnowMore">
+          <div className="row rowContact">
+            <div className="column columnContact">
               <div>
                 <form aria-live="polite" data-ux="Form">
                   <input type="name" name="name" />
                 </form>
               </div>
             </div>
-            <div className="column">
+            <div className="column columnContact">
               <div className="block">
                 <h4 className="find">Find ways to volunteer ----</h4>
                 <div className="ContentText">
-                  <p
-                  // style="margin: 0"
-                  >
+                  <p style={{ margin: "0" }}>
                     <span className="Cont">
                       Any initiative is as strong as the community that holds it
                       up. Together we can do more than what we can do alone. Let
@@ -207,7 +44,7 @@ const ContactPoint = () => {
                   data-tccl="ux2.contact.whatsapp.click,click"
                   icon="whatsApp"
                   data-typography="false"
-                  className="message"
+                  className="messageContact"
                 >
                   <span className="MsgElement">
                     <span className="Msg2Element">
@@ -229,8 +66,8 @@ const ContactPoint = () => {
                               y2="39.9"
                               gradientUnits="userSpaceOnUse"
                             >
-                              <stop offset="0" stop-color="#20b038"></stop>
-                              <stop offset="1" stop-color="#60d66a"></stop>
+                              <stop offset="0" stopColor="#20b038"></stop>
+                              <stop offset="1" stopColor="#60d66a"></stop>
                             </linearGradient>
                             <linearGradient
                               id="b"
@@ -240,8 +77,8 @@ const ContactPoint = () => {
                               y2="32.61"
                               gradientUnits="userSpaceOnUse"
                             >
-                              <stop offset="0" stop-color="#f9f9f9"></stop>
-                              <stop offset="1" stop-color="#fff"></stop>
+                              <stop offset="0" stopColor="#f9f9f9"></stop>
+                              <stop offset="1" stopColor="#fff"></stop>
                             </linearGradient>
                           </defs>
                           <path d="M37.88 453.37l29.59-108A208 208 0 0 1 39.63 241.1c0-115 93.6-208.49 208.56-208.49a208.57 208.57 0 0 1 208.57 208.66c-.05 115-93.62 208.49-208.57 208.49h-.08a208.41 208.41 0 0 1-99.67-25.38zm115.68-66.73l6.34 3.75a173.18 173.18 0 0 0 88.23 24.16h.06c95.55 0 173.31-77.75 173.35-173.3A173.34 173.34 0 0 0 248.26 67.83c-95.62 0-173.38 77.73-173.42 173.28a172.94 172.94 0 0 0 26.5 92.23l4.13 6.55L88 403.84z"></path>

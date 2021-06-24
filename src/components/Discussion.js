@@ -12,11 +12,12 @@ function useInput(initialValue) {
   };
 }
 
-function Discussion(props) {
+const Discussion = (props) => {
   const commentsList = useInput([]);
   const comment = useInput("");
   const loader = useInput(false);
   const userId = parseInt(cookie.load("userId"));
+  console.log("discussion");
 
   console.log(comment.value);
 
@@ -108,7 +109,7 @@ function Discussion(props) {
       .then((result) => {
         loader.setValue(false);
 
-        document.getElementById("message").value = "";
+        document.querySelector("#message").value = "";
         fetchComments();
         console.log("Comments List", result);
       })
@@ -119,45 +120,55 @@ function Discussion(props) {
     e.preventDefault();
   }
 
+  function MessageScroll() {
+    var elmnt = document.getElementById("moveScrollMessage-" + props.batch_id);
+    // console.log("Message Element", elmnt);
+    elmnt.scrollIntoView();
+  }
+
+  useEffect(() => {
+    MessageScroll();
+  });
+
   return (
     <React.Fragment>
-      <div class="container">
-        <h3 class=" text-center">Messaging</h3>
-        <div class="messaging">
-          <div class="inbox_msg">
-            <div class="mesgs">
-              <div class="msg_history">
+      <div className="container">
+        {/* <h3 className=" text-center">Messaging</h3> */}
+        <div className="messaging">
+          <div className="inbox_msg">
+            <div className="mesgs">
+              <div className="msg_history">
                 {commentsList.value.map((data) => (
                   <div>
                     {data.user.student == null ? (
                       <div>
                         {data.user.id === userId ? (
-                          <div class="outgoing_msg">
-                            <div class="sent_msg">
-                              <span class="commentsUserName">
+                          <div className="outgoing_msg">
+                            <div className="sent_msg">
+                              <span className="commentsUserName">
                                 <b>{data.user.teacher.name}</b>
                               </span>
                               <p>{data.comment}</p>
-                              <span class="time_date">
+                              <span className="time_date">
                                 {data.timestamp.slice(0, 10)}
                               </span>
                             </div>
                           </div>
                         ) : (
-                          <div class="incoming_msg">
-                            <div class="incoming_msg_img">
+                          <div className="incoming_msg">
+                            <div className="incoming_msg_img">
                               <img
                                 src="https://ptetutorials.com/images/user-profile.png"
                                 alt="sunil"
                               />
                             </div>
-                            <div class="received_msg">
-                              <div class="received_withd_msg">
-                                <span class="commentsUserName">
+                            <div className="received_msg">
+                              <div className="received_withd_msg">
+                                <span className="commentsUserName">
                                   <b>{data.user.teacher.name}</b>
                                 </span>
                                 <p>{data.comment}</p>
-                                <span class="time_date">
+                                <span className="time_date">
                                   {data.timestamp.slice(0, 10)}
                                 </span>
                               </div>
@@ -168,32 +179,32 @@ function Discussion(props) {
                     ) : (
                       <div>
                         {data.user.id === userId ? (
-                          <div class="outgoing_msg">
-                            <div class="sent_msg">
-                              <span class="commentsUserName">
+                          <div className="outgoing_msg">
+                            <div className="sent_msg">
+                              <span className="commentsUserName">
                                 <b>{data.user.student.name}</b>
                               </span>
                               <p>{data.comment}</p>
-                              <span class="time_date">
+                              <span className="time_date">
                                 {data.timestamp.slice(0, 10)}
                               </span>
                             </div>
                           </div>
                         ) : (
-                          <div class="incoming_msg">
-                            <div class="incoming_msg_img">
+                          <div className="incoming_msg">
+                            <div className="incoming_msg_img">
                               <img
                                 src="https://ptetutorials.com/images/user-profile.png"
                                 alt="sunil"
                               />
                             </div>
-                            <div class="received_msg">
-                              <div class="received_withd_msg">
-                                <span class="commentsUserName">
+                            <div className="received_msg">
+                              <div className="received_withd_msg">
+                                <span className="commentsUserName">
                                   <b>{data.user.student.name}</b>
                                 </span>
                                 <p>{data.comment}</p>
-                                <span class="time_date">
+                                <span className="time_date">
                                   {data.timestamp.slice(0, 10)}
                                 </span>
                               </div>
@@ -204,21 +215,21 @@ function Discussion(props) {
                     )}
                   </div>
                 ))}
+                <div id={"moveScrollMessage-" + props.batch_id}>.</div>
               </div>
-              <div class="type_msg">
-                <div class="input_msg_write">
+              <div className="type_msg">
+                <div className="input_msg_write">
                   <form onSubmit={handleCommentSubmit}>
                     <input
                       type="text"
-                      id="message"
-                      class="write_msg"
+                      id={"message"}
+                      className="write_msg"
                       placeholder="Type a message"
                       onChange={handleCommentChange}
-                      autocomplete="off"
+                      autoComplete="off"
                     />
-                    <button class="msg_send_btn" type="submit">
-                      &#x2708;
-                      <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                    <button className="msg_send_btn" type="submit">
+                      <img src="https://image.flaticon.com/icons/png/512/2132/2132589.png" />
                     </button>
                   </form>
                 </div>
@@ -305,6 +316,6 @@ function Discussion(props) {
       </div> */}
     </React.Fragment>
   );
-}
+};
 
 export default Discussion;

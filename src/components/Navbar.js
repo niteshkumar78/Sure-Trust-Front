@@ -69,11 +69,11 @@ class Navbar extends Component {
           </div>
         </div>
         <div>
-          <div className="mt-5 mb-3 text-center">
+          <div className=" text-center">
             <img
               className="d-block mx-auto"
-              // src="https://img1.wsimg.com/isteam/ip/6f038646-2052-4598-8c4e-ed7fea8124d5/SURE%20INITIATIVE%20LOGO.png/:/rs=h:200,cg:true,m/qt=q:95"
-
+              src="https://img1.wsimg.com/isteam/ip/6f038646-2052-4598-8c4e-ed7fea8124d5/SURE%20INITIATIVE%20LOGO.png/:/rs=h:200,cg:true,m/qt=q:95"
+              height="170px"
               alt=""
             ></img>
           </div>
@@ -158,14 +158,14 @@ class Navbar extends Component {
                   </ul>
                 </li>
                 <li className="nav-item">
-                  <a href="../vidushi/knowMore.html" className="nav-link">
+                  <Link to="/knowMore" className="nav-link">
                     KNOW MORE
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="#" className="nav-link">
+                  <Link to="/researchPage" className="nav-link">
                     RESEARCH GUIDANCE
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item dropdown">
                   <a
@@ -183,9 +183,13 @@ class Navbar extends Component {
                     aria-labelledby="navbarDropdownMenuLink"
                   >
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <Link
+                        to="/aboutSureInitiative"
+                        className="dropdown-item"
+                        href="#"
+                      >
                         ABOUT SURE INITIATIVE
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <a className="dropdown-item" href="#">
@@ -198,9 +202,13 @@ class Navbar extends Component {
                       </a>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <Link
+                        to="/contactPoint"
+                        className="dropdown-item"
+                        href="#"
+                      >
                         CONTACT POINT
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>

@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react";
 import cookie, { load } from "react-cookies";
 
-import { Posts, StudentsTab, GradesTab, Discussion, Loader } from "./index";
+import {
+  Posts,
+  StudentsTab,
+  GradesTab,
+  Discussion,
+  Loader,
+  DisplayTrainerBatches,
+} from "./index";
 import { BatchesApi } from "../apis/allApis";
 
 function useInput(initialValue) {
@@ -16,7 +23,8 @@ function TrainerBatches(props) {
   const batches = useInput([]);
   const loader = useInput(false);
   const handleBatch = useInput();
-
+  // const handleBatchChange = useInput(false);
+  // var handleBatch = 0;
   console.log("batch state", batches);
 
   useEffect(() => {
@@ -47,6 +55,8 @@ function TrainerBatches(props) {
 
   function handleBatchClick(id) {
     handleBatch.setValue(id);
+    // handleBatch = id;
+    // handleBatchChange.setValue(true);
   }
 
   return (
@@ -56,59 +66,11 @@ function TrainerBatches(props) {
       ) : (
         // <div></div>
         batches.value.map((data) => (
-          <div className="assignment batch">
-            <p className="">
-              <a
-                className="btn btn-primary "
-                data-bs-toggle="collapse"
-                href={"#course-" + props.course_id + "batch" + data.id}
-                role="button"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-                onClick={() => {
-                  handleBatchClick(data.id);
-                }}
-              >
-                <span className="assignmentName">{data.batch_name}</span>
-              </a>
-            </p>
-            <div
-              className="collapse"
-              id={"course-" + props.course_id + "batch" + data.id}
-            >
-              {handleBatch.value == data.id && (
-                <div>
-                  {props.tab == "students" && (
-                    <StudentsTab batch_id={data.id} key={data.id} />
-                  )}
-                  {props.tab == "courses" && (
-                    <Posts id={data.id} key={data.id} user="teacher" />
-                  )}
-                  {props.tab == "grades" && (
-                    <GradesTab
-                      batch_id={data.id}
-                      key={data.id}
-                      user="teacher"
-                    />
-                  )}
-                  {props.tab == "discussion" && (
-                    <Discussion
-                      batch_id={data.id}
-                      key={data.id}
-                      user="teacher"
-                    />
-                  )}
-                   {props.tab == "recording" && (
-                    <Discussion
-                      batch_id={data.id}
-                      key={data.id}
-                      user="teacher"
-                    />
-                  )}
-                </div>
-              )}
-            </div>
-          </div>
+          <DisplayTrainerBatches
+            course_id={props.course_id}
+            data={data}
+            tab={props.tab}
+          />
         ))
       )}
     </div>

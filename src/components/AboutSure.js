@@ -1,12 +1,18 @@
 import React from "react";
 import "../AboutSure.css";
 const AboutSure = () => {
+  const ele = document.createElement("script");
+
   return (
-    <main>
+    <main className="mainAboutContainer">
+      {/* <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      /> */}
       <hr />
       <h1>BOARD OF TRUSTEES</h1>
-      <div className="main">
-        <div className="flex-container">
+      <div className="mainAbout">
+        <div className="flex-container Aboutflex-container">
           <div>
             <h4>
               <b>EXECUTIVE DIRECTOR & FOUNDER</b>
@@ -129,8 +135,8 @@ const AboutSure = () => {
       <hr />
 
       <h1>GOVERNING COUNCIL</h1>
-      <div className="main">
-        <div className="flex-container">
+      <div className="mainAbout">
+        <div className="flex-container Aboutflex-container">
           <div>
             <img
               src="https://img1.wsimg.com/isteam/ip/6f038646-2052-4598-8c4e-ed7fea8124d5/WhatsApp%20Image%202020-07-05%20at%2011.35.51%20AM.jpeg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,h:600,cg:true"
@@ -236,6 +242,7 @@ const AboutSure = () => {
 
                   <div className="col-lg advisorContentConatiner">
                     <p className="advisorContent">
+                      {" "}
                       <b> Advisor-Communications & Outreach</b>
                       <br />
                       Ms. Sarah Berry:

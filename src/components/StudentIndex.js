@@ -49,7 +49,7 @@ function StudentIndex(props) {
                   data-bs-target="#cousrepost"
                   type="button"
                   role="tab"
-                  aria-control="cousrepost"
+                  aria-controls="cousrepost"
                   aria-selected="true"
                   onClick={() => handleNavClick("coursePost")}
                 >
@@ -120,7 +120,7 @@ function StudentIndex(props) {
                     data-bs-target="#cousrepost"
                     type="button"
                     role="tab"
-                    aria-control="cousrepost"
+                    aria-controls="cousrepost"
                     aria-selected="true"
                     onClick={() => handleNavClick("coursePost")}
                   >

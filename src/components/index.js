@@ -25,6 +25,11 @@ import TeacherRecording from "./TeacherRecording";
 import CoursesList from "./CoursesList";
 import StudentProfile from "./StudentProfile";
 import Loader from "./Loader";
+import KnowMore from "./KnowMore";
+import AboutSure from "./AboutSure";
+import ContactPoint from "./ContactPoint";
+import ResearchPage from "./ResearchPage";
+import DisplayTrainerBatches from "./DisplayTrainerBatches";
 
 export {
   Navbar,
@@ -54,4 +59,9 @@ export {
   CoursesList,
   StudentProfile,
   Loader,
+  KnowMore,
+  ContactPoint,
+  AboutSure,
+  ResearchPage,
+  DisplayTrainerBatches,
 };

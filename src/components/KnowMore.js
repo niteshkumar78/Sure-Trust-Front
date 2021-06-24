@@ -1,169 +1,19 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import "../KnowMore.css";
 
 const KnowMore = () => {
   return (
     <>
-      <section>
-        <div className="container-fluid logo_part">
-          <div id="myNav" className="overlay">
-            <a
-              href="javascript:void(0)"
-              className="closebtn "
-              onclick="closeNav()"
-            >
-              <i className="fas fa-bars menu_bar"></i>
-            </a>
-            <ul className="nav flex-column small_nav">
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  HOME
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  data-toggle="dropdown"
-                  href="#"
-                >
-                  COURSE OFFERED
-                </a>
-                <div className="dropdown-menu">
-                  <a className="dropdown-item" href="#">
-                    1. ROBOTICS
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    2. INTERNET OF THINGS
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    3. CYBER SECURITY AND HACKING
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    4. CLOUD COMPUTING
-                  </a>
-                </div>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link " href="#">
-                  KNOW MORE
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  RESEARCH AND GUIDANCE
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  data-toggle="dropdown"
-                  href="#"
-                >
-                  MORE
-                </a>
-                <div className="dropdown-menu">
-                  <a className="dropdown-item" href="#">
-                    ABOUT SURE INITIATIVE
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    STUDENT CORNER
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    VOLUNTEER TO BE TRAINER?
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    CONTACT POINT
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <span
-            // style={{font-size:"30px",cursor:"pointer"}}
-            className="openNav"
-            onclick="openNav()"
-          >
-            &#9776;{" "}
-          </span>
-          <div id="logo">
-            <img src="logo.png" alt="" />
-          </div>
-
-          <hr />
-          <hr />
-          <nav className="mynav ">
-            <ul className="nav">
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  HOME
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  data-toggle="dropdown"
-                  href="#"
-                >
-                  COURSE OFFERED
-                </a>
-                <div className="dropdown-menu">
-                  <a className="dropdown-item" href="#">
-                    1. ROBOTICS
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    2. INTERNET OF THINGS
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    3. CYBER SECURITY AND HACKING
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    4. CLOUD COMPUTING
-                  </a>
-                </div>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link " href="#">
-                  KNOW MORE
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  RESEARCH AND GUIDANCE
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  data-toggle="dropdown"
-                  href="#"
-                >
-                  MORE
-                </a>
-                <div className="dropdown-menu">
-                  <a className="dropdown-item" href="#">
-                    ABOUT SURE INITIATIVE
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    STUDENT CORNER
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    VOLUNTEER TO BE TRAINER?
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    CONTACT POINT
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </section>
-      <section className=" container-fluid mid">
+      <section className=" container-fluid mid2">
         <h2>APPROACH FOR COURSE COMPLETION</h2>
-
         <div className="box">
           <div id="image_part">
-            <img src="sure2.jpg" alt="" />
+            <img
+              src="https://isteam.wsimg.com/ip/6f038646-2052-4598-8c4e-ed7fea8124d5/paper-3033204_1280.jpg/:/rs=w:400,cg:true,m"
+              alt=""
+            />
           </div>
           <div id="content">
             <h3>Mode Of Training : Online</h3>

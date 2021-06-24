@@ -2,16 +2,6 @@ body {
   font-family: Cantarell, Arial, sans-serif;
   font-weight: 400;
 }
-header h1 {
-  font-size: 1.6em;
-  padding: 1rem;
-  letter-spacing: 0.128em;
-  text-transform: uppercase;
-  display: inline;
-  box-sizing: border-box;
-  overflow-wrap: break-word;
-  -webkit-font-smoothing: antialised;
-}
 .find {
   letter-spacing: 0.045em;
   text-transform: none;
@@ -72,7 +62,7 @@ header h1 {
   font-size: 20px;
 }
 
-.message {
+.messageContact {
   transition: all 0.3s;
   color: rgb(255, 255, 255);
   font-size: 20px;
@@ -105,19 +95,19 @@ header h1 {
   text-transform: none;
 }
 
-.message:hover {
+.messageContact:hover {
   background-color: rgb(79, 102, 114);
 }
 
-.message:after {
+.messageContact:after {
   display: none;
 }
 
-.message:active {
+.messageContact:active {
   background-color: rgb(69, 90, 100);
 }
 
-.message:hover:after {
+.messageContact:hover:after {
   display: none;
 }
 
@@ -157,80 +147,7 @@ header h1 {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 20px;
 }
-
-.svgcls {
-  width: 30px;
-  box-sizing: inherit;
-  display: inline;
-  animation-name: spin;
-  letter-spacing: normal;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-}
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.openNav {
-  display: none;
-}
-.small_nav {
-  display: none;
-}
-.closebtn {
-  display: none;
-}
-.logo_part {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 32rem;
-  flex-direction: column;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-}
-.logo_part img {
-  width: 16rem;
-  height: 14rem;
-}
-.mynav li a {
-  margin-top: 2rem;
-  margin: 1rem;
-  cursor: pointer;
-  letter-spacing: 0.214em;
-  font-size: 20px;
-
-  text-decoration: none;
-  line-height: 24px;
-  font-weight: bold;
-  padding: 0.5rem;
-  font-weight: 400;
-  color: rgb(21, 21, 21);
-  overflow-wrap: break-word;
-}
-.mynav li a:hover {
-  border: 1px solid rgb(80, 151, 196);
-  border-bottom: -5px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-}
-.box {
+.boxKnowMore {
   display: flex;
   margin: 2rem;
 }
@@ -288,143 +205,27 @@ header h1 {
   padding: 0.8rem;
 }
 
-@media (min-width: 0px) and (max-width: 1200px) {
-  .mynav {
-    display: none;
-  }
-  .logo_part {
-    display: flex;
-    flex-direction: row;
-  }
-  #logo {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-  }
-  .logo_part img {
-    width: 10rem;
-    height: 10rem;
-  }
-  .openNav {
-    display: block;
-  }
-  .closebtn {
-    display: block;
-  }
-  .small_nav {
-    display: inline-block;
-  }
-  .overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-
-    background-color: rgb(215, 228, 236);
-    overflow-x: hidden;
-    transition: 0.5s;
-  }
-
-  .overlay-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-  }
-
-  .overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: black;
-    display: block;
-    transition: 0.3s;
-  }
-
-  .overlay a:hover,
-  .overlay a:focus {
-    color: rgb(59, 143, 197);
-  }
-
-  .overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-  }
-}
 @media (min-width: 0px) and (max-width: 900px) {
-  .box {
+  .boxKnowMore {
     display: flex;
     flex-direction: column;
   }
-  .row {
+  .rowContact {
     display: flex;
   }
 
-  .column {
+  .columnContact {
     flex: 50%;
   }
 }
 
-.mid p {
+.mid1 p {
   font-size: 20px;
   letter-spacing: 0.083em;
   color: rgb(89, 89, 89);
   font-weight: 400;
   line-height: 1.5;
   overflow-wrap: break-word;
-}
-#a {
-  width: 28rem;
-}
-
-.footer {
-  display: flex;
-  margin: 3.5rem;
-  padding: 1rem;
-}
-.footer p {
-  font-size: 15px;
-  letter-spacing: 0.083em;
-  color: rgb(89, 89, 89);
-  line-height: 1.5;
-  overflow-wrap: break-word;
-}
-#a {
-  width: 28rem;
-}
-#b {
-  width: 30rem;
-  justify-content: center;
-  display: flex;
-  text-align: center;
-  align-items: center;
-}
-
-#b i {
-  padding: 2rem;
-}
-#c {
-  width: 30rem;
-}
-@media (min-width: 0px) and (max-width: 800px) {
-  .footer {
-    display: flex;
-    flex-direction: column;
-  }
-  #a {
-    max-width: 100%;
-  }
-  #b {
-    max-width: 100%;
-  }
-  #c {
-    max-width: 100%;
-  }
 }
 .separation {
   border: 0;

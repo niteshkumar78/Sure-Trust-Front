@@ -3,9 +3,19 @@ import { context } from "./Student";
 
 import { Posts, Discussion, GradesTab } from "./index";
 
+function useInput(initialValue) {
+  const [value, setValue] = useState(initialValue);
+  return {
+    value: value,
+    setValue,
+  };
+}
+
 function StudentCourses(props) {
   const value = React.useContext(context);
-  console.log("context", value.courses.value);
+  const courseId = useInput(undefined);
+
+  console.log("Courses value", value.courses.value);
 
   console.log("type", props.tab);
 
@@ -27,6 +37,9 @@ function StudentCourses(props) {
               role="tab"
               aria-controls={"pills-" + data.id}
               aria-selected="true"
+              onClick={() => {
+                courseId.setValue(data.id);
+              }}
             >
               {data.course_name}
               {(active1 = "")}
@@ -42,15 +55,19 @@ function StudentCourses(props) {
             role="tabpanel"
             aria-labelledby={"pills-" + data.id + "-tab"}
           >
-            {(active2 = "")}
-            {props.tab === "posts" && (
-              <Posts id={data.id} key={data.id} user="student" />
-            )}
-            {props.tab === "discussion" && (
-              <Discussion batch_id={data.id} user="student" />
-            )}
-            {props.tab === "grades" && (
-              <GradesTab user="student" batch_id={data.id} />
+            {(courseId.value === data.id || active2 != "") && (
+              <div>
+                {(active2 = "")}
+                {props.tab === "posts" && (
+                  <Posts id={data.id} key={data.id} user="student" />
+                )}
+                {props.tab === "discussion" && (
+                  <Discussion batch_id={data.id} user="student" />
+                )}
+                {props.tab === "grades" && (
+                  <GradesTab user="student" batch_id={data.id} />
+                )}
+              </div>
             )}
           </div>
         ))}
