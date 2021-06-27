@@ -67,6 +67,7 @@ function TrainerBatches(props) {
         // <div></div>
         batches.value.map((data) => (
           <DisplayTrainerBatches
+            teacherDetails={props.teacherDetails}
             course_id={props.course_id}
             data={data}
             tab={props.tab}

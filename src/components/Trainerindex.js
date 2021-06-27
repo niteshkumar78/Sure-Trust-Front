@@ -357,10 +357,12 @@ function Traineeindex(props) {
                 role="tabpanel"
                 aria-labelledby="recording1-tab"
               >
-                <h1>Comming Soon....</h1>
-                {/* {trainerNav.value === "recording" && (
-                  <TrainerCourses tab="recording" />
-                )} */}
+                {trainerNav.value === "recording" && (
+                  <TrainerCourses
+                    teacherDetails={props.teacherDetails}
+                    tab="recording"
+                  />
+                )}
               </div>
               <div
                 className="tab-pane fade dispaly-5"

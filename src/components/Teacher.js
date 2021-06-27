@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import Traineeindex from "./Trainerindex";
 import cookie from "react-cookies";
-import { TeacherCourseListApi } from "../apis/allApis";
+import { TeacherCourseListApi, TeacherDetailsApi } from "../apis/allApis";
 import { Loader } from "./index";
 
 const context = React.createContext();
@@ -18,6 +18,7 @@ function useInput(initialValue) {
 function Teacher(props) {
   const courses = useInput([]);
   const loader = useInput(true);
+  const teacherDetails = useInput({});
   // var state = {
   //   courses: courses.value,
   // };
@@ -45,6 +46,30 @@ function Teacher(props) {
       .catch((error) => console.log("error", error));
   }, []);
 
+  useEffect(() => {
+    // loader.setValue(true);
+    var requestOptions = {
+      method: "GET",
+      headers: {
+        Authorization: `Token ${cookie.load("token")}`,
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+    };
+
+    fetch(`${TeacherDetailsApi}${cookie.load("userId")}/`, requestOptions)
+      .then((response) => response.json())
+      .then((result) => {
+        teacherDetails.setValue(result);
+        // loader.setValue(false);
+        console.log("teacher", result);
+      })
+      .catch((error) => {
+        // loader.setValue(false);
+        console.log("error", error);
+      });
+  }, []);
+
   if (props.login) {
     return (
       <context.Provider value={{ courses }}>
@@ -52,7 +77,7 @@ function Teacher(props) {
           <Loader />
         ) : (
           <div>
-            <Traineeindex />
+            <Traineeindex teacherDetails={teacherDetails.value} />
           </div>
         )}
       </context.Provider>

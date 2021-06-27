@@ -1,5 +1,12 @@
 import Reactm, { useState, useEffect } from "react";
-import { Posts, StudentsTab, GradesTab, Discussion, Loader } from "./index";
+import {
+  Posts,
+  StudentsTab,
+  GradesTab,
+  Discussion,
+  Loader,
+  TeacherRecording,
+} from "./index";
 
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
@@ -46,6 +53,14 @@ function DisplayTrainerBatches(props) {
             )}
             {props.tab == "grades" && (
               <GradesTab batch_id={data.id} key={data.id} user="teacher" />
+            )}
+            {props.tab == "recording" && (
+              <TeacherRecording
+                teacherDetails={props.teacherDetails}
+                batch_id={data.id}
+                key={data.id}
+                user="teacher"
+              />
             )}
             {props.tab == "discussion" && (
               <Discussion

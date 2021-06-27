@@ -30,6 +30,7 @@ import AboutSure from "./AboutSure";
 import ContactPoint from "./ContactPoint";
 import ResearchPage from "./ResearchPage";
 import DisplayTrainerBatches from "./DisplayTrainerBatches";
+import JitsiRecordingTeacher from "./JitsiRecordingTeacher";
 
 export {
   Navbar,
@@ -64,4 +65,5 @@ export {
   AboutSure,
   ResearchPage,
   DisplayTrainerBatches,
+  JitsiRecordingTeacher,
 };

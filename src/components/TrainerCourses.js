@@ -40,7 +40,12 @@ function TrainerCourses(props) {
             aria-labelledby={"pills-" + data.id + "-tab"}
           >
             {(active2 = "")}
-            <TrainerBatches course_id={data.id} tab={props.tab} key={data.id} />
+            <TrainerBatches
+              teacherDetails={props.teacherDetails}
+              course_id={data.id}
+              tab={props.tab}
+              key={data.id}
+            />
           </div>
         ))}
       </div>

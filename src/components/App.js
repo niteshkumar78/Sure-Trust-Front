@@ -20,6 +20,7 @@ import {
   AboutSure,
   ContactPoint,
   ResearchPage,
+  JitsiRecordingTeacher,
 } from "./index";
 
 class App extends Component {
@@ -76,7 +77,23 @@ class App extends Component {
   };
 
   render() {
+    const pathname = window.location.pathname;
+
     console.log("App LoginAs", this.state.loginAs);
+    if (pathname === "/meet") {
+      return (
+        <Router>
+          <Route
+            exact={true}
+            path="/meet"
+            render={(props) => {
+              return <JitsiRecordingTeacher />;
+            }}
+          />
+        </Router>
+      );
+    }
+
     return (
       <Router>
         <div>
