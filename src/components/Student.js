@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import cookie from "react-cookies";
 
-import { TeacherCourseListApi } from "../apis/allApis";
+import { TeacherCourseListApi, StudentDetailsApi } from "../apis/allApis";
 import { StudentIndex, Loader } from "./index";
 
 const context = React.createContext();
@@ -18,6 +18,8 @@ function useInput(initialValue) {
 function Student(props) {
   const courses = useInput([]);
   const loader = useInput(true);
+  const regno = cookie.load("regno");
+  const StudentDetails = useInput({});
   console.log("Student");
 
   useEffect(() => {
@@ -45,6 +47,30 @@ function Student(props) {
       .catch((error) => console.log("error", error));
   }, []);
 
+  useEffect(() => {
+    // loader.setValue(true);
+    var requestOptions = {
+      method: "GET",
+      headers: {
+        Authorization: `Token ${cookie.load("token")}`,
+        "Content-Type": "application/json",
+      },
+      redirect: "follow",
+    };
+
+    fetch(`${StudentDetailsApi}${regno}/`, requestOptions)
+      .then((response) => response.json())
+      .then((result) => {
+        console.log("student Details", result);
+        // loader.setValue(false);
+        StudentDetails.setValue(result);
+      })
+      .catch((error) => {
+        // loader.setValue(false);
+        console.log("error", error);
+      });
+  }, []);
+
   if (props.login) {
     return (
       <context.Provider value={{ courses }}>
@@ -52,7 +78,7 @@ function Student(props) {
           <Loader />
         ) : (
           <div>
-            <StudentIndex />
+            <StudentIndex StudentDetails={StudentDetails.value} />
           </div>
         )}
       </context.Provider>

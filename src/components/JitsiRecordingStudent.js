@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 
-class JitsiRecordingTeacher extends Component {
+class JitsiRecordingStudent extends Component {
   domain = "meet.jit.si";
   api = {};
 
   constructor(props) {
     super(props);
     this.state = {
-      room: localStorage.getItem("MeetCodeTeacher"),
+      room: localStorage.getItem("MeetCodeStudent"),
       user: {
-        name: localStorage.getItem("MeetNameTeacher"),
+        name: localStorage.getItem("MeetNameStudent"),
       },
       isAudioMuted: true,
       isVideoMuted: true,
@@ -32,7 +32,7 @@ class JitsiRecordingTeacher extends Component {
         SHOW_JITSI_WATERMARK: false,
         SHOW_WATERMARK_FOR_GUESTS: false,
 
-        // TOOLBAR_BUTTONS: ["camera", "microphone"],
+        TOOLBAR_BUTTONS: ["camera", "microphone", "hangup"],
       },
       parentNode: document.querySelector("#jitsi-iframe"),
       userInfo: {
@@ -75,8 +75,8 @@ class JitsiRecordingTeacher extends Component {
   handleVideoConferenceLeft = () => {
     console.log("handleVideoConferenceLeft");
     // return this.props.history.push("/thank-you");
-    localStorage.removeItem("MeetCodeTeacher");
-    localStorage.removeItem("MeetNameTeacher");
+    localStorage.removeItem("MeetCodeStudent");
+    localStorage.removeItem("MeetNameStudent");
     window.close();
   };
 
@@ -169,4 +169,4 @@ class JitsiRecordingTeacher extends Component {
   }
 }
 
-export default JitsiRecordingTeacher;
+export default JitsiRecordingStudent;

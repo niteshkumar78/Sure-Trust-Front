@@ -113,6 +113,8 @@ function DisplayTrainerBatches(props) {
                 batch_id={data.id}
                 key={data.id}
                 user="teacher"
+                data={data}
+                course_id={props.course_id}
               />
             )}
             {props.tab == "discussion" && (

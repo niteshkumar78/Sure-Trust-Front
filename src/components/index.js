@@ -31,6 +31,7 @@ import ContactPoint from "./ContactPoint";
 import ResearchPage from "./ResearchPage";
 import DisplayTrainerBatches from "./DisplayTrainerBatches";
 import JitsiRecordingTeacher from "./JitsiRecordingTeacher";
+import JitsiRecordingStudent from "./JitsiRecordingStudent";
 
 export {
   Navbar,
@@ -66,4 +67,5 @@ export {
   ResearchPage,
   DisplayTrainerBatches,
   JitsiRecordingTeacher,
+  JitsiRecordingStudent,
 };

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { context } from "./Student";
 
-import { Posts, Discussion, GradesTab } from "./index";
+import { Posts, Discussion, GradesTab, StudentRecording } from "./index";
 
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
@@ -112,17 +112,21 @@ function StudentCourses(props) {
               <div>
                 {(active2 = "")}
                 {props.tab === "posts" && (
-                  <Posts
-                    id={data.course.id}
-                    key={data.course.id}
-                    user="student"
-                  />
+                  <Posts id={data.id} key={data.course.id} user="student" />
                 )}
                 {props.tab === "discussion" && (
                   <Discussion batch_id={data.course.id} user="student" />
                 )}
                 {props.tab === "grades" && (
                   <GradesTab user="student" batch_id={data.course.id} />
+                )}
+                {props.tab === "recording" && (
+                  <StudentRecording
+                    user="student"
+                    batch_id={data.course.id}
+                    data={data}
+                    StudentDetails={props.StudentDetails}
+                  />
                 )}
               </div>
             )}

@@ -21,6 +21,7 @@ import {
   ContactPoint,
   ResearchPage,
   JitsiRecordingTeacher,
+  JitsiRecordingStudent,
 } from "./index";
 
 class App extends Component {
@@ -80,7 +81,7 @@ class App extends Component {
     const pathname = window.location.pathname;
 
     console.log("App LoginAs", this.state.loginAs);
-    if (pathname === "/meet") {
+    if (pathname === "/meet" && this.state.loginAs === "teacher") {
       return (
         <Router>
           <Route
@@ -88,6 +89,19 @@ class App extends Component {
             path="/meet"
             render={(props) => {
               return <JitsiRecordingTeacher />;
+            }}
+          />
+        </Router>
+      );
+    }
+    if (pathname === "/meet-student" && this.state.loginAs === "student") {
+      return (
+        <Router>
+          <Route
+            exact={true}
+            path="/meet-student"
+            render={(props) => {
+              return <JitsiRecordingStudent />;
             }}
           />
         </Router>
