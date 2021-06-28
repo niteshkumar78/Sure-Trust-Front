@@ -32,7 +32,10 @@ function Student(props) {
       redirect: "follow",
     };
 
-    fetch(TeacherCourseListApi, requestOptions)
+    fetch(
+      "https://suretrustplatform.herokuapp.com/courses/batch/",
+      requestOptions
+    )
       .then((response) => response.json())
       .then((result) => {
         courses.setValue(result);

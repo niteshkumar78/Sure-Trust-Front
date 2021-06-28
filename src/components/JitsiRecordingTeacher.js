@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 class JitsiRecordingTeacher extends Component {
-  domain = "meet.jit.si";
+  domain = "ec2-18-117-253-249.us-east-2.compute.amazonaws.com";
   api = {};
 
   constructor(props) {
@@ -20,7 +20,7 @@ class JitsiRecordingTeacher extends Component {
     const options = {
       roomName: this.state.room,
       width: "100%",
-      height: "830px",
+      height: 850,
       configOverwrite: {
         prejoinPageEnabled: false,
         startWithVideoMuted: true,
@@ -28,6 +28,11 @@ class JitsiRecordingTeacher extends Component {
       },
       interfaceConfigOverwrite: {
         // overwrite interface properties
+        filmStripOnly: false,
+        SHOW_JITSI_WATERMARK: false,
+        SHOW_WATERMARK_FOR_GUESTS: false,
+
+        // TOOLBAR_BUTTONS: ["camera", "microphone"],
       },
       parentNode: document.querySelector("#jitsi-iframe"),
       userInfo: {
@@ -45,6 +50,7 @@ class JitsiRecordingTeacher extends Component {
       audioMuteStatusChanged: this.handleMuteStatus,
       videoMuteStatusChanged: this.handleVideoStatus,
     });
+    this.api.executeCommand("subject", "Sure Trust");
   };
 
   handleClose = () => {
