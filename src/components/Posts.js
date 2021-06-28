@@ -38,20 +38,13 @@ function TrainerPosts(props) {
 
   function postFetch() {
     loader.setValue(true);
-    var head;
-    if (props.user === "student") {
-      head = {
-        Authorization: `Token ${cookie.load("token")}`,
-        "course-id": `${props.id}`,
-        "Content-Type": "application/json",
-      };
-    } else {
-      head = {
-        Authorization: `Token ${cookie.load("token")}`,
-        "batch-id": props.id,
-        "Content-Type": "application/json",
-      };
-    }
+    // var head;
+    // if (props.user === "student") {
+    var head = {
+      Authorization: `Token ${cookie.load("token")}`,
+      "batch-id": props.id,
+      "Content-Type": "application/json",
+    };
 
     var requestOptions = {
       method: "GET",

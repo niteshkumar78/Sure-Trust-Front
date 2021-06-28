@@ -112,7 +112,11 @@ function StudentCourses(props) {
               <div>
                 {(active2 = "")}
                 {props.tab === "posts" && (
-                  <Posts id={data.id} key={data.course.id} user="student" />
+                  <Posts
+                    id={data.course.id}
+                    key={data.course.id}
+                    user="student"
+                  />
                 )}
                 {props.tab === "discussion" && (
                   <Discussion batch_id={data.course.id} user="student" />

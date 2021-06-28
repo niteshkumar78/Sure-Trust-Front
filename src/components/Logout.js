@@ -22,6 +22,11 @@ class Logout extends Component {
     cookie.remove("loginAs", { path: "/" });
     cookie.remove("userId", { path: "/" });
     cookie.remove("regno", { path: "/" });
+    localStorage.removeItem("MeetCodeStudent");
+    localStorage.removeItem("MeetNameStudent");
+    localStorage.removeItem("MeetCodeTeacher");
+    localStorage.removeItem("MeetNameTeacher");
+    // cookie.remove();
     // cookie.remove();
     this.props.handleUpdate(false);
     this.props.handleUpdateLoginAs("");

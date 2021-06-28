@@ -43,7 +43,7 @@ function GradesList(props) {
         loader.setValue(false);
       })
       .catch((error) => {
-        loader.setValue(false);
+        // loader.setValue(false);
         console.log("error", error);
       });
   }, []);
