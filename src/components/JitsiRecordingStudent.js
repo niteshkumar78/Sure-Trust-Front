@@ -48,6 +48,8 @@ class JitsiRecordingStudent extends Component {
           "tileview",
           "select-background",
           "help",
+          "raisehand",
+          "closedcaptions",
         ],
       },
       parentNode: document.querySelector("#jitsi-iframe"),

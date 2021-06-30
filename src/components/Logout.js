@@ -18,6 +18,7 @@ class Logout extends Component {
   // }
 
   render() {
+    console.log("Logout Component");
     cookie.remove("token", { path: "/" });
     cookie.remove("loginAs", { path: "/" });
     cookie.remove("userId", { path: "/" });

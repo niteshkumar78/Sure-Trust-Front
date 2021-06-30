@@ -32,7 +32,7 @@ function AdminPost(props) {
     if (file.value !== undefined) {
       formData.append("file", file.value);
     }
-    formData.append("batch", props.id);
+    // formData.append("batch", props.id);
 
     var requestOptions = {
       method: "POST",

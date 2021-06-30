@@ -51,22 +51,28 @@ class Login extends Component {
             loginButton: true,
           });
           if (typeof data.token != "undefined") {
-            cookie.save("token", data.token, { maxAge: 604800 });
+            cookie.save("token", data.token, { maxAge: 604800, path: "/" });
             // localStorage.setItem("token", data.token);
             let LoginAs;
             if (typeof data.regno != "undefined") {
               LoginAs = "student";
-              cookie.save("loginAs", "student", { maxAge: 604800 });
-              cookie.save("userId", data.user_id, { maxAge: 604800 });
-              cookie.save("regno", data.regno, { maxAge: 604800 });
+              cookie.save("loginAs", "student", { maxAge: 604800, path: "/" });
+              cookie.save("userId", data.user_id, {
+                maxAge: 604800,
+                path: "/",
+              });
+              cookie.save("regno", data.regno, { maxAge: 604800, path: "/" });
               this.props.handleUpdateLoginAs(LoginAs);
               // localStorage.setItem("userId", data.user_id);
               // localStorage.setItem("regno", LoginAs);
             } else {
               LoginAs = "teacher";
-              cookie.save("loginAs", "teacher", { maxAge: 604800 });
+              cookie.save("loginAs", "teacher", { maxAge: 604800, path: "/" });
               this.props.handleUpdateLoginAs(LoginAs);
-              cookie.save("userId", data.teacher_id, { maxAge: 604800 });
+              cookie.save("userId", data.teacher_id, {
+                maxAge: 604800,
+                path: "/",
+              });
               // localStorage.setItem("userId", data.teacher_id);
             }
             this.props.handleUpdate(true);
@@ -74,7 +80,6 @@ class Login extends Component {
             this.setState({
               login: true,
             });
-            
 
             // cookie.save("loginAs", LoginAs, { maxAge: 604800 });
             // localStorage.setItem("loginAs", LoginAs);
@@ -118,7 +123,7 @@ class Login extends Component {
   render() {
     const { login } = this.props;
 
-    // console.log(this.state);
+    console.log("Login Component");
 
     return (
       <div>
