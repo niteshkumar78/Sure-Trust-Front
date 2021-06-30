@@ -315,7 +315,10 @@ function Traineeindex(props) {
               >
                 {trainerNav.value !== "" ? (
                   trainerNav.value === "coursePost" && (
-                    <TrainerCourses tab="courses" />
+                    <TrainerCourses
+                      tab="courses"
+                      teacherDetails={props.teacherDetails}
+                    />
                   )
                 ) : (
                   <div className="tab-pane fade show active" role="tabpanel">
@@ -357,12 +360,13 @@ function Traineeindex(props) {
                 role="tabpanel"
                 aria-labelledby="recording1-tab"
               >
-                {trainerNav.value === "recording" && (
+                {/* {trainerNav.value === "recording" && (
                   <TrainerCourses
                     teacherDetails={props.teacherDetails}
                     tab="recording"
                   />
-                )}
+                )} */}
+                <h1>Comming Soon...</h1>
               </div>
               <div
                 className="tab-pane fade dispaly-5"

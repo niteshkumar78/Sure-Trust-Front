@@ -139,7 +139,9 @@ function TrainerPosts(props) {
     formData.append("title", title.value);
     formData.append("type", type.value);
     formData.append("content", content.value);
-    formData.append("file", file.value);
+    if (file.value !== undefined) {
+      formData.append("file", file.value);
+    }
     formData.append("batch", props.id);
 
     var requestOptions = {
@@ -177,7 +179,7 @@ function TrainerPosts(props) {
         <Loader />
       ) : (
         <React.Fragment>
-          <div className="card card-body" id={"postList-" + props.id}>
+          <div className="card card-body postList" id={"postList-" + props.id}>
             {props.user === "teacher" && (
               <div className="row">
                 <div className="col-12 d-flex">

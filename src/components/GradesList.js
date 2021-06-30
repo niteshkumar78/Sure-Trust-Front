@@ -19,6 +19,7 @@ function GradesList(props) {
   const { post_id } = props;
   const studentsList = useInput([]);
   const loader = useInput(true);
+  console.log("Grades Students List", studentsList.value);
 
   console.log("post Id", post_id);
 
@@ -52,34 +53,38 @@ function GradesList(props) {
     <div>
       {loader.value ? (
         <Loader />
-      ) : props.user === "teacher" ? (
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Reg No</th>
-              <th scope="col">Name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Date of submission</th>
-              <th scope="col">Download</th>
-              <th scope="col">Grades</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {studentsList.value.map((value) => (
-              <TeacherStudentgrades value={value} post_id={post_id} />
-            ))}
-          </tbody>
-        </table>
       ) : (
-        <div>
-          <StudentGrades1
-            studentDetails={studentsList.value[0]}
-            studentSet={studentsList}
-            post_id={post_id}
-            content={props.content}
-          />
-        </div>
+        <React.Fragment>
+          {props.user === "teacher" ? (
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Reg No</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Date of submission</th>
+                  <th scope="col">Download</th>
+                  <th scope="col">Grades</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {studentsList.value.map((value) => (
+                  <TeacherStudentgrades value={value} post_id={post_id} />
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <div>
+              <StudentGrades1
+                studentDetails={studentsList.value[0]}
+                studentSet={studentsList}
+                post_id={post_id}
+                content={props.content}
+              />
+            </div>
+          )}
+        </React.Fragment>
       )}
     </div>
   );

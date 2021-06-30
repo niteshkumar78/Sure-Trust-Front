@@ -22,6 +22,7 @@ import {
   ResearchPage,
   JitsiRecordingTeacher,
   JitsiRecordingStudent,
+  AdminPost,
 } from "./index";
 
 class App extends Component {
@@ -179,6 +180,17 @@ class App extends Component {
                 }}
               />
             )}
+
+            {this.state.loginAs === "teacher" && (
+              <Route
+                exact
+                path="/admin/post/546546584685454"
+                render={(props) => {
+                  return <AdminPost />;
+                }}
+              />
+            )}
+
             <Route
               exact
               path="/test"

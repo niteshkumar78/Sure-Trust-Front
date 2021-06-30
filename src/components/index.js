@@ -32,6 +32,7 @@ import ResearchPage from "./ResearchPage";
 import DisplayTrainerBatches from "./DisplayTrainerBatches";
 import JitsiRecordingTeacher from "./JitsiRecordingTeacher";
 import JitsiRecordingStudent from "./JitsiRecordingStudent";
+import AdminPost from "./AdminPost";
 
 export {
   Navbar,
@@ -68,4 +69,5 @@ export {
   DisplayTrainerBatches,
   JitsiRecordingTeacher,
   JitsiRecordingStudent,
+  AdminPost,
 };

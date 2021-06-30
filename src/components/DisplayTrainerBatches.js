@@ -102,7 +102,17 @@ function DisplayTrainerBatches(props) {
               <StudentsTab batch_id={data.id} key={data.id} />
             )}
             {props.tab == "courses" && (
-              <Posts id={data.id} key={data.id} user="teacher" />
+              <Reactm.Fragment>
+                <TeacherRecording
+                  teacherDetails={props.teacherDetails}
+                  batch_id={data.id}
+                  key={data.id}
+                  user="teacher"
+                  data={data}
+                  course_id={props.course_id}
+                />
+                <Posts id={data.id} key={data.id} user="teacher" />
+              </Reactm.Fragment>
             )}
             {props.tab == "grades" && (
               <GradesTab batch_id={data.id} key={data.id} user="teacher" />

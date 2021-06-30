@@ -440,3 +440,23 @@ button[data-bs-toggle="pill"]:hover {
     padding: 0px;
   }
 }
+
+.joinClassTeacher {
+  position: relative;
+  display: inline-block;
+
+  top: -5px;
+  left: 20px;
+  z-index: 99;
+}
+
+.joinClassStudent {
+  position: relative;
+  display: inline-block;
+  top: -30px;
+  left: 20px;
+}
+
+.postList {
+  margin-top: -25px;
+}

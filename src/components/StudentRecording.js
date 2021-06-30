@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function StudentRecording(props) {
   console.log(props.data.meeting_code);
   return (
-    <div>
+    <div className="joinClassStudent">
       {props.data.meeting_code === null ? (
         <button className="btn btn-secondary" disabled>
           Join Class

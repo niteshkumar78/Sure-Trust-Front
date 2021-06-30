@@ -63,7 +63,7 @@ function TeacherRecording(props) {
   }
 
   return (
-    <div>
+    <div className="joinClassTeacher">
       {code.value === null ? (
         <Link
           className="btn btn-primary"

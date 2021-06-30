@@ -69,7 +69,7 @@ function StudentCourses(props) {
             </div>
             <div
               class="offcanvas offcanvas-end"
-              tabindex="-1"
+              tabIndex="-1"
               id={"offcanvasRight-" + data.id}
               aria-labelledby="offcanvasRightLabel"
             >
@@ -112,7 +112,15 @@ function StudentCourses(props) {
               <div>
                 {(active2 = "")}
                 {props.tab === "posts" && (
-                  <Posts id={data.id} key={data.course.id} user="student" />
+                  <React.Fragment>
+                    <StudentRecording
+                      user="student"
+                      batch_id={data.course.id}
+                      data={data}
+                      StudentDetails={props.StudentDetails}
+                    />
+                    <Posts id={data.id} key={data.course.id} user="student" />
+                  </React.Fragment>
                 )}
                 {props.tab === "discussion" && (
                   <Discussion batch_id={data.course.id} user="student" />

@@ -30,6 +30,9 @@ const AddToCourse =
 const StudentDetailsApi =
   "https://suretrustplatform.herokuapp.com/student/student/";
 
+const AdminPostApi =
+  "https://suretrustplatform.herokuapp.com/courses/post-all/";
+
 export {
   LoginApi,
   SignupApi,
@@ -45,4 +48,5 @@ export {
   CoursesList,
   AddToCourse,
   StudentDetailsApi,
+  AdminPostApi,
 };

@@ -198,7 +198,10 @@ function StudentIndex(props) {
               >
                 {trainerNav.value !== "" ? (
                   trainerNav.value === "coursePost" && (
-                    <StudentCourses tab="posts" />
+                    <StudentCourses
+                      tab="posts"
+                      StudentDetails={props.StudentDetails}
+                    />
                   )
                 ) : (
                   <div className="tab-pane fade show active" role="tabpanel">
@@ -231,12 +234,13 @@ function StudentIndex(props) {
                 role="tabpanel"
                 aria-labelledby="recording-tab"
               >
-                {trainerNav.value === "recording" && (
+                {/* {trainerNav.value === "recording" && (
                   <StudentCourses
                     tab="recording"
                     StudentDetails={props.StudentDetails}
                   />
-                )}
+                )} */}
+                <h1>Comming Soon...</h1>
               </div>
               <div
                 className="tab-pane fade dispaly-5"
