@@ -21,8 +21,9 @@ class JitsiRecordingStudent extends Component {
   startMeet = () => {
     const options = {
       roomName: this.state.room,
+      height: "100%",
       width: "100%",
-      height: 850,
+
       configOverwrite: {
         prejoinPageEnabled: false,
         startWithVideoMuted: true,
@@ -145,7 +146,7 @@ class JitsiRecordingStudent extends Component {
   render() {
     const { isAudioMuted, isVideoMuted } = this.state;
     return (
-      <div id="jitsi-iframe"></div>
+      <div id="jitsi-iframe" style={{ height: "100vh" }}></div>
       /* <header className="nav-bar">
             <p className="item-left heading">Jitsi React</p>
           </header>
