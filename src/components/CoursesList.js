@@ -49,6 +49,7 @@ function CoursesList(props) {
   }, [ParamsId]);
 
   const handleApplyCourse = (e) => {
+    errorMessage.setValue("");
     var requestOptions = {
       method: "POST",
       headers: {

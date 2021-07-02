@@ -14,7 +14,7 @@ function Home(props) {
             {props.login && (
               <Link
                 to={loginAs}
-                class="btn btn-primary"
+                className="btn btn-primary"
                 style={{ marginTop: "100px" }}
               >
                 Go To {loginAs} Page
