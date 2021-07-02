@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 
 class JitsiRecordingTeacher extends Component {
-  domain = "meet.jit.si";
+  // domain = "meet.jit.si";
+  domain = "suretrust.peer2peerloan.tech";
   api = {};
 
   constructor(props) {

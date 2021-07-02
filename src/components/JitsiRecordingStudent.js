@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 
 class JitsiRecordingStudent extends Component {
-  domain = "meet.jit.si";
+  // domain = "meet.jit.si";
+  domain = "suretrust.peer2peerloan.tech";
   api = {};
 
   constructor(props) {
@@ -10,6 +11,7 @@ class JitsiRecordingStudent extends Component {
       room: localStorage.getItem("MeetCodeStudent"),
       user: {
         name: localStorage.getItem("MeetNameStudent"),
+        Email: "jhbdhjbdshd",
       },
       isAudioMuted: true,
       isVideoMuted: true,
@@ -25,10 +27,10 @@ class JitsiRecordingStudent extends Component {
         prejoinPageEnabled: false,
         startWithVideoMuted: true,
         startWithAudioMuted: true,
-        remoteVideoMenu: {
-          disableKick: true,
-        },
-        disableRemoteMute: true,
+        // remoteVideoMenu: {
+        //   disableKick: true,
+        // },
+        // disableRemoteMute: true,
         // enableLipSync: false,
       },
       interfaceConfigOverwrite: {
@@ -37,20 +39,21 @@ class JitsiRecordingStudent extends Component {
         SHOW_JITSI_WATERMARK: false,
         SHOW_WATERMARK_FOR_GUESTS: false,
 
-        TOOLBAR_BUTTONS: [
-          "camera",
-          "microphone",
-          "hangup",
-          "desktop",
-          "profile",
-          "chat",
-          "videoquality",
-          "tileview",
-          "select-background",
-          "help",
-          "raisehand",
-          "closedcaptions",
-        ],
+        // TOOLBAR_BUTTONS: [
+        //   "camera",
+        //   "microphone",
+        //   "hangup",
+        //   "desktop",
+        //   "profile",
+        //   "chat",
+        //   "videoquality",
+        //   "tileview",
+        //   "select-background",
+        //   "help",
+        //   "raisehand",
+        //   "closedcaptions",
+        //   "participants",
+        // ],
       },
       parentNode: document.querySelector("#jitsi-iframe"),
       userInfo: {
@@ -83,6 +86,7 @@ class JitsiRecordingStudent extends Component {
   handleParticipantJoined = async (participant) => {
     console.log("handleParticipantJoined", participant); // { id: "2baa184e", displayName: "Shanu Verma", formattedDisplayName: "Shanu Verma" }
     const data = await this.getParticipants();
+    console.log("participantsEmail", this.api.getEmail(data.id));
   };
 
   handleVideoConferenceJoined = async (participant) => {
