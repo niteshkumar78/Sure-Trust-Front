@@ -146,10 +146,10 @@ class JitsiRecordingStudent extends Component {
             <p className="item-left heading">Jitsi React</p>
           </header>
           <div id="jitsi-iframe"></div>
-          <div class="item-center">
+          <div className="item-center">
             <span>Custom Controls</span>
           </div>
-          <div class="item-center">
+          <div className="item-center">
             <span>&nbsp;&nbsp;</span>
             <i
               onClick={() => this.executeCommand("toggleAudio")}

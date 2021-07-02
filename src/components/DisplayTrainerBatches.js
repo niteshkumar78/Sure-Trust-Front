@@ -47,7 +47,7 @@ function DisplayTrainerBatches(props) {
           <div>
             <div style={{ marginRight: "25px", textAlign: "right" }}>
               <a
-                // class="btn btn-primary "
+                // className="btn btn-primary "
                 style={{ color: "blue" }}
                 type="button"
                 data-bs-toggle={"offcanvas"}
@@ -58,23 +58,23 @@ function DisplayTrainerBatches(props) {
               </a>
             </div>
             <div
-              class="offcanvas offcanvas-end"
+              className="offcanvas offcanvas-end"
               tabindex="-1"
               id={"offcanvasRight-" + data.id}
               aria-labelledby="offcanvasRightLabel"
             >
-              <div class="offcanvas-header">
+              <div className="offcanvas-header">
                 <h5 id={"offcanvasRightLabel"}>
                   <b>Course Details</b>
                 </h5>
                 <button
                   type="button"
-                  class="btn-close text-reset"
+                  className="btn-close text-reset"
                   data-bs-dismiss={"offcanvas"}
                   aria-label="Close"
                 ></button>
               </div>
-              <div class={"offcanvas-body"}>
+              <div className={"offcanvas-body"}>
                 <p>
                   <b>Course Name :</b> {data.course.course_name}
                 </p>

@@ -79,12 +79,12 @@ function CoursesList(props) {
     <div className="courseMainContainer">
       <div className="courseContainer">
         {error.value === 1 && (
-          <div class="alert alert-warning" role="alert">
+          <div className="alert alert-warning" role="alert">
             {errorMessage.value}
           </div>
         )}
         {error.value === 2 && (
-          <div class="alert alert-success" role="alert">
+          <div className="alert alert-success" role="alert">
             {errorMessage.value}
           </div>
         )}

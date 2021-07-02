@@ -56,7 +56,7 @@ function GradesList(props) {
       ) : (
         <React.Fragment>
           {props.user === "teacher" ? (
-            <table class="table">
+            <table className="table">
               <thead>
                 <tr>
                   <th scope="col">Reg No</th>

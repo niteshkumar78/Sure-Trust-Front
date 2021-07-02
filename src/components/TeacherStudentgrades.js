@@ -13,7 +13,7 @@ function useInput(initialValue) {
 
 function TeacherStudentgrades(props) {
   const loader = useInput(false);
-  const grades = useInput("");
+  const grades = useInput();
   const { value, post_id } = props;
 
   const gradingDetails = useInput(value);
@@ -43,7 +43,7 @@ function TeacherStudentgrades(props) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        grading: grades.value,
+        marks: grades.value,
       }),
       redirect: "follow",
     };
@@ -90,21 +90,21 @@ function TeacherStudentgrades(props) {
               <span className="visually-hidden">Loading...</span>
             </div>
           ) : (
-            <div class="grades">
+            <div className="grades">
               <div
-                class="editGrades"
+                className="editGrades"
                 id={"editGrades-" + gradingDetails.value.id}
               >
-                {gradingDetails.value.grading == null ? (
+                {gradingDetails.value.marks == null ? (
                   <span id={"gradingId-" + gradingDetails.value.id}>NA</span>
                 ) : (
                   <span id={"gradingId-" + gradingDetails.value.id}>
-                    {gradingDetails.value.grading}
+                    {gradingDetails.value.marks}
                   </span>
                 )}
                 <a
                   href=""
-                  class="editGradesBtn"
+                  className="editGradesBtn"
                   id={"editGradesBtn-" + gradingDetails.value.id}
                   onClick={handleEditClick}
                 >
@@ -112,19 +112,19 @@ function TeacherStudentgrades(props) {
                 </a>
               </div>
               <div
-                class=" saveGrades edit1"
+                className=" saveGrades edit1"
                 id={"saveGrades-" + gradingDetails.value.id}
               >
                 <form onSubmit={handleGradesSubmit}>
                   <input
-                    type="text"
+                    type="number"
                     style={{ width: "50px" }}
                     name="grades"
                     onChange={handleChange}
                   />
                   <button
                     type="submit"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     // onClick={handleGradesSubmit}
                   >
                     Save

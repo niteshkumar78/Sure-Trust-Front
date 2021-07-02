@@ -45,7 +45,7 @@ function StudentsTab(props) {
   }, []);
   return (
     <div>
-      <table class="table">
+      <table className="table">
         <thead>
           <tr>
             <th className="studentsTableData">Reg. No.</th>

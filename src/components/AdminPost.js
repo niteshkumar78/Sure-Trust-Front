@@ -15,11 +15,13 @@ function AdminPost(props) {
   const type = useInput("");
   const title = useInput("");
   const file = useInput();
+  const postSubmitLoader = useInput(false);
   const success = useInput(false);
   const error1 = useInput(false);
   const successMessage = useInput("");
 
   function handleFormSubmit(e) {
+    postSubmitLoader.setValue(true);
     console.log("Title", title.value);
     console.log("Type", type.value);
     console.log("content", content.value);
@@ -62,10 +64,12 @@ function AdminPost(props) {
           success.setValue(false);
           error1.setValue(true);
         }
+        postSubmitLoader.setValue(false);
       })
       .catch((error) => {
         success.setValue(false);
         error1.setValue(true);
+        postSubmitLoader.setValue(false);
         console.log("error", error);
       });
     e.preventDefault();
@@ -74,12 +78,12 @@ function AdminPost(props) {
   return (
     <div className="card card-body">
       {success.value && (
-        <div class="alert alert-success" role="alert">
+        <div className="alert alert-success" role="alert">
           Post submitted sucessfully
         </div>
       )}
       {error1.value && (
-        <div class="alert alert-danger" role="alert">
+        <div className="alert alert-danger" role="alert">
           Something went wrong, please try again after some time!!!!
         </div>
       )}
@@ -169,10 +173,18 @@ function AdminPost(props) {
             }
           />
         </div>
-
-        <button type="submit" className="btn btn-primary">
-          Post
-        </button>
+        {postSubmitLoader.value ? (
+          <button className="btn btn-secondary" disabled>
+            Posting...&nbsp;&nbsp;&nbsp;&nbsp;
+            <div className="spinner-border text-dark" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </button>
+        ) : (
+          <button type="submit" className="btn btn-primary">
+            Post
+          </button>
+        )}
       </form>
     </div>
   );

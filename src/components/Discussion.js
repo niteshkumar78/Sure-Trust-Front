@@ -258,7 +258,7 @@ const Discussion = (props) => {
                 ></textarea>
               </div>
             </fieldset>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <div className="d-grid gap-2 d-md-flex justify-content-md-end">
               {loader.value ? (
                 <button type="submit" className="btn btn-secondary " disabled>
                   Submit...&nbsp;&nbsp;

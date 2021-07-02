@@ -53,10 +53,10 @@ function StudentGrades(props) {
 
   return (
     <div className="studentPostContent" style={{ margin: "10px" }}>
-      {props.studentDetails.grading !== null && (
+      {props.studentDetails.marks !== null && (
         <p style={{ textAlign: "right", margin: "0px" }}>
-          <b>Grade:&nbsp;</b>
-          {props.studentDetails.grading}
+          <b>Marks:&nbsp;</b>
+          {props.studentDetails.marks}
         </p>
       )}
       <p>{props.content}</p>

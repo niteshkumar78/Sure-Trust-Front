@@ -18,6 +18,7 @@ class Signup extends Component {
       error: false,
       errorType: "",
       success: false,
+      qualification: "",
     };
   }
 
@@ -37,6 +38,7 @@ class Signup extends Component {
           name: this.state.name,
           gender: this.state.gender,
           phone: this.state.phone,
+          qualification: this.state.qualification,
         }),
       })
         .then((response) => response.json())
@@ -161,7 +163,6 @@ class Signup extends Component {
                   required="required"
                   value={this.state.email}
                   onChange={this.handleChange}
-                  
                 ></input>
               </div>
               <div className="form-group">
@@ -173,7 +174,6 @@ class Signup extends Component {
                   required="required"
                   value={this.state.password}
                   onChange={this.handleChange}
-                 
                 ></input>
               </div>
               <div className="form-group">
@@ -185,7 +185,6 @@ class Signup extends Component {
                   required="required"
                   value={this.state.confirm_password}
                   onChange={this.handleChange}
-                  
                 ></input>
               </div>
               <div className="form-group">
@@ -197,7 +196,6 @@ class Signup extends Component {
                   required="required"
                   value={this.state.name}
                   onChange={this.handleChange}
-                  
                 ></input>
               </div>
               <div className="form-group form-control form-controlInput">
@@ -233,14 +231,24 @@ class Signup extends Component {
               </div>
               <div className="form-group">
                 <input
+                  type="text"
+                  className="form-control form-controlInput input-lg"
+                  name="qualification"
+                  placeholder="qualification  i.e. B.Tech., M.Tech, etc."
+                  required="required"
+                  value={this.state.qualification}
+                  onChange={this.handleChange}
+                ></input>
+              </div>
+              <div className="form-group">
+                <input
                   type="number"
                   className="form-control form-controlInput input-lg"
                   name="phone"
-                  placeholder="Number"
+                  placeholder="Mobile Number"
                   required="required"
                   value={this.state.phone}
                   onChange={this.handleChange}
-                  
                 ></input>
               </div>
               <div className="form-group">
