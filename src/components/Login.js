@@ -75,11 +75,12 @@ class Login extends Component {
               });
               // localStorage.setItem("userId", data.teacher_id);
             }
-            this.props.handleUpdate(true);
 
             this.setState({
               login: true,
             });
+
+            this.props.handleUpdate(true);
 
             // cookie.save("loginAs", LoginAs, { maxAge: 604800 });
             // localStorage.setItem("loginAs", LoginAs);

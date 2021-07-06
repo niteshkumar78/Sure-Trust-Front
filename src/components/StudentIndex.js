@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { context } from "./Student";
+// import { context } from "./Student";
 
 import { StudentCourses, StudentRecording } from "./index";
 
@@ -15,10 +15,10 @@ function StudentIndex(props) {
   // const teacherDetails = useInput({});
   const trainerNav = useInput("");
 
-  const value = React.useContext(context);
-  console.log("context", value.courses.value);
+  // const value = React.useContext(context);
+  // console.log("context", value.courses.value);
 
-  const courses = value.courses.value;
+  const courses = props.courses;
 
   function handleNavClick(nav) {
     trainerNav.setValue(nav);
@@ -201,6 +201,7 @@ function StudentIndex(props) {
                     <StudentCourses
                       tab="posts"
                       StudentDetails={props.StudentDetails}
+                      courses={props.courses}
                     />
                   )
                 ) : (
@@ -225,7 +226,7 @@ function StudentIndex(props) {
                 aria-labelledby="grade-tab"
               >
                 {trainerNav.value === "grades" && (
-                  <StudentCourses tab="grades" />
+                  <StudentCourses tab="grades" courses={props.courses} />
                 )}
               </div>
               <div
@@ -238,6 +239,7 @@ function StudentIndex(props) {
                   <StudentCourses
                     tab="recording"
                     StudentDetails={props.StudentDetails}
+                    courses={props.courses}
                   />
                 )} */}
                 <h1>Comming Soon...</h1>
@@ -249,7 +251,7 @@ function StudentIndex(props) {
                 aria-labelledby="Discussion-tab"
               >
                 {trainerNav.value === "discussion" && (
-                  <StudentCourses tab="discussion" />
+                  <StudentCourses tab="discussion" courses={props.courses} />
                 )}
               </div>
             </div>

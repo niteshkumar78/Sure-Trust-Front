@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+// import FlashMessage from "react-flash-message";
+
 import cookie from "react-cookies";
 
 class Logout extends Component {
@@ -31,7 +33,16 @@ class Logout extends Component {
     // cookie.remove();
     this.props.handleUpdate(false);
     this.props.handleUpdateLoginAs("");
-    return <Redirect to="/login" />;
+    console.log("LOGOUT");
+    return (
+      <React.Fragment>
+        {/* <FlashMessage duration={5000}>
+          <strong>I will disapper in 5 seconds!</strong>
+        </FlashMessage> */}
+
+        <Redirect to="/login" />
+      </React.Fragment>
+    );
   }
 }
 

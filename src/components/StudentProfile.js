@@ -101,6 +101,7 @@ function StudentProfile(props) {
                             alt="Maxwell Admin"
                           />
                         </div>
+
                         <h5 className="user-name">
                           {studentDetails.value.name}
                         </h5>

@@ -96,45 +96,54 @@ function GradesTab(props) {
 
   return (
     <div>
-      <div className="card card-body" id={"postList-" + props.batch_id}>
-        {posts.value.map((data) => (
-          <React.Fragment>
-            {data.type == "assignment" && (
-              <div className="assignment assign">
-                <p>
-                  <a
-                    className="btn btn-primary"
-                    data-bs-toggle="collapse"
-                    href={"#batch" + props.batch_id + "Assignment" + data.id}
-                    role="button"
-                    aria-expanded="false"
-                    aria-controls="collapseExample"
-                  >
-                    <span className="assignmentName" style={{ width: "50%" }}>
-                      {data.title}
-                    </span>
+      {posts.value.length === 0 ? (
+        <div style={{ height: "320px" }}>
+          <div className=" h-100 d-flex justify-content-center align-items-center">
+            <div>
+              <h1 style={{ marginLeft: "15px" }}>No Assignments</h1>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="card card-body" id={"postList-" + props.batch_id}>
+          {posts.value.map((data) => (
+            <React.Fragment>
+              {data.type == "assignment" && (
+                <div className="assignment assign">
+                  <p>
+                    <a
+                      className="btn btn-primary"
+                      data-bs-toggle="collapse"
+                      href={"#batch" + props.batch_id + "Assignment" + data.id}
+                      role="button"
+                      aria-expanded="false"
+                      aria-controls="collapseExample"
+                    >
+                      <span className="assignmentName" style={{ width: "50%" }}>
+                        {data.title}
+                      </span>
 
-                    <span className="assignmentDate" style={{ width: "50%" }}>
-                      {data.date_time.slice(0, 10)}
-                    </span>
-                  </a>
-                </p>
-                <div
-                  className="collapse"
-                  id={"batch" + props.batch_id + "Assignment" + data.id}
-                >
-                  {/* Write here */}
-                  <GradesList
-                    content={data.content}
-                    post_id={data.id}
-                    user={props.user}
-                  />
+                      <span className="assignmentDate" style={{ width: "50%" }}>
+                        {data.date_time.slice(0, 10)}
+                      </span>
+                    </a>
+                  </p>
+                  <div
+                    className="collapse"
+                    id={"batch" + props.batch_id + "Assignment" + data.id}
+                  >
+                    {/* Write here */}
+                    <GradesList
+                      content={data.content}
+                      post_id={data.id}
+                      user={props.user}
+                    />
+                  </div>
                 </div>
-              </div>
-            )}
-          </React.Fragment>
-        ))}
-        {/* <nav aria-label="Page navigation example">
+              )}
+            </React.Fragment>
+          ))}
+          {/* <nav aria-label="Page navigation example">
           <ul className="pagination">
             <li className="page-item">
               <a
@@ -144,7 +153,7 @@ function GradesTab(props) {
                 Previous
               </a>
             </li> */}
-        {/* <li className="page-item">
+          {/* <li className="page-item">
   <a className="page-link" href="#">
     1
   </a>
@@ -159,7 +168,7 @@ function GradesTab(props) {
     3
   </a>
 </li> */}
-        {/* <li className="page-item">
+          {/* <li className="page-item">
               <a
                 className="page-link"
                 onClick={() => handlePagination(nextPostsPage.value)}
@@ -169,7 +178,8 @@ function GradesTab(props) {
             </li>
           </ul>
         </nav> */}
-      </div>
+        </div>
+      )}
     </div>
   );
 }

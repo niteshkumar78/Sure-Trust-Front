@@ -5,7 +5,7 @@ import cookie from "react-cookies";
 import { TeacherCourseListApi, StudentDetailsApi } from "../apis/allApis";
 import { StudentIndex, Loader } from "./index";
 
-const context = React.createContext();
+// const context = React.createContext();
 
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
@@ -73,19 +73,24 @@ function Student(props) {
 
   if (props.login) {
     return (
-      <context.Provider value={{ courses }}>
+      // <context.Provider value={{ courses }}>
+      <React.Fragment>
         {loader.value ? (
           <Loader />
         ) : (
           <div>
-            <StudentIndex StudentDetails={StudentDetails.value} />
+            <StudentIndex
+              courses={courses.value}
+              StudentDetails={StudentDetails.value}
+            />
           </div>
         )}
-      </context.Provider>
+      </React.Fragment>
+      // </context.Provider>
     );
   }
   return <Redirect to="/login" />;
 }
 
 export default Student;
-export { context };
+// export { context };
