@@ -119,7 +119,7 @@ class Signup extends Component {
     }
 
     return (
-      <div>
+      <div style={{ marginTop: "6rem" }}>
         {login ? (
           <Redirect to={loginAs2} />
         ) : (

@@ -76,7 +76,7 @@ function AdminPost(props) {
   }
 
   return (
-    <div className="card card-body">
+    <div className="card card-body" style={{ marginTop: "6rem" }}>
       {success.value && (
         <div className="alert alert-success" role="alert">
           Post submitted sucessfully

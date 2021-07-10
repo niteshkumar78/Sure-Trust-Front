@@ -50,7 +50,7 @@ function TeacherProfile(props) {
       {loader.value ? (
         <Loader />
       ) : (
-        <div className="main">
+        <div className="main" style={{ marginTop: "6rem" }}>
           <div className="container">
             <div className="row gutters">
               <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">

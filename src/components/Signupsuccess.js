@@ -6,7 +6,7 @@ class Signupsuccess extends Component {
   render() {
     try {
       return (
-        <div style={{ height: "520px" }}>
+        <div style={{ height: "520px", marginTop: "6rem" }}>
           <div className=" h-100 d-flex justify-content-center align-items-center">
             <div className="card text-center">
               <div className="card-header">
