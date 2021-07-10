@@ -41,7 +41,7 @@ function StudentIndex(props) {
             </a>
             <hr />
             <ul className="nav nav-pills flex-column mb-auto">
-              <li key="coursePost">
+              <li className="nav-item" key="coursePost">
                 <a
                   className="nav-link active"
                   id="cousrepost-tab"
@@ -57,7 +57,7 @@ function StudentIndex(props) {
                 </a>
               </li>
 
-              <li key="grades">
+              <li className="nav-item" key="grades">
                 <a
                   className="nav-link text-dark"
                   id="grade-tab"
@@ -72,7 +72,7 @@ function StudentIndex(props) {
                   Grades
                 </a>
               </li>
-              <li key="recordings">
+              <li className="nav-item" key="recordings">
                 <a
                   className="nav-link text-dark"
                   id="recoding-tab"
@@ -87,7 +87,7 @@ function StudentIndex(props) {
                   Recording
                 </a>
               </li>
-              <li key="discussion">
+              <li className="nav-item" key="discussion">
                 <a
                   className="nav-link text-dark"
                   id="Discussion-tab"

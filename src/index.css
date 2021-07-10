@@ -352,7 +352,7 @@ button[data-bs-toggle="pill"]:hover {
 
 .dashsboard {
   width: 100%;
-  min-height: 63vh;
+  min-height: 65vh;
 }
 .trainerNav {
   width: 83%;

@@ -1,10 +1,16 @@
 import React from "react";
 import "../ResearchPage.css";
+
+import ResearchAndGuidance from "../images/ResearchAndGuid.png";
+
 const ResearchPage = () => {
   return (
     <div className="row researchPage" style={{ marginTop: "6rem" }}>
-      <div className="column1 col-lg-6 col-md-6 col-12">
-        <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+      <div
+        className="column1 col-lg-6 col-md-6 col-12"
+        style={{ margin: "0 auto" }}
+      >
+        <img src={ResearchAndGuidance} />
       </div>
       <div
         className="column2 col-lg-6 col-md-6 col-12"

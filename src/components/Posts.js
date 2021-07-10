@@ -198,14 +198,7 @@ function TrainerPosts(props) {
               <div style={{ height: "320px" }}>
                 <div className=" h-100 d-flex justify-content-center align-items-center">
                   <div>
-                    <h1 style={{ marginLeft: "15px" }}>
-                      No Posts Yet &nbsp;&nbsp;
-                      <img
-                        src="https://img-premium.flaticon.com/png/512/1043/premium/1043838.png?token=exp=1625509304~hmac=3731ac352190793c3ccd262539b6b581"
-                        height="40px"
-                        style={{ marginTop: "-10px" }}
-                      />
-                    </h1>
+                    <h1 style={{ marginLeft: "15px" }}>No Posts Yet</h1>
                   </div>
                 </div>
               </div>
@@ -236,11 +229,12 @@ function TrainerPosts(props) {
                       <div className="card card-body">
                         <p>{data.content}</p>
                         {(data.type == "material" ||
-                          data.type == "assignment") && (
-                          <a href={data.file} target="_blank">
-                            Click Here To Download
-                          </a>
-                        )}
+                          data.type == "assignment") &&
+                          data.file != null && (
+                            <a href={data.file} target="_blank">
+                              Click Here To Download
+                            </a>
+                          )}
                       </div>
                     </div>
                   </div>
@@ -352,7 +346,10 @@ function TrainerPosts(props) {
                       name="type"
                       id="inlineRadio2"
                       value="announcement"
-                      onChange={(e) => type.setValue(e.target.value)}
+                      onChange={(e) => {
+                        type.setValue(e.target.value);
+                        file.setValue();
+                      }}
                       required
                     />
                     <label className="form-check-label" htmlFor="inlineRadio2">
@@ -391,23 +388,25 @@ function TrainerPosts(props) {
                     required
                   />
                 </div>
-                <div className="form-group">
-                  <label htmlFor="exampleFormControlFile1">
-                    <b>Upload Material</b>
-                  </label>
-                  <input
-                    type="file"
-                    className="form-control-file"
-                    id={"fileInput-" + props.id}
-                    name="file"
-                    onChange={(e) =>
-                      file.setValue(
-                        document.getElementById(`fileInput-${props.id}`)
-                          .files[0]
-                      )
-                    }
-                  />
-                </div>
+                {type.value !== "announcement" && (
+                  <div className="form-group">
+                    <label htmlFor="exampleFormControlFile1">
+                      <b>Upload Material</b>
+                    </label>
+                    <input
+                      type="file"
+                      className="form-control-file"
+                      id={"fileInput-" + props.id}
+                      name="file"
+                      onChange={(e) =>
+                        file.setValue(
+                          document.getElementById(`fileInput-${props.id}`)
+                            .files[0]
+                        )
+                      }
+                    />
+                  </div>
+                )}
 
                 <button type="submit" className="btn btn-primary">
                   Post
