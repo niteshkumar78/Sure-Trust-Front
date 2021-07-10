@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "../KnowMore.css";
 
+import sureTrustBroucher from "../pdfs/SureTrustBroucher.pdf";
+
 const KnowMore = () => {
   return (
     <main style={{ marginTop: "10rem" }}>
@@ -108,50 +110,22 @@ const KnowMore = () => {
       </section>
       <section className="initiative">
         <h2>SURE INITIATIVE BROCHURE</h2>
-        <a href="#" className="pdf_btn" style={{ fontWeight: "600" }}>
+        <a
+          href={sureTrustBroucher}
+          className="pdf_btn"
+          style={{ fontWeight: "600" }}
+          target="_blank"
+        >
           Download PDF <i className="fas fa-angle-right"></i>
         </a>
-        <div
-          id="demo"
-          className="carousel slide mycarousel"
-          data-ride="carousel"
-        >
-          {/* <!-- Indicators --> */}
-          <ul className="carousel-indicators">
-            <li data-target="#demo" data-slide-to="0" className="active"></li>
-            <li data-target="#demo" data-slide-to="1"></li>
-            <li data-target="#demo" data-slide-to="2"></li>
-            <li data-target="#demo" data-slide-to="3"></li>
-            <li data-target="#demo" data-slide-to="4"></li>
-          </ul>
-          {/* <!-- The slideshow --> */}
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img src="sureA.png" alt="" />
-            </div>
-            <div className="carousel-item">
-              <img src="sureb.png" alt="Chicago" />
-            </div>
-            <div className="carousel-item">
-              <img src="sure3.png" alt="New York" />
-            </div>
-            <div className="carousel-item">
-              <img src="sure4.png" alt="New York" />
-            </div>
-            <div className="carousel-item">
-              <img src="sure5.png" alt="New York" />
-            </div>
-            <div className="carousel-item">
-              <img src="sur6.png" alt="New York" />
-            </div>
-          </div>
-          {/* <!-- Left and right controls --> */}
-          <a className="carousel-control-prev" href="#demo" data-slide="prev">
-            <span className="carousel-control-prev-icon"></span>
-          </a>
-          <a className="carousel-control-next" href="#demo" data-slide="next">
-            <span className="carousel-control-next-icon"></span>
-          </a>
+
+        <div style={{ width: "80%", margin: "0 auto" }}>
+          <embed
+            src={sureTrustBroucher}
+            width="100%"
+            height="1000px"
+            // style={{ margin: "0 auto" }}
+          ></embed>
         </div>
       </section>
     </main>

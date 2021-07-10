@@ -220,7 +220,7 @@ class Navbar extends Component {
                         ABOUT SURE INITIATIVE
                       </Link>
                     </li>
-                    <li
+                    {/* <li
                       onClick={() =>
                         this.setState({ navToggle: !this.state.navToggle })
                       }
@@ -237,7 +237,7 @@ class Navbar extends Component {
                       <a className="dropdown-item" href="#">
                         VOLUNTEER TO BE TRAINER ?
                       </a>
-                    </li>
+                    </li> */}
                     <li
                       onClick={() =>
                         this.setState({ navToggle: !this.state.navToggle })

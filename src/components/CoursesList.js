@@ -6,6 +6,7 @@ import { SourceURL } from "../apis/allApis";
 import cookie from "react-cookies";
 import "../courseList.css";
 import { AddToCourse } from "../apis/allApis";
+import avatar from "../images/avatar.png";
 
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
@@ -103,7 +104,7 @@ function CoursesList(props) {
                 <span>{courseDetails.value.prerequisites}</span>
               </h4>
               <a
-                href={SourceURL + courseDetails.value.syllabus}
+                href={courseDetails.value.syllabus}
                 target="blank"
                 style={{
                   fontWeight: "600",
@@ -143,8 +144,8 @@ function CoursesList(props) {
                   return (
                     <article className="instructorArticle" key={id}>
                       <img
-                        src={`${SourceURL}${profile_pic}`}
-                        alt=""
+                        src={`${profile_pic}`}
+                        alt={avatar}
                         style={{ width: "100px", height: "100px" }}
                       />
                       <h3>{name}</h3>
@@ -154,11 +155,11 @@ function CoursesList(props) {
                   );
                 })}
               </section>
-              <div>
+              <div style={{ width: "70%", height: "100vh", margin: "0 auto" }}>
                 <embed
-                  src={SourceURL + courseDetails.value.syllabus}
+                  src={courseDetails.value.syllabus}
                   width="100%"
-                  height="500p"
+                  height="100%"
                 ></embed>
               </div>
             </div>
