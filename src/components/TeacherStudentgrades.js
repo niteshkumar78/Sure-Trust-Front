@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import cookie from "react-cookies";
 
-import { GradesStudentsList } from "../apis/allApis";
+import { SourceURL } from "../apis/allApis";
 
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
@@ -48,10 +48,7 @@ function TeacherStudentgrades(props) {
       redirect: "follow",
     };
 
-    fetch(
-      `https://suretrustplatform.herokuapp.com/courses/grades/${value.id}/`,
-      requestOptions
-    )
+    fetch(`${SourceURL}/courses/grades/${value.id}/`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         gradingDetails.setValue(result);

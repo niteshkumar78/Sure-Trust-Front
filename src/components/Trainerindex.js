@@ -64,7 +64,7 @@ function Traineeindex(props) {
             </a>
             <hr />
             <ul className="nav nav-pills flex-column mb-auto">
-              <li key="coursePost">
+              <li className="nav-item" key="coursePost">
                 <a
                   className="nav-link active"
                   id="cousrepost-tab"
@@ -79,7 +79,7 @@ function Traineeindex(props) {
                   Course Posts
                 </a>
               </li>
-              <li key="students">
+              <li className="nav-item" key="students">
                 <a
                   className="nav-link "
                   id="trainerStudent-tab"
@@ -94,7 +94,7 @@ function Traineeindex(props) {
                   Students
                 </a>
               </li>
-              <li key="grades">
+              <li className="nav-item" key="grades">
                 <a
                   className="nav-link text-dark"
                   id="grade-tab"

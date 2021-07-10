@@ -87,7 +87,7 @@ function StudentIndex(props) {
                   Recording
                 </a>
               </li>
-              <li className="nav-item" key="discussion">
+              <li key="discussion">
                 <a
                   className="nav-link text-dark"
                   id="Discussion-tab"

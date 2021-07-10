@@ -5,18 +5,21 @@ import "../KnowMore.css";
 
 const KnowMore = () => {
   return (
-    <>
+    <main style={{ marginTop: "10rem" }}>
+      <h2 className="knowMoreHeading">APPROACH FOR COURSE COMPLETION</h2>
       <section className=" container-fluid mid2">
-        <h2>APPROACH FOR COURSE COMPLETION</h2>
         <div className="box">
-          <div id="image_part">
+          {/* <div id="image_part">
             <img
               src="https://isteam.wsimg.com/ip/6f038646-2052-4598-8c4e-ed7fea8124d5/paper-3033204_1280.jpg/:/rs=w:400,cg:true,m"
               alt=""
             />
-          </div>
+          </div> */}
           <div id="content">
-            <h3>Mode Of Training : Online</h3>
+            <h3 style={{ fontSize: "1.7rem" }}>
+              Mode Of Training :&nbsp;&nbsp;&nbsp;
+              <span style={{ color: "#fff" }}>Online</span>
+            </h3>
             <br />
             <br />
 
@@ -37,14 +40,34 @@ const KnowMore = () => {
               </li>
             </ul>
             <h3>Modalities Of the Courses : </h3>
-            <ul>
-              <li>Mode of Training --- Online </li>
-              <li> Period of Training --- Four months</li>
-              <li>Sessions per week --- 3 to 6 </li>
-              <li>Length of the session --- 1 to 2 hours</li>
-              <li>Tests to be taken --- 2 per month</li>
-              <li>Assignments --- 2 per month</li>
-              <li>Last 15 days --- Preparing the project and course reports</li>
+            <ul className="gird_justify">
+              <li>
+                Mode of Training <span>--- &nbsp;&nbsp;&nbsp;Online</span>
+              </li>
+              <li>
+                {" "}
+                Period of Training{" "}
+                <span>--- &nbsp;&nbsp;&nbsp;Four months</span>
+              </li>
+              <li>
+                Sessions per week <span>--- &nbsp;&nbsp;&nbsp;3 to 6</span>
+              </li>
+              <li>
+                Length of the session{" "}
+                <span>--- &nbsp;&nbsp;&nbsp;1 to 2 hours</span>
+              </li>
+              <li>
+                Tests to be taken <span>--- &nbsp;&nbsp;&nbsp;2 per month</span>
+              </li>
+              <li>
+                Assignments <span>--- &nbsp;&nbsp;&nbsp;2 per month</span>
+              </li>
+              <li>
+                Last 15 days{" "}
+                <span>
+                  --- &nbsp;&nbsp;&nbsp;Preparing the project and course reports
+                </span>
+              </li>
             </ul>
             <h3>Periods of Training: </h3>
             <ul>
@@ -85,7 +108,7 @@ const KnowMore = () => {
       </section>
       <section className="initiative">
         <h2>SURE INITIATIVE BROCHURE</h2>
-        <a href="#" className="pdf_btn">
+        <a href="#" className="pdf_btn" style={{ fontWeight: "600" }}>
           Download PDF <i className="fas fa-angle-right"></i>
         </a>
         <div
@@ -131,7 +154,7 @@ const KnowMore = () => {
           </a>
         </div>
       </section>
-    </>
+    </main>
   );
 };
 

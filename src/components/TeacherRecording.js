@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import cookie from "react-cookies";
 
+import { SourceURL } from "../apis/allApis";
+
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
   return {
@@ -35,10 +37,7 @@ function TeacherRecording(props) {
       redirect: "follow",
     };
 
-    fetch(
-      `https://suretrustplatform.herokuapp.com/courses/batch/${props.batch_id}/`,
-      requestOptions
-    )
+    fetch(`${SourceURL}/courses/batch/${props.batch_id}/`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         code.setValue(result.meeting_code);

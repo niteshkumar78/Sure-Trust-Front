@@ -84,6 +84,7 @@ function StudentCourses(props) {
                   tabIndex="-1"
                   id={"offcanvasRight-" + data.id}
                   aria-labelledby="offcanvasRightLabel"
+                  style={{ zIndex: 9999999 }}
                 >
                   <div className="offcanvas-header">
                     <h5 id={"offcanvasRightLabel"}>

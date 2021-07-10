@@ -1,37 +1,32 @@
 import cookie from "react-cookies";
 
-const LoginApi = "https://suretrustplatform.herokuapp.com/users/get-token/";
-const SignupApi = "https://suretrustplatform.herokuapp.com/users/";
-const TeacherCourseListApi =
-  "https://suretrustplatform.herokuapp.com/courses/course/";
-const BatchesApi = "https://suretrustplatform.herokuapp.com/courses/batch/";
-const TeacherDetailsApi = `https://suretrustplatform.herokuapp.com/teacher/`;
-const PostsApi = "https://suretrustplatform.herokuapp.com/courses/posts/";
-const StudentsApi =
-  "https://suretrustplatform.herokuapp.com/courses/students-of-batch/";
+const SourceURL = "https://suretrustplatform.herokuapp.com";
 
-const DiscussionComments =
-  "https://suretrustplatform.herokuapp.com/discussion/discussiondummy/";
+// const SourceURL =
+//   "http://ec2-3-108-64-21.ap-south-1.compute.amazonaws.com:8000";
 
-const GradesAssignment =
-  "https://suretrustplatform.herokuapp.com/courses/assignment-posts/";
+const LoginApi = `${SourceURL}/users/get-token/`;
+const SignupApi = `${SourceURL}/users/`;
+const TeacherCourseListApi = `${SourceURL}/courses/course/`;
+const BatchesApi = `${SourceURL}/courses/batch/`;
+const TeacherDetailsApi = `${SourceURL}/teacher/`;
+const PostsApi = `${SourceURL}/courses/posts/`;
+const StudentsApi = `${SourceURL}/courses/students-of-batch/`;
 
-const GradesStudentsList =
-  "https://suretrustplatform.herokuapp.com/courses/grades/";
+const DiscussionComments = `${SourceURL}/discussion/discussiondummy/`;
 
-const SendNewComment =
-  "https://suretrustplatform.herokuapp.com/discussion/discussion/";
+const GradesAssignment = `${SourceURL}/courses/assignment-posts/`;
 
-const CoursesList =
-  "https://suretrustplatform.herokuapp.com/courses/get-all-courses/";
+const GradesStudentsList = `${SourceURL}/courses/grades/`;
 
-const AddToCourse =
-  "https://suretrustplatform.herokuapp.com/users/add-to-course/";
-const StudentDetailsApi =
-  "https://suretrustplatform.herokuapp.com/student/student/";
+const SendNewComment = `${SourceURL}/discussion/discussion/`;
 
-const AdminPostApi =
-  "https://suretrustplatform.herokuapp.com/courses/post-all/";
+const CoursesList = `${SourceURL}/courses/get-all-courses/`;
+
+const AddToCourse = `${SourceURL}/users/add-to-course/`;
+const StudentDetailsApi = `${SourceURL}/student/student/`;
+
+const AdminPostApi = `${SourceURL}/courses/post-all/`;
 
 export {
   LoginApi,
@@ -49,4 +44,5 @@ export {
   AddToCourse,
   StudentDetailsApi,
   AdminPostApi,
+  SourceURL,
 };

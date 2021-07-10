@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../Navbar.css";
 import { Link } from "react-router-dom";
 import cookie from "react-cookies";
 import { CoursesList } from "../apis/allApis";
@@ -9,6 +10,7 @@ class Navbar extends Component {
 
     this.state = {
       courses: [],
+      navToggle: false,
     };
   }
 
@@ -33,8 +35,8 @@ class Navbar extends Component {
     console.log("Check Refresh", loginAs);
 
     return (
-      <div className="container-fluid text-center text-white">
-        <div>
+      <div className="container-fluid" style={{ padding: "0" }}>
+        {/* <div>
           <div className="row p-2" style={{ background: "rgba(59, 143, 197)" }}>
             <div className="col mt-auto mb-auto">
               <svg
@@ -67,8 +69,8 @@ class Navbar extends Component {
               </svg>
             </div>
           </div>
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
           <div className=" text-center">
             <img
               className="d-block mx-auto"
@@ -77,49 +79,54 @@ class Navbar extends Component {
               alt=""
             ></img>
           </div>
-        </div>
+        </div> */}
         <nav
-          className="navi navbar navbar-expand-lg navbar-white text-dark rounded"
+          className="navi navbar navbar-expand-lg navbar-white"
           aria-label="Twelfth navbar example"
           style={{
-            backgroundColor: "#f8f9fa",
-            // borderTop: "1px solid black",
-            // borderBottom: "1px solid black",
+            backgroundColor: "#fff",
+            height: "6rem",
+            position: "fixed",
+            inset: "0",
+            zIndex: "100000",
           }}
         >
           <div className="container-fluid">
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarsExample10"
-              aria-controls="navbarsExample10"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
+            <div
+              className={`burgerMenu ${this.state.navToggle && "toggleNav"}`}
+              onClick={() =>
+                this.setState({ navToggle: !this.state.navToggle })
+              }
             >
-              <span className="text-dark w-100">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-list"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-                  />
-                </svg>
-              </span>
-            </button>
+              <div className="level1"></div>
+              <div className="level2"></div>
+              <div className="level3"></div>
+            </div>
+            <div className=" text-center">
+              <img
+                className="d-block logo_img"
+                src="https://img1.wsimg.com/isteam/ip/6f038646-2052-4598-8c4e-ed7fea8124d5/SURE%20INITIATIVE%20LOGO.png/:/rs=h:200,cg:true,m/qt=q:95"
+                height="80px"
+                width="90px"
+                alt=""
+                style={{ margin: "0 3rem" }}
+              ></img>
+            </div>
 
             <div
-              className="collapse navbar-collapse justify-content-md-center text-dark"
+              className={`justify-content-start navigantionBar ${
+                this.state.navToggle && "openNavigation"
+              }`}
               id="navbarsExample10"
+              style={{ width: "70vw", margin: "0 auto" }}
             >
               <ul className="navbar-nav">
-                <li className="nav-item">
+                <li
+                  className="nav-item"
+                  onClick={() =>
+                    this.setState({ navToggle: !this.state.navToggle })
+                  }
+                >
                   <Link className="nav-link" aria-current="page" to="/">
                     HOME
                   </Link>
@@ -137,10 +144,19 @@ class Navbar extends Component {
                   <ul
                     className="dropdown-menu overflow-auto shadow"
                     aria-labelledby="dropdown08"
-                    style={{ height: 350 + "px" }}
+                    style={{
+                      height: 350 + "px",
+                      widows: "200px !important",
+                      border: "none",
+                    }}
                   >
                     {this.state.courses.map((data) => (
-                      <li style={{ color: "black" }} id={data.id}>
+                      <li
+                        id={data.id}
+                        onClick={() =>
+                          this.setState({ navToggle: !this.state.navToggle })
+                        }
+                      >
                         <Link
                           className="dropdown-item"
                           to={{
@@ -151,18 +167,28 @@ class Navbar extends Component {
                             this.props.handleCourseIdUpdate(data.id);
                           }}
                         >
-                          <span>{data.id}</span>. &nbsp;{data.course_name}
+                          {data.course_name}
                         </Link>
                       </li>
                     ))}
                   </ul>
                 </li>
-                <li className="nav-item">
+                <li
+                  className="nav-item"
+                  onClick={() =>
+                    this.setState({ navToggle: !this.state.navToggle })
+                  }
+                >
                   <Link to="/knowMore" className="nav-link">
                     KNOW MORE
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li
+                  className="nav-item"
+                  onClick={() =>
+                    this.setState({ navToggle: !this.state.navToggle })
+                  }
+                >
                   <Link to="/researchPage" className="nav-link">
                     RESEARCH GUIDANCE
                   </Link>
@@ -187,21 +213,36 @@ class Navbar extends Component {
                         to="/aboutSureInitiative"
                         className="dropdown-item"
                         href="#"
+                        onClick={() =>
+                          this.setState({ navToggle: !this.state.navToggle })
+                        }
                       >
                         ABOUT SURE INITIATIVE
                       </Link>
                     </li>
-                    <li>
+                    <li
+                      onClick={() =>
+                        this.setState({ navToggle: !this.state.navToggle })
+                      }
+                    >
                       <a className="dropdown-item" href="#">
                         STUDENT CORNER
                       </a>
                     </li>
-                    <li>
+                    <li
+                      onClick={() =>
+                        this.setState({ navToggle: !this.state.navToggle })
+                      }
+                    >
                       <a className="dropdown-item" href="#">
                         VOLUNTEER TO BE TRAINER ?
                       </a>
                     </li>
-                    <li>
+                    <li
+                      onClick={() =>
+                        this.setState({ navToggle: !this.state.navToggle })
+                      }
+                    >
                       <Link
                         to="/contactPoint"
                         className="dropdown-item"
@@ -215,13 +256,23 @@ class Navbar extends Component {
                 {login ? (
                   <li className="nav-item">
                     <ul className="navbar-nav">
-                      <li className="nav-item">
+                      <li
+                        className="nav-item"
+                        onClick={() =>
+                          this.setState({ navToggle: !this.state.navToggle })
+                        }
+                      >
                         <Link className="nav-link" to="/logout">
                           LOG OUT
                         </Link>
                       </li>
                       {loginAs == "teacher" && (
-                        <li className="nav-item dropdown">
+                        <li
+                          className="nav-item dropdown"
+                          onClick={() =>
+                            this.setState({ navToggle: !this.state.navToggle })
+                          }
+                        >
                           <a
                             className="nav-link dropdown-toggle"
                             href="#"
@@ -236,12 +287,24 @@ class Navbar extends Component {
                             className="dropdown-menu shadow"
                             aria-labelledby="navbarDropdownMenuLink"
                           >
-                            <li>
+                            <li
+                              onClick={() =>
+                                this.setState({
+                                  navToggle: !this.state.navToggle,
+                                })
+                              }
+                            >
                               <Link className="dropdown-item" to="/teacher">
                                 Dashboard
                               </Link>
                             </li>
-                            <li>
+                            <li
+                              onClick={() =>
+                                this.setState({
+                                  navToggle: !this.state.navToggle,
+                                })
+                              }
+                            >
                               <Link
                                 className="dropdown-item"
                                 to="/teacher/profile"
@@ -253,7 +316,12 @@ class Navbar extends Component {
                         </li>
                       )}
                       {loginAs === "student" && (
-                        <li className="nav-item dropdown">
+                        <li
+                          className="nav-item dropdown"
+                          onClick={() =>
+                            this.setState({ navToggle: !this.state.navToggle })
+                          }
+                        >
                           <a
                             className="nav-link dropdown-toggle"
                             href="#"
@@ -268,12 +336,24 @@ class Navbar extends Component {
                             className="dropdown-menu shadow"
                             aria-labelledby="navbarDropdownMenuLink"
                           >
-                            <li>
+                            <li
+                              onClick={() =>
+                                this.setState({
+                                  navToggle: !this.state.navToggle,
+                                })
+                              }
+                            >
                               <Link className="dropdown-item" to="/student">
                                 Dashboard
                               </Link>
                             </li>
-                            <li>
+                            <li
+                              onClick={() =>
+                                this.setState({
+                                  navToggle: !this.state.navToggle,
+                                })
+                              }
+                            >
                               <Link
                                 className="dropdown-item"
                                 to="/student/profile"
@@ -287,14 +367,24 @@ class Navbar extends Component {
                     </ul>
                   </li>
                 ) : (
-                  <li className="nav-item">
+                  <li>
                     <ul className="navbar-nav">
-                      <li className="nav-item">
+                      <li
+                        className="nav-item"
+                        onClick={() =>
+                          this.setState({ navToggle: !this.state.navToggle })
+                        }
+                      >
                         <Link className="nav-link" to="/login">
                           LOGIN
                         </Link>
                       </li>
-                      <li className="nav-item">
+                      <li
+                        className="nav-item"
+                        onClick={() =>
+                          this.setState({ navToggle: !this.state.navToggle })
+                        }
+                      >
                         <Link className="nav-link" to="/signup">
                           SIGNUP
                         </Link>

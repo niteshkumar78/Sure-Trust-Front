@@ -1,19 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500;600;700;800&display=swap");
+:root {
+  --brand_color: #004e97;
+  --brand_lighten_color: #6ab7ff;
+  --brand_very_lighten_color: #a9d4fb;
+  --button_hover_color: #93b3d1;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Baloo Bhai 2", cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #fff;
+  overflow-x: hidden;
+  color: #000;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 body,
 p {
-  font-family: "Cantarell", Arial, sans-serif;
+  font-family: "Baloo Bhai 2", cursive;
   font-weight: 400;
 }
 .toptxt {
@@ -38,19 +42,50 @@ p {
   animation: spin 2s linear infinite;
 }
 .navi {
-  font-family: "Cantarell", Arial, sans-serif;
+  font-family: "Baloo Bhai 2", cursive;
   cursor: pointer;
   font-size: 18px;
   font-weight: 400;
-  letter-spacing: 0.214em;
 }
 .nav-link {
-  text-decoration: none;
-  color: rgb(10, 10, 10);
+  color: var(--brand_color);
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: 0 !important;
+  position: relative;
+  padding-bottom: 0;
 }
+.nav-item {
+  position: relative;
+  margin-left: 0.5rem;
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--brand_color) !important;
+}
+
+.nav-item a {
+  font-size: 1.2rem;
+}
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--brand_color);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: all 500ms;
+}
+.nav-item:hover::after {
+  transform: scaleX(1);
+}
+
 .hero {
   text-transform: uppercase;
-  letter-spacing: 0.664px;
   font-size: 28px;
 }
 .txt {
@@ -70,7 +105,7 @@ p {
   justify-content: center;
 }
 .btn hover {
-  background: rgba(59, 143, 197);
+  background: var(--button_hover_color);
 }
 @-webkit-keyframes spin {
   0% {
@@ -117,6 +152,9 @@ p {
   border-top-right-radius: 0;
 }
 
+.form-select {
+  border: 3px solid var(--brand_color);
+}
 .login-tab {
   margin-top: 30px;
 }
@@ -135,16 +173,22 @@ p {
   box-shadow: none;
 }
 .form-controlInput:focus {
-  border-color: #0d6efd;
+  box-shadow: 0 0 5px var(--brand_lighten_color) !important;
 }
 .form-controlInput,
 .btn {
   outline: none !important;
 }
 .signup-form {
-  width: 480px;
+  width: 85vw;
   margin: 0 auto;
   padding: 30px 0;
+  margin-top: 6rem;
+}
+@media screen and (min-width: 550px) {
+  .signup-form {
+    width: 480px;
+  }
 }
 .signup-form form {
   border-radius: 5px;
@@ -154,7 +198,7 @@ p {
   padding: 40px;
 }
 .signup-form a {
-  color: #0d6efd;
+  color: var(--brand_color);
 }
 .signup-form h2 {
   text-align: center;
@@ -176,12 +220,15 @@ p {
   text-align: center;
 }
 .signup-btn {
+  color: #fff;
+  background-color: var(--brand_color);
   text-align: center;
-  border-color: #0d6efd;
-  transition: all 0.4s;
+  border-color: var(--brand_color);
+  transition: all 0.6s;
 }
 .signup-btn:hover {
-  background: #0d6efd;
+  background: var(--button_hover_color);
+  color: var(--brand_color);
   opacity: 0.8;
 }
 .or-seperator {
@@ -220,7 +267,7 @@ p {
   opacity: 0.8;
 }
 .social-btn .btn-primary {
-  background: #507cc0;
+  background: var(--brand_color);
 }
 .social-btn .btn-info {
   background: #64ccf1;
@@ -247,13 +294,13 @@ p {
 }
 
 .assignment > p > .btn:hover {
-  background-color: #007bff;
+  background-color: var(--button_hover_color);
   color: white;
   border: none;
   outline: none;
 }
 .active1 {
-  background-color: #007bff;
+  background-color: var(--brand_color);
 }
 
 .assignment > p > .btn > .assignmentName {
@@ -371,7 +418,7 @@ button[data-bs-toggle="pill"]:hover {
 }
 .account-settings .about h5 {
   margin: 0 0 15px 0;
-  color: #007ae1;
+  color: var(--brand_color);
 }
 .account-settings .about p {
   font-size: 0.825rem;
@@ -441,20 +488,19 @@ button[data-bs-toggle="pill"]:hover {
   }
 }
 
-.joinClassTeacher {
-  position: relative;
-  display: inline-block;
-
-  top: -5px;
-  left: 20px;
-  z-index: 99;
-}
-
 .joinClassStudent {
   position: relative;
   display: inline-block;
   top: -30px;
   left: 20px;
+}
+
+.joinClassTeacher {
+  position: relative;
+  display: inline-block;
+  top: -5px;
+  left: 20px;
+  z-index: 99;
 }
 
 .postList {

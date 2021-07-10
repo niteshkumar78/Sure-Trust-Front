@@ -62,6 +62,7 @@ function DisplayTrainerBatches(props) {
               tabindex="-1"
               id={"offcanvasRight-" + data.id}
               aria-labelledby="offcanvasRightLabel"
+              style={{ zIndex: 999999 }}
             >
               <div className="offcanvas-header">
                 <h5 id={"offcanvasRightLabel"}>

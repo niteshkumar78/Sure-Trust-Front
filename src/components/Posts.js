@@ -179,41 +179,38 @@ function TrainerPosts(props) {
         <Loader />
       ) : (
         <React.Fragment>
-          {posts.value.length == 0 ? (
-            <div style={{ height: "320px" }}>
-              <div className=" h-100 d-flex justify-content-center align-items-center">
-                <div>
-                  <h1 style={{ marginLeft: "15px" }}>
-                    No Posts Yet &nbsp;&nbsp;
-                    <img
-                      src="https://img-premium.flaticon.com/png/512/1043/premium/1043838.png?token=exp=1625509304~hmac=3731ac352190793c3ccd262539b6b581"
-                      height="40px"
-                      style={{ marginTop: "-10px" }}
-                    />
-                  </h1>
+          <div className="card card-body postList" id={"postList-" + props.id}>
+            {props.user === "teacher" && (
+              <div className="row">
+                <div className="col-12 d-flex">
+                  <button
+                    className="btn btn-outline-primary ml-auto"
+                    id={"postButton-" + props.id}
+                    style={{ marginRight: "10px" }}
+                    onClick={handlePostClick}
+                  >
+                    + POST
+                  </button>
                 </div>
               </div>
-            </div>
-          ) : (
-            <React.Fragment>
-              <div
-                className="card card-body postList"
-                id={"postList-" + props.id}
-              >
-                {props.user === "teacher" && (
-                  <div className="row">
-                    <div className="col-12 d-flex">
-                      <button
-                        className="btn btn-outline-primary ml-auto"
-                        id={"postButton-" + props.id}
-                        style={{ marginRight: "10px" }}
-                        onClick={handlePostClick}
-                      >
-                        + POST
-                      </button>
-                    </div>
+            )}
+            {posts.value.length == 0 ? (
+              <div style={{ height: "320px" }}>
+                <div className=" h-100 d-flex justify-content-center align-items-center">
+                  <div>
+                    <h1 style={{ marginLeft: "15px" }}>
+                      No Posts Yet &nbsp;&nbsp;
+                      <img
+                        src="https://img-premium.flaticon.com/png/512/1043/premium/1043838.png?token=exp=1625509304~hmac=3731ac352190793c3ccd262539b6b581"
+                        height="40px"
+                        style={{ marginTop: "-10px" }}
+                      />
+                    </h1>
                   </div>
-                )}
+                </div>
+              </div>
+            ) : (
+              <React.Fragment>
                 {posts.value.map((data) => (
                   <div className="assignment assign">
                     <p>
@@ -287,145 +284,136 @@ function TrainerPosts(props) {
                     )}
                   </ul>
                 </nav>
+              </React.Fragment>
+            )}
+          </div>
+
+          {props.user === "teacher" && (
+            <div
+              id={"postSubmit-" + props.id}
+              style={{ display: "none" }}
+              className="card card-body"
+            >
+              <div className="row">
+                <div className="col-12 d-flex">
+                  <button
+                    className="btn btn-outline-primary ml-auto"
+                    id="postBackButton"
+                    onClick={handlePostBack}
+                    style={{ marginRight: "10px" }}
+                  >
+                    Back
+                  </button>
+                </div>
               </div>
 
-              {props.user === "teacher" && (
-                <div
-                  id={"postSubmit-" + props.id}
-                  style={{ display: "none" }}
-                  className="card card-body"
-                >
-                  <div className="row">
-                    <div className="col-12 d-flex">
-                      <button
-                        className="btn btn-outline-primary ml-auto"
-                        id="postBackButton"
-                        onClick={handlePostBack}
-                        style={{ marginRight: "10px" }}
-                      >
-                        Back
-                      </button>
-                    </div>
-                  </div>
-
-                  <form onSubmit={handleFormSubmit}>
-                    <div className="form-group">
-                      <label htmlFor="exampleInputEmail1">
-                        <b>Title</b>
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
-                        placeholder="Enter Title"
-                        name="title"
-                        value={title.value}
-                        onChange={(e) => title.setValue(e.target.value)}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label
-                        htmlFor="exampleInputPassword1"
-                        style={{ paddingRight: "10px" }}
-                      >
-                        <b>Post Type :</b>
-                      </label>
-                      <div className="form-check form-check-inline">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="type"
-                          id="inlineRadio1"
-                          value="assignment"
-                          onChange={(e) => type.setValue(e.target.value)}
-                          required
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="inlineRadio1"
-                        >
-                          Assignment
-                        </label>
-                      </div>
-                      <div className="form-check form-check-inline">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="type"
-                          id="inlineRadio2"
-                          value="announcement"
-                          onChange={(e) => type.setValue(e.target.value)}
-                          required
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="inlineRadio2"
-                        >
-                          Announcement
-                        </label>
-                      </div>
-                      <div className="form-check form-check-inline">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="type"
-                          id="inlineRadio3"
-                          value="material"
-                          onChange={(e) => type.setValue(e.target.value)}
-                          required
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="inlineRadio3"
-                        >
-                          Material
-                        </label>
-                      </div>
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="exampleInputEmail1">
-                        <b>Content</b>
-                      </label>
-                      <textarea
-                        rows="5"
-                        className="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
-                        placeholder="Add content"
-                        name="content"
-                        value={content.value}
-                        onChange={(e) => content.setValue(e.target.value)}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="exampleFormControlFile1">
-                        <b>Upload Material</b>
-                      </label>
-                      <input
-                        type="file"
-                        className="form-control-file"
-                        id={"fileInput-" + props.id}
-                        name="file"
-                        onChange={(e) =>
-                          file.setValue(
-                            document.getElementById(`fileInput-${props.id}`)
-                              .files[0]
-                          )
-                        }
-                      />
-                    </div>
-
-                    <button type="submit" className="btn btn-primary">
-                      Post
-                    </button>
-                  </form>
+              <form onSubmit={handleFormSubmit}>
+                <div className="form-group">
+                  <label htmlFor="exampleInputEmail1">
+                    <b>Title</b>
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter Title"
+                    name="title"
+                    value={title.value}
+                    onChange={(e) => title.setValue(e.target.value)}
+                    required
+                  />
                 </div>
-              )}
-            </React.Fragment>
+                <div className="form-group">
+                  <label
+                    htmlFor="exampleInputPassword1"
+                    style={{ paddingRight: "10px" }}
+                  >
+                    <b>Post Type :</b>
+                  </label>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="type"
+                      id="inlineRadio1"
+                      value="assignment"
+                      onChange={(e) => type.setValue(e.target.value)}
+                      required
+                    />
+                    <label className="form-check-label" htmlFor="inlineRadio1">
+                      Assignment
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="type"
+                      id="inlineRadio2"
+                      value="announcement"
+                      onChange={(e) => type.setValue(e.target.value)}
+                      required
+                    />
+                    <label className="form-check-label" htmlFor="inlineRadio2">
+                      Announcement
+                    </label>
+                  </div>
+                  <div className="form-check form-check-inline">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="type"
+                      id="inlineRadio3"
+                      value="material"
+                      onChange={(e) => type.setValue(e.target.value)}
+                      required
+                    />
+                    <label className="form-check-label" htmlFor="inlineRadio3">
+                      Material
+                    </label>
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="exampleInputEmail1">
+                    <b>Content</b>
+                  </label>
+                  <textarea
+                    rows="5"
+                    className="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="Add content"
+                    name="content"
+                    value={content.value}
+                    onChange={(e) => content.setValue(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="exampleFormControlFile1">
+                    <b>Upload Material</b>
+                  </label>
+                  <input
+                    type="file"
+                    className="form-control-file"
+                    id={"fileInput-" + props.id}
+                    name="file"
+                    onChange={(e) =>
+                      file.setValue(
+                        document.getElementById(`fileInput-${props.id}`)
+                          .files[0]
+                      )
+                    }
+                  />
+                </div>
+
+                <button type="submit" className="btn btn-primary">
+                  Post
+                </button>
+              </form>
+            </div>
           )}
         </React.Fragment>
       )}

@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import cookie from "react-cookies";
 
-import { TeacherCourseListApi, StudentDetailsApi } from "../apis/allApis";
+import {
+  TeacherCourseListApi,
+  StudentDetailsApi,
+  SourceURL,
+} from "../apis/allApis";
 import { StudentIndex, Loader } from "./index";
 
 // const context = React.createContext();
@@ -34,10 +38,7 @@ function Student(props) {
       redirect: "follow",
     };
 
-    fetch(
-      "https://suretrustplatform.herokuapp.com/courses/batch/",
-      requestOptions
-    )
+    fetch(`${SourceURL}/courses/batch/`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         courses.setValue(result);
@@ -78,7 +79,7 @@ function Student(props) {
         {loader.value ? (
           <Loader />
         ) : (
-          <div>
+          <div style={{ marginTop: "6rem" }}>
             <StudentIndex
               courses={courses.value}
               StudentDetails={StudentDetails.value}

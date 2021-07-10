@@ -76,7 +76,7 @@ function Teacher(props) {
         {loader.value ? (
           <Loader />
         ) : (
-          <div>
+          <div style={{ marginTop: "6rem" }}>
             <Traineeindex teacherDetails={teacherDetails.value} />
           </div>
         )}

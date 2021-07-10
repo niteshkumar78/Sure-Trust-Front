@@ -1,178 +1,193 @@
+@import url(./index.css);
 .mainAbout {
   margin: auto;
   display: flex;
   justify-content: center;
-  width: 80%;
-  /* background-color: violet; */
-  /* flex-direction: ; */
+  color: #000;
 }
 .Aboutflex-container {
-  /* width: 85%; */
-  display: flex;
-  flex-wrap: wrap;
-  /* flex-direction: column; */
-  justify-content: space-around;
-  /* background-color: #3b8fc5; */
-  color: white;
-}
-
-.Aboutflex-container > div {
-  background-color: #3b8fc5;
-  width: 350px;
-  margin-bottom: 40px;
-  text-align: center;
-  line-height: 75px;
-  font-size: 30px;
-  /* margin: 20px; */
-  /* padding: 50%; */
-}
-.Aboutflex-container > div > h4 {
-  font-size: 2.5rem;
-  margin: 10px;
-  height: 50px;
-}
-.Aboutflex-container > div > p {
-  margin: 20px;
-  /* height: 265px; */
-}
-.Aboutflex-container > div > p {
-  font-size: 2rem;
-  line-height: normal;
-}
-.Aboutflex-container img {
-  margin-top: 10px;
-  border-radius: 50%;
-  width: 250px;
-  /* width: 40%; */
-}
-
-.mainAboutContainer > h1 {
-  font-size: 5rem;
-  font-weight: bolder;
-  text-align: center;
-  padding: 30px;
-}
-
-.advisorContainer {
-  background-color: #3b8fc5;
-  overflow: hidden;
-}
-.advisorContainer1 {
-  font-size: 2rem;
-  color: white;
-  margin: auto;
-  width: 85%;
-  /* background-color:#3b8fc5 ; */
-}
-
-.advisorImg {
-  margin: auto;
-  width: 400px;
-  border-radius: 50%;
-  padding: 20px;
-}
-
-.colAdvisorImg {
-  margin: auto;
-  width: 400px;
-}
-.advisorContent {
-  margin-top: 40px;
-}
-
-.advisorContentConatiner {
-  margin-right: 20px;
-}
-
-.carousel {
-  width: 80%;
-  /* height: 500px; */
-  margin: auto;
-}
-.carousel-inner > .item > img {
   width: 100%;
 }
-
-.birthOfSureInitativeContainer {
-  background-color: #3b8fc5;
+.alternate_flex {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 786px) {
+  .alternate_flex {
+    flex-direction: column !important;
+  }
+}
+@media screen and (min-width: 786px) {
+  .alternate_flex section {
+    position: relative !important;
+    width: 35vw;
+    height: 500px;
+    background-color: var(--brand_color);
+  }
+  .alternate_flex div {
+    display: block !important;
+    width: 10vw;
+  }
+  .alternate_flex article {
+    background-color: #fff;
+    align-items: flex-start;
+    width: 55vw;
+  }
+  .alternate_flex img {
+    position: absolute;
+    top: 125px;
+    right: -125px;
+    width: 250px !important;
+    height: 250px !important;
+    border-radius: 50%;
+  }
+  .alternate_flex h4 {
+    font-size: 1.6rem !important;
+  }
+  .alternate_flex p {
+    margin: 0 !important;
+    font-size: 1.4rem !important;
+    text-align: justify !important;
+  }
+  .alternate_img {
+    position: absolute;
+    left: -125px !important;
+    top: 125px !important;
+  }
+  .alternate_flex section {
+    margin-top: 0 !important;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .alternate_flex h4 {
+    font-size: 2rem !important;
+  }
+  .alternate_flex img {
+    width: 300px !important;
+    height: 300px !important;
+    position: absolute;
+    top: 20%;
+    right: -150px;
+  }
+  .alternate_img {
+    position: absolute;
+    left: -150px !important;
+    top: 20% !important;
+  }
+}
+.alternate_flex section {
+  margin-top: 3rem;
+}
+.alternate_flex div {
+  background-color: #fff;
+  width: 20vw;
+  display: none;
+}
+.alternate_flex article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (max-width: 786px) {
+  .alternate_flex img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+  }
+}
+.alternate_flex h4 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+.alternate_flex p {
+  margin: auto;
+  text-align: center;
+  font-size: 1.1rem;
+  width: 400px;
+}
+.alternate_flex a {
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-align: center;
+  color: var(--brand_color);
+  transition: all 0.5s;
+}
+.alternate_flex a:hover {
+  letter-spacing: 4px;
+}
+.aboutMainHeading {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  text-align: center;
+  padding: 30px 30px 0 30px;
+  margin-top: 2rem;
+  color: var(--brand_color);
+}
+.aboutSubHeading {
+  font-size: 2.2rem;
+  text-align: center;
+  margin: 1rem auto;
+  font-weight: 800;
+  width: 90%;
+  color: var(--brand_color);
+}
+@media screen and (min-width: 1000px) {
+  .aboutMainHeading {
+    font-size: 4rem;
+  }
+  .aboutSubHeading {
+    margin: 3rem auto;
+    font-size: 2.5rem;
+  }
 }
 .birthOfSureInitativeImg {
-  float: right;
-  /* width: 100ch; */
-  margin-top: 50px;
-  margin-right: -50px;
-  padding-bottom: 30px;
+  width: 80%;
+  margin: 60px auto;
+  height: 600px;
+  box-shadow: 0 0 0 4px #fff, 0 0 0 5px var(--brand_color), 0 0 0 7px #fff,
+    0 0 0 9px var(--brand_color);
+}
+@media screen and (min-width: 800px) {
+  .birthOfSureInitativeImg {
+    height: 550px;
+  }
+  .birthOfSureInitativeCenter {
+    width: 85%;
+  }
+  .birthOfSureInitativeContent {
+    font-size: 1.6rem !important;
+  }
 }
 .birthOfSureInitativeImg > img {
-  width: 80%;
+  width: 100%;
+  height: 100%;
 }
 
 .birthOfSureInitativeContent {
-  color: white;
-  font-size: 2rem;
-  width: 55%;
+  font-size: 1.2rem;
+  width: 100%;
   padding-bottom: 30px;
+  text-align: justify;
 }
 .birthOfSureInitativeCenter {
-  width: 85%;
+  width: 90%;
   margin: auto;
 }
 
 .birthOfSureInitativeCenter > h1 {
   padding-top: 50px;
-  color: white;
-  font-size: 4.5rem;
+  font-size: 2.5rem;
+  color: var(--brand_color);
   font-weight: bolder;
+  text-align: center;
 }
-
-@media (max-width: 850px) {
-  .mainAboutContainer > h1 {
-    font-size: 4rem;
-  }
+@media screen and (min-width: 1000px) {
   .birthOfSureInitativeCenter > h1 {
     font-size: 4rem;
-  }
-}
-@media (max-width: 550px) {
-  .mainAboutContainer > h1 {
-    font-size: 3.5rem;
-  }
-  .birthOfSureInitativeCenter > h1 {
-    font-size: 3.5rem;
-  }
-}
-@media (max-width: 1380px) {
-  .Aboutflex-container > div {
-    width: 40%;
-  }
-  .Aboutflex-container img {
-    width: 80%;
-  }
-}
-@media (max-width: 920px) {
-  .birthOfSureInitativeImg {
-    float: none;
-    width: 100%;
-    margin-top: 50px;
-    /* margin-right: -50px; */
-  }
-  .birthOfSureInitativeImg > img {
-    width: 100%;
-  }
-
-  .birthOfSureInitativeContent {
-    width: 100%;
-  }
-}
-@media (max-width: 990px) {
-  .Aboutflex-container > div {
-    width: 100%;
-  }
-  .Aboutflex-container img {
-    width: 80%;
-  }
-  .colAdvisorImg,
-  .advisorImg {
-    width: 100%;
+    text-align: left;
   }
 }

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link, Redirect } from "react-router-dom";
 
+import { SourceURL } from "../apis/allApis";
+
 import cookie from "react-cookies";
 import "../courseList.css";
 import { AddToCourse } from "../apis/allApis";
@@ -23,9 +25,7 @@ function CoursesList(props) {
   console.log("params", ParamsId);
 
   useEffect(() => {
-    fetch(
-      `https://suretrustplatform.herokuapp.com/courses/get-course-teachers/${ParamsId}/`
-    )
+    fetch(`${SourceURL}/courses/get-course-teachers/${ParamsId}/`)
       .then((res) => res.json())
       .then((result) => {
         teachers.setValue(result);
@@ -35,9 +35,7 @@ function CoursesList(props) {
   }, [ParamsId]);
 
   useEffect(() => {
-    fetch(
-      `https://suretrustplatform.herokuapp.com/courses/get-course/${ParamsId}/`
-    )
+    fetch(`${SourceURL}/courses/get-course/${ParamsId}/`)
       .then((res) => res.json())
       .then((result) => {
         courseDetails.setValue(result);
@@ -49,7 +47,6 @@ function CoursesList(props) {
   }, [ParamsId]);
 
   const handleApplyCourse = (e) => {
-    errorMessage.setValue("");
     var requestOptions = {
       method: "POST",
       headers: {
@@ -74,87 +71,97 @@ function CoursesList(props) {
     e.preventDefault();
   };
 
-  console.log("paramss", ParamsId);
-
   return ParamsId !== undefined ? (
-    <div className="courseMainContainer">
+    <div className="courseMainContainer" style={{ marginTop: "6rem" }}>
+      <div className="d-flex">
+        <h1
+          className="courseHeading"
+          style={{ width: "90%", margin: "2rem auto" }}
+        >
+          <b>Course Details</b>
+        </h1>
+      </div>
       <div className="courseContainer">
         {error.value === 1 && (
-          <div className="alert alert-warning" role="alert">
+          <div class="alert alert-warning" role="alert">
             {errorMessage.value}
           </div>
         )}
         {error.value === 2 && (
-          <div className="alert alert-success" role="alert">
+          <div class="alert alert-success" role="alert">
             {errorMessage.value}
           </div>
         )}
-        <div className="d-flex">
-          <h1 className="mr-auto p-2">
-            <b>Course Details</b>
-          </h1>
-          <p className="ml-auto p-2">
-            <b>{courseDetails.value.date}</b>
-          </p>
-        </div>
         <h2>
           <b>{courseDetails.value.course_name}</b>
         </h2>
         <div className="courseContainerMain">
-          <div className=" h-100 d-flex justify-content-center align-items-center">
-            <div style={{ textAlign: "center" }}>
-              <h4>prerequisites: {courseDetails.value.prerequisites}</h4>
-
+          <div>
+            <div>
+              <h4 style={{ fontWeight: "800", color: "#fff" }}>
+                prerequisites:&nbsp;&nbsp;&nbsp;
+                <span>{courseDetails.value.prerequisites}</span>
+              </h4>
+              <a
+                href={SourceURL + courseDetails.value.syllabus}
+                target="blank"
+                style={{
+                  fontWeight: "600",
+                  color: "#fff",
+                  fontSize: "1.2rem",
+                  marginRight: "2rem",
+                }}
+              >
+                Download Curicullum
+              </a>
               {loginAs === "student" && (
                 <div>
                   <form onSubmit={handleApplyCourse}>
-                    <button className="btn btn-secondary" id="liveToastBtn">
+                    <button
+                      className="btn btn-success"
+                      id="liveToastBtn"
+                      style={{ fontWeight: "600" }}
+                    >
                       Enroll now
                     </button>
                   </form>
                 </div>
               )}
               {loginAs === undefined && (
-                <Link className="btn btn-secondary" to="/login">
+                <Link
+                  className="btn btn-success"
+                  to="/login"
+                  style={{ fontWeight: "600" }}
+                >
                   Enroll now
                 </Link>
               )}
               <section className="courseColumn">
                 {teachers.value.map((teacher) => {
-                  console.log(teacher);
                   const { id, name, profile_pic, qualification, phone } =
                     teacher;
                   return (
-                    <article key={id} style={{ marginTop: "5rem" }}>
+                    <article className="instructorArticle" key={id}>
                       <img
-                        src={`https://suretrustplatform.herokuapp.com${profile_pic}`}
+                        src={`${SourceURL}${profile_pic}`}
                         alt=""
                         style={{ width: "100px", height: "100px" }}
                       />
-                      <h3>
-                        Name : <span>{name}</span>
-                      </h3>
-                      <p>
-                        Qualification : <span>{qualification}</span>
-                      </p>
-                      <p>
-                        Phone : <span>{phone}</span>
-                      </p>
+                      <h3>{name}</h3>
+                      <p>{qualification}</p>
+                      <p>{phone}</p>
                     </article>
                   );
                 })}
               </section>
+              <div>
+                <embed
+                  src={SourceURL + courseDetails.value.syllabus}
+                  width="100%"
+                  height="500p"
+                ></embed>
+              </div>
             </div>
-          </div>
-          <div>
-            <embed
-              src={
-                "https://suretrustplatform.herokuapp.com" +
-                courseDetails.value.syllabus
-              }
-              width="100%"
-              height="500p"
-            ></embed>
           </div>
         </div>
       </div>

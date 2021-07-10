@@ -15,6 +15,7 @@ function StudentRecording(props) {
           onClick={() => {
             localStorage.setItem("MeetCodeStudent", props.data.meeting_code);
             localStorage.setItem("MeetNameStudent", props.StudentDetails.name);
+            localStorage.setItem("TEST", "test");
           }}
           to="/meet-student"
           target="blank"

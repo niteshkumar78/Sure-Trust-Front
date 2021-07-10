@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import cookie from "react-cookies";
 
+import { SourceURL } from "../apis/allApis";
+
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
   return {
@@ -34,8 +36,8 @@ function StudentGrades(props) {
     };
 
     fetch(
-      `https://suretrustplatform.herokuapp.com/courses/grades/${props.studentDetails.id}/`,
-      // `https://suretrustplatform.herokuapp.com/courses/grades/${73}/`,
+      `${SourceURL}/courses/grades/${props.studentDetails.id}/`,
+      // `${SourceURL}/courses/grades/${73}/`,
       requestOptions
     )
       .then((response) => response.json())

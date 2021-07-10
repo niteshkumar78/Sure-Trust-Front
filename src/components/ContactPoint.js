@@ -3,10 +3,15 @@ import "../ContactPoint.css";
 const ContactPoint = () => {
   return (
     <>
-      <section className=" container-fluid mid1">
-        <h2>CONTACT THE TEAM</h2>
+      <section
+        className=" container-fluid mid1"
+        style={{ paddingTop: "3rem", marginTop: "6rem" }}
+      >
         <div className="boxKnowMore">
           <div className="row rowContact">
+            <h2 style={{ fontWeight: "800", marginBottom: "2rem" }}>
+              CONTACT THE TEAM
+            </h2>
             <div className="column columnContact">
               <div>
                 <form aria-live="polite" data-ux="Form">
@@ -16,9 +21,13 @@ const ContactPoint = () => {
             </div>
             <div className="column columnContact">
               <div className="block">
-                <h4 className="find">Find ways to volunteer ----</h4>
+                <h4 className="find" style={{ fontWeight: "600" }}>
+                  Find ways to volunteer ----
+                </h4>
                 <div className="ContentText">
-                  <p style={{ margin: "0" }}>
+                  <p
+                    style={{ margin: "0", padding: "0", textAlign: "justify" }}
+                  >
                     <span className="Cont">
                       Any initiative is as strong as the community that holds it
                       up. Together we can do more than what we can do alone. Let
@@ -26,7 +35,7 @@ const ContactPoint = () => {
                       effect real change in the rural areas by targeting the
                       educated unemployed youth. This initiative is visualized
                       to bridge the inequality in employability among the
-                      educated youth in &nbsp;rural and urban areas. &nbsp;There
+                      educated youth in &nbsp;rural and urban areas.&nbsp;There
                       are plenty of volunteering opportunities in the
                       initiative.&nbsp;
                     </span>
@@ -128,7 +137,7 @@ const ContactPoint = () => {
                   >
                     9440045717
                   </a>
-                  ,{" "}
+                  ,&nbsp;
                   <a
                     rel=""
                     role="link"
@@ -142,6 +151,7 @@ const ContactPoint = () => {
                   >
                     8309228027
                   </a>
+                  ,&nbsp;
                   <a
                     rel=""
                     role="link"

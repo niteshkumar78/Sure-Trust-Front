@@ -1,58 +1,82 @@
+@import url(./index.css);
 .courseMainContainer {
-  background-color: rgb(59, 143, 197);
+  font-family: "Baloo Bhai 2", cursive;
+  min-height: 80vh;
 }
 
 .courseContainer {
-  color: white;
-  padding-left: 10%;
-  padding-right: 10%;
+  background-color: var(--brand_color);
+  color: #000;
+  padding-left: 5%;
+  padding-right: 5%;
   padding-top: 5px;
   padding-bottom: 10px;
 }
-
+.courseHeading {
+  color: var(--brand_color);
+}
 .courseContainer > h2 {
   text-align: center;
-  padding-bottom: 20px;
+  padding: 2rem 0;
+  color: #fff;
 }
 
 .courseContainerMain {
   display: flex;
+  flex-direction: column;
 }
 
 .courseContainerMain > div {
-  width: 50%;
+  width: 100%;
   min-height: 500px;
 }
 .courseColumn {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
-.courseColumn h3,
-.courseColumn p {
-  text-align: left;
-  width: 200px;
+  width: 90%;
+  margin: 5rem auto;
   display: grid;
-  grid-template-columns: 125px 1fr;
+  grid-template-columns: repeat(1, auto);
+  gap: 3rem;
+}
+@media screen and (min-width: 786px) {
+  .courseColumn {
+    grid-template-columns: repeat(2, auto);
+  }
+  .instructorArticle {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .courseColumn {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+.instructorArticle {
+  position: relative;
+  background-color: #fff;
+  border-radius: 0.3rem;
+  width: 300px !important;
+  margin: auto;
+  padding: 1rem 1rem 1rem 3rem;
+}
+.courseColumn h3 {
+  text-align: center;
   text-transform: capitalize;
+  margin: 0.5rem 0;
+  font-weight: 800;
+  color: var(--brand_color);
 }
 .courseColumn p {
-  font-size: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  font-weight: 600;
 }
-.courseColumn span {
-  letter-spacing: 2px;
-}
-
 .courseColumn img {
-  border-radius: 50%;
-  margin-bottom: 30px;
   width: 170px;
   height: 170px;
-  /* box-shadow: 0 0 0 6px rgb(59, 143, 197), 0 0 0 12px #fff, 0 -12px 30px 0 #000,
-    0 12px 30px 0 #000; */
-}
-
-.courseColumn article {
-  width: initial;
+  border-radius: 0.3rem;
+  border: 3px solid #fff;
+  position: absolute;
+  top: -30%;
+  left: -10%;
 }
