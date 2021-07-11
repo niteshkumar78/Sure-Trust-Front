@@ -254,7 +254,7 @@ class Navbar extends Component {
                   </ul>
                 </li>
                 {login ? (
-                  <li className="nav-item">
+                  <li>
                     <ul className="navbar-nav">
                       <li
                         className="nav-item"
@@ -267,12 +267,7 @@ class Navbar extends Component {
                         </Link>
                       </li>
                       {loginAs == "teacher" && (
-                        <li
-                          className="nav-item dropdown"
-                          onClick={() =>
-                            this.setState({ navToggle: !this.state.navToggle })
-                          }
-                        >
+                        <li className="nav-item dropdown">
                           <a
                             className="nav-link dropdown-toggle"
                             href="#"
@@ -316,12 +311,7 @@ class Navbar extends Component {
                         </li>
                       )}
                       {loginAs === "student" && (
-                        <li
-                          className="nav-item dropdown"
-                          onClick={() =>
-                            this.setState({ navToggle: !this.state.navToggle })
-                          }
-                        >
+                        <li className="nav-item dropdown">
                           <a
                             className="nav-link dropdown-toggle"
                             href="#"

@@ -268,7 +268,7 @@ export const motive = [
     src: require("./images/home-1.jpg").default,
     title: "Why SURE Initiative",
     content:
-      "There is an urgent need to make quality training in skil upgradation more accessible to the rural youth considering the fact that half of India’s population is expected to be in rural India by 2050 and the rural work force accounting for 70% of the total workforce",
+      "There is an urgent need to make quality training in skills upgradation more accessible to the rural youth considering the fact that half of India’s population is expected to be in rural India by 2050 and the rural work force accounting for 70% of the total workforce",
   },
   {
     id: 2,

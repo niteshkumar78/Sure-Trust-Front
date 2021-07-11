@@ -59,7 +59,7 @@ function StudentIndex(props) {
 
               <li className="nav-item" key="grades">
                 <a
-                  className="nav-link text-dark"
+                  className="nav-link"
                   id="grade-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#grade"
@@ -67,7 +67,9 @@ function StudentIndex(props) {
                   role="tab"
                   aria-controls="grade"
                   aria-selected="false"
-                  onClick={() => handleNavClick("grades")}
+                  onClick={() => {
+                    handleNavClick("grades");
+                  }}
                 >
                   Grades
                 </a>
