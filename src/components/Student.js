@@ -2,11 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import cookie from "react-cookies";
 
-import {
-  TeacherCourseListApi,
-  StudentDetailsApi,
-  SourceURL,
-} from "../apis/allApis";
+import { StudentDetailsApi, SourceURL } from "../apis/allApis";
 import { StudentIndex, Loader } from "./index";
 
 // const context = React.createContext();

@@ -47,7 +47,7 @@ class Signup extends Component {
           this.setState({
             loginButton: true,
           });
-          if (data.email != this.state.email) {
+          if (data.email !== this.state.email) {
             this.setState({
               error: true,
               errorType: data.email[0],

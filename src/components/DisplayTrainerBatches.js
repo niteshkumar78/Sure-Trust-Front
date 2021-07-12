@@ -1,10 +1,9 @@
-import Reactm, { useState, useEffect } from "react";
+import Reactm, { useState } from "react";
 import {
   Posts,
   StudentsTab,
   GradesTab,
   Discussion,
-  Loader,
   TeacherRecording,
 } from "./index";
 
@@ -99,10 +98,10 @@ function DisplayTrainerBatches(props) {
                 </p>
               </div>
             </div>
-            {props.tab == "students" && (
+            {props.tab === "students" && (
               <StudentsTab batch_id={data.id} key={data.id} />
             )}
-            {props.tab == "courses" && (
+            {props.tab === "courses" && (
               <Reactm.Fragment>
                 <TeacherRecording
                   teacherDetails={props.teacherDetails}
@@ -115,10 +114,10 @@ function DisplayTrainerBatches(props) {
                 <Posts id={data.id} key={data.id} user="teacher" />
               </Reactm.Fragment>
             )}
-            {props.tab == "grades" && (
+            {props.tab === "grades" && (
               <GradesTab batch_id={data.id} key={data.id} user="teacher" />
             )}
-            {props.tab == "recording" && (
+            {props.tab === "recording" && (
               <TeacherRecording
                 teacherDetails={props.teacherDetails}
                 batch_id={data.id}
@@ -128,7 +127,7 @@ function DisplayTrainerBatches(props) {
                 course_id={props.course_id}
               />
             )}
-            {props.tab == "discussion" && (
+            {props.tab === "discussion" && (
               <Discussion
                 batch_id={data.id}
                 key={data.id}

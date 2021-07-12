@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import cookie from "react-cookies";
-import { Link } from "react-router-dom";
 import { StudentsApi } from "../apis/allApis";
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
@@ -12,7 +11,7 @@ function useInput(initialValue) {
 
 function StudentsTab(props) {
   const studentsList = useInput([]);
-  const course_id = props.course_id;
+  //const course_id = props.course_id;
   const loader = useInput(false);
 
   var raw = JSON.stringify({

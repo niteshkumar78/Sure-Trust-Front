@@ -1,14 +1,7 @@
 import React, { useEffect, useState } from "react";
-import cookie, { load } from "react-cookies";
+import cookie from "react-cookies";
 
-import {
-  Posts,
-  StudentsTab,
-  GradesTab,
-  Discussion,
-  Loader,
-  DisplayTrainerBatches,
-} from "./index";
+import { Loader, DisplayTrainerBatches } from "./index";
 import { BatchesApi } from "../apis/allApis";
 
 function useInput(initialValue) {

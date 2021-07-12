@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 // import { context } from "./Student";
 
-import { StudentCourses, StudentRecording } from "./index";
+import { StudentCourses } from "./index";
 
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);

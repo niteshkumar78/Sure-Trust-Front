@@ -1,9 +1,7 @@
-import React, { useEffect, useState, useContext } from "react";
-import cookie from "react-cookies";
+import React, { useState } from "react";
 
 import { context } from "./Teacher";
-import { TrainerCourses, Discussion, TeacherRecording } from "./index";
-import { TeacherDetailsApi } from "../apis/allApis";
+import { TrainerCourses } from "./index";
 
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);

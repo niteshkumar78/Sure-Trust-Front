@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import cookie from "react-cookies";
 
 import { SourceURL } from "../apis/allApis";

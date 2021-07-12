@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../Navbar.css";
 import { Link } from "react-router-dom";
-import cookie from "react-cookies";
 import { CoursesList } from "../apis/allApis";
 
 class Navbar extends Component {
@@ -156,6 +155,7 @@ class Navbar extends Component {
                         onClick={() =>
                           this.setState({ navToggle: !this.state.navToggle })
                         }
+                        key={"DropdownCourse-" + data.id}
                       >
                         <Link
                           className="dropdown-item"

@@ -60,6 +60,7 @@ function StudentProfile(props) {
       body: JSON.stringify({
         registration_no: studentDetails.value.registration_no,
         name: studentDetails.value.name,
+        qualification: studentDetails.value.qualification,
         phone: editPhone.value,
       }),
       redirect: "follow",
@@ -87,7 +88,7 @@ function StudentProfile(props) {
       {loader.value ? (
         <Loader />
       ) : (
-        <div className="main" style={{ marginTop: "6rem" }}>
+        <div className="main" style={{ marginTop: "6rem", height: "67vh" }}>
           <div className="container">
             <div className="row gutters">
               <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { context } from "./Teacher";
 import { TrainerBatches } from "./index";
 
@@ -13,7 +13,11 @@ function TrainerCourses(props) {
     <div>
       <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
         {courses.map((data) => (
-          <li className="nav-item" role="presentation">
+          <li
+            className="nav-item"
+            role="presentation"
+            key={"TrainerCourseName-" + data.id}
+          >
             <button
               className={"nav-link " + active1}
               // className="nav-link"

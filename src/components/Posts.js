@@ -18,7 +18,7 @@ function TrainerPosts(props) {
   const nextPostsPage = useInput("");
   const postPageCount = useInput(0);
   const loader = useInput(false);
-  const postList = useInput(true);
+  //const postList = useInput(true);
 
   const content = useInput("");
   const type = useInput("");
@@ -194,7 +194,7 @@ function TrainerPosts(props) {
                 </div>
               </div>
             )}
-            {posts.value.length == 0 ? (
+            {posts.value.length === 0 ? (
               <div style={{ height: "320px" }}>
                 <div className=" h-100 d-flex justify-content-center align-items-center">
                   <div>
@@ -228,9 +228,9 @@ function TrainerPosts(props) {
                     >
                       <div className="card card-body">
                         <p>{data.content}</p>
-                        {(data.type == "material" ||
-                          data.type == "assignment") &&
-                          data.file != null && (
+                        {(data.type === "material" ||
+                          data.type === "assignment") &&
+                          data.file !== null && (
                             <a href={data.file} target="_blank">
                               Click Here To Download
                             </a>

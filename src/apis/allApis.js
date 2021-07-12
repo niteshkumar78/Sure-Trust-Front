@@ -1,5 +1,3 @@
-import cookie from "react-cookies";
-
 const SourceURL = "https://suretrustplatform.herokuapp.com";
 
 // const SourceURL =

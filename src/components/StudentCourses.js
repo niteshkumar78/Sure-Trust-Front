@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 // import { context } from "./Student";
 
 import { Posts, Discussion, GradesTab, StudentRecording } from "./index";
@@ -42,6 +42,7 @@ function StudentCourses(props) {
                 <button
                   className={"nav-link " + active1}
                   // className="nav-link"
+                  key={"studentCourse-" + data.course.id}
                   id={"pills-" + data.course.id + "-tab"}
                   data-bs-toggle="pill"
                   data-bs-target={"#pills-" + data.course.id}

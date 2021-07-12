@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import cookie from "react-cookies";
 import { AdminPostApi } from "../apis/allApis";
 
@@ -18,7 +18,7 @@ function AdminPost(props) {
   const postSubmitLoader = useInput(false);
   const success = useInput(false);
   const error1 = useInput(false);
-  const successMessage = useInput("");
+  // const successMessage = useInput("");
 
   function handleFormSubmit(e) {
     postSubmitLoader.setValue(true);
