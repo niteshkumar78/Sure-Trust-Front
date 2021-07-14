@@ -140,6 +140,7 @@ class App extends Component {
                     login={this.state.login}
                     courseId={this.state.courseId}
                     handleUpdate={this.handleUpdate}
+                    handleCourseIdUpdate={this.handleCourseIdUpdate}
                   />
                   // <div>hello</div>
                 );

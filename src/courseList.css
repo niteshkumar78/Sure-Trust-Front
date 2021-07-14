@@ -80,3 +80,23 @@
   top: -30%;
   left: -10%;
 }
+
+.sub_course {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem auto;
+}
+.sub_course h4 {
+  color: var(--brand_very_lighten_color);
+}
+.courseContainer > h2 {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 5px;
+  margin: auto;
+  margin-bottom: 2rem;
+  width: max-content;
+  border-bottom: 4px solid var(--brand_very_lighten_color);
+  color: #fff;
+}

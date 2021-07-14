@@ -127,7 +127,7 @@ class Login extends Component {
     console.log("Login Component");
 
     return (
-      <div>
+      <div style={{ marginTop: "10rem", minHeight: "70vh" }}>
         {login ? (
           <Redirect to={this.state.loginAs} />
         ) : (

@@ -73,13 +73,13 @@ function Teacher(props) {
   if (props.login) {
     return (
       <context.Provider value={{ courses }}>
-        {loader.value ? (
-          <Loader />
-        ) : (
-          <div style={{ marginTop: "6rem" }}>
+        <div style={{ marginTop: "7rem", minHeight: "70vh" }}>
+          {loader.value ? (
+            <Loader />
+          ) : (
             <Traineeindex teacherDetails={teacherDetails.value} />
-          </div>
-        )}
+          )}
+        </div>
       </context.Provider>
     );
   }

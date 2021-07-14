@@ -71,18 +71,16 @@ function Student(props) {
   if (props.login) {
     return (
       // <context.Provider value={{ courses }}>
-      <React.Fragment>
+      <div style={{ marginTop: "7rem", minHeight: "70vh" }}>
         {loader.value ? (
           <Loader />
         ) : (
-          <div style={{ marginTop: "6rem" }}>
-            <StudentIndex
-              courses={courses.value}
-              StudentDetails={StudentDetails.value}
-            />
-          </div>
+          <StudentIndex
+            courses={courses.value}
+            StudentDetails={StudentDetails.value}
+          />
         )}
-      </React.Fragment>
+      </div>
       // </context.Provider>
     );
   }

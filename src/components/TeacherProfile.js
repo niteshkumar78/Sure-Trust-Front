@@ -47,10 +47,10 @@ function TeacherProfile(props) {
 
   return (
     <div>
-      {loader.value ? (
-        <Loader />
-      ) : (
-        <div className="main" style={{ marginTop: "6rem" }}>
+      <div className="main" style={{ marginTop: "7rem", height: "70vh" }}>
+        {loader.value ? (
+          <Loader />
+        ) : (
           <div className="container">
             <div className="row gutters">
               <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
@@ -150,8 +150,8 @@ function TeacherProfile(props) {
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
