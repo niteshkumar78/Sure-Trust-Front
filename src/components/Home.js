@@ -147,7 +147,7 @@ const Home = () => {
               <br />
               <p>
                 "Number of rural youth educated & certified to date: 48 Number
-                of courses offered: 25 Number of faculty: 28 Number of
+                of courses offered: 25 Number of faculty: 28. Number of
                 internships & jobs obtained after the training: Internships- 3
                 in ML and 3 in Blockchain Technology Jobs Obtained: 7.
               </p>

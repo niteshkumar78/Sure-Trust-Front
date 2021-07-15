@@ -27,19 +27,13 @@ const KnowMore = () => {
 
             <h3>Eligibility for Enrollment</h3>
             <ul>
-              <li>B. Tech completed or pursuing fourth year, any field</li>
+              <li>
+                B. Tech/ B.E. completed or pursuing fourth year, any field
+              </li>
               <li>
                 MBA or PG in any field with flare for learning computer program
               </li>
-              <li>
-                Fresh Employees who want to upgrade their skills in the
-                technologies offered
-              </li>
-
-              <li>
-                Company representatives who want to learn the technology and
-                develop solutions for the company
-              </li>
+              <li>Any undergraduate students who desires to upgrade skills</li>
             </ul>
             <h3>Modalities Of the Courses : </h3>
             <ul className="gird_justify">
