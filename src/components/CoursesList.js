@@ -10,7 +10,7 @@ import avatar from "../images/avatar.png";
 
 import pdf from "../pdfs/SureTrustBroucher.pdf";
 
-import { Loader } from "./index";
+import { Loader2 } from "./index";
 
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
@@ -95,7 +95,7 @@ function CoursesList(props) {
         </h1>
       </div>
       {load.value ? (
-        <Loader />
+        <Loader2 />
       ) : (
         <div className="courseContainer">
           {error.value === 1 && (

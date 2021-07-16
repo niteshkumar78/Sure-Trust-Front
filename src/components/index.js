@@ -33,6 +33,7 @@ import DisplayTrainerBatches from "./DisplayTrainerBatches";
 import JitsiRecordingTeacher from "./JitsiRecordingTeacher";
 import JitsiRecordingStudent from "./JitsiRecordingStudent";
 import AdminPost from "./AdminPost";
+import Loader2 from "./Loader2";
 
 export {
   Navbar,
@@ -70,4 +71,5 @@ export {
   JitsiRecordingTeacher,
   JitsiRecordingStudent,
   AdminPost,
+  Loader2,
 };

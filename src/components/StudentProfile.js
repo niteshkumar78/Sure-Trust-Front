@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import cookie from "react-cookies";
 import { Link } from "react-router-dom";
 
-import { Loader } from "./index";
+import { Loader2 } from "./index";
 import { StudentDetailsApi } from "../apis/allApis";
 
 function useInput(initialValue) {
@@ -89,7 +89,7 @@ function StudentProfile(props) {
     <div>
       <div className="main" style={{ marginTop: "7rem", height: "70vh" }}>
         {loader.value ? (
-          <Loader />
+          <Loader2 />
         ) : (
           <div className="container">
             <div className="row gutters">

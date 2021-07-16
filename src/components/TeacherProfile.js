@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { TeacherDetailsApi } from "../apis/allApis";
 
-import { Loader } from "./index";
+import { Loader2 } from "./index";
 
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
@@ -51,7 +51,7 @@ function TeacherProfile(props) {
     <div>
       <div className="main" style={{ marginTop: "7rem", height: "70vh" }}>
         {loader.value ? (
-          <Loader />
+          <Loader2 />
         ) : (
           <div className="container">
             <div className="row gutters">

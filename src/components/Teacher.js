@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 import Traineeindex from "./Trainerindex";
 import cookie from "react-cookies";
 import { TeacherCourseListApi, TeacherDetailsApi } from "../apis/allApis";
-import { Loader } from "./index";
+import { Loader2 } from "./index";
 
 const context = React.createContext();
 
@@ -76,7 +76,7 @@ function Teacher(props) {
       <context.Provider value={{ courses }}>
         <div style={{ marginTop: "7rem", minHeight: "70vh" }}>
           {loader.value ? (
-            <Loader />
+            <Loader2 />
           ) : (
             <Traineeindex teacherDetails={teacherDetails.value} />
           )}

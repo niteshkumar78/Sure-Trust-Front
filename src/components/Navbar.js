@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../Navbar.css";
 import { Link } from "react-router-dom";
 import { CoursesList } from "../apis/allApis";
-import { Loader } from "./index";
+import { Loader2 } from "./index";
 
 class Navbar extends Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class Navbar extends Component {
     console.log("Check Refresh", loginAs);
 
     return this.state.loader ? (
-      <Loader />
+      <Loader2 />
     ) : (
       <div className="container-fluid" style={{ padding: "0" }}>
         {/* <div>
