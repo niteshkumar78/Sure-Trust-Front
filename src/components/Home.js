@@ -236,7 +236,7 @@ const Home = () => {
             </h1>
             <br />
             <p>
-              Number of rural youth educated & certified to date: 48 An
+              Number of rural youth educated & certified to date: 48. An
               alternative channel for source of employment.{" "}
             </p>
           </div>

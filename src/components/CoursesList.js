@@ -111,7 +111,7 @@ function CoursesList(props) {
             <div>
               <div>
                 <h4 style={{ fontWeight: "800" }}>
-                  prerequisites:&nbsp;&nbsp;&nbsp;
+                  Prerequisites:&nbsp;&nbsp;&nbsp;
                   <span style={{ color: "#fff" }}>
                     {courseDetails.value.prerequisites}
                   </span>

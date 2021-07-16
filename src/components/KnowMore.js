@@ -27,9 +27,7 @@ const KnowMore = () => {
 
             <h3>Eligibility for Enrollment</h3>
             <ul>
-              <li>
-                B. Tech/ B.E. completed or pursuing fourth year, any field
-              </li>
+              <li>B. Tech/ B.E completed or pursuing fourth year, any field</li>
               <li>
                 MBA or PG in any field with flare for learning computer program
               </li>
@@ -79,8 +77,8 @@ const KnowMore = () => {
             <h3>Uniqueness Of the Course:</h3>
             <ul>
               <li>
-                One on One className to ensure that all the students understand
-                the subject{" "}
+                One on One class to ensure that all the students understand the
+                subject{" "}
               </li>
               <li>
                 Course Learning Report prepared by each student to show case the

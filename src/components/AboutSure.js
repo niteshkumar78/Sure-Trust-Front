@@ -338,8 +338,8 @@ const AboutSure = () => {
                 <br />
                 Former Senior Adviser, NITI Aayog. During his career spanning
                 over 34 years, Dr. C.M Kumar headed divisions responsible for
-                the development of Information &CommunicationTechnology, Science
-                & Technology and Innovation.
+                the development of Information & Communication Technology,
+                Science & Technology and Innovation.
               </p>
               <a href="https://www.linkedin.com/in/muralikrishna-kumar-c-9b735a41">
                 Linkedin
