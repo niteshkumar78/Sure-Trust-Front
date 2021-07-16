@@ -40,8 +40,9 @@ function Teacher(props) {
       .then((response) => response.json())
       .then((result) => {
         courses.setValue(result);
-        loader.setValue(false);
-        // console.log("batches", result);
+        setTimeout(() => {
+          loader.setValue(false);
+        }, 1000); // console.log("batches", result);
       })
       .catch((error) => console.log("error", error));
   }, []);

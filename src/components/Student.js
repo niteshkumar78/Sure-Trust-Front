@@ -38,7 +38,9 @@ function Student(props) {
       .then((response) => response.json())
       .then((result) => {
         courses.setValue(result);
-        loader.setValue(false);
+        setTimeout(() => {
+          loader.setValue(false);
+        }, 1000);
         console.log("Course API", result);
       })
       .catch((error) => console.log("error", error));

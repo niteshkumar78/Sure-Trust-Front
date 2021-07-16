@@ -37,7 +37,9 @@ function CoursesList(props) {
       .then((result) => {
         courseDetails.setValue(result);
         console.log(result);
-        load.setValue(false);
+        setTimeout(() => {
+          load.setValue(false);
+        }, 1000);
       })
       .catch((error) => {
         console.log("error", error);
@@ -51,7 +53,9 @@ function CoursesList(props) {
       .then((result) => {
         teachers.setValue(result);
         console.log("teacher", result);
-        load.setValue(false);
+        setTimeout(() => {
+          load.setValue(false);
+        }, 1000);
       })
       .catch((err) => console.log("error", err));
   }, [ParamsId]);

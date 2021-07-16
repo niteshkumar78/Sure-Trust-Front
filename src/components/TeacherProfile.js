@@ -34,7 +34,9 @@ function TeacherProfile(props) {
       .then((response) => response.json())
       .then((result) => {
         teacherDetails.setValue(result);
-        loader.setValue(false);
+        setTimeout(() => {
+          loader.setValue(false);
+        }, 1000);
         console.log("teacher", result);
       })
       .catch((error) => {

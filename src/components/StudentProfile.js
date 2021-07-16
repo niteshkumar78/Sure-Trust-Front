@@ -41,7 +41,9 @@ function StudentProfile(props) {
         studentDetails.setValue(result);
         editPhone.setValue(result.phone);
         console.log("student Details", result);
-        loader.setValue(false);
+        setTimeout(() => {
+          loader.setValue(false);
+        }, 1000);
       })
       .catch((error) => {
         loader.setValue(false);
