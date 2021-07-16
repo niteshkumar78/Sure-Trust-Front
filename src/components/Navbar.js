@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../Navbar.css";
 import { Link } from "react-router-dom";
 import { CoursesList } from "../apis/allApis";
+import { Loader } from "./index";
 
 class Navbar extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class Navbar extends Component {
     this.state = {
       courses: [],
       navToggle: false,
+      loader: true,
     };
   }
 
@@ -21,6 +23,11 @@ class Navbar extends Component {
         this.setState({
           courses: result,
         });
+        setTimeout(() => {
+          this.setState({
+            loader: false,
+          });
+        }, 2000);
       });
   }
 
@@ -33,7 +40,9 @@ class Navbar extends Component {
     // const loginAs = cookie.load("loginAs");
     console.log("Check Refresh", loginAs);
 
-    return (
+    return this.state.loader ? (
+      <Loader />
+    ) : (
       <div className="container-fluid" style={{ padding: "0" }}>
         {/* <div>
           <div className="row p-2" style={{ background: "rgba(59, 143, 197)" }}>

@@ -399,3 +399,11 @@ main {
 .youth {
   color: var(--brand_color) !important;
 }
+
+.eapps-widget-toolbar-panel-wrapper {
+  display: none;
+}
+
+.CommonLayout__Inner-d1flxf-1 > a {
+  display: none !important ;
+}

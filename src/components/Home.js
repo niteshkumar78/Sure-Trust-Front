@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../Home.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -24,6 +24,16 @@ const Home = () => {
     var slide = document.querySelector(".dev_row");
     slide.style.transform = `translateX(-${(x - 1) * len}px)`;
   }
+
+  useEffect(() => {
+    const script = document.createElement("script");
+
+    script.src = "https://apps.elfsight.com/p/platform.js";
+    script.async = true;
+
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <main>
       {/* <!-- 1st page-->	 */}
@@ -105,6 +115,11 @@ const Home = () => {
           </a>
         </div>
       </div>
+
+      <div
+        class="elfsight-app-24275791-8baa-4f85-be52-dee774f2672e"
+        // style={{ width: "80%", height: "00px" }}
+      ></div>
 
       {/* <!-- 4th page-->  */}
 
