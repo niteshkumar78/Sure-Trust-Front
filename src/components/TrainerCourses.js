@@ -11,7 +11,11 @@ function TrainerCourses(props) {
   let active2 = "active";
   return (
     <div>
-      <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <ul
+        className="nav nav-pills mb-3 coursesListDashboard"
+        id="pills-tab"
+        role="tablist"
+      >
         {courses.map((data) => (
           <li
             className="nav-item"

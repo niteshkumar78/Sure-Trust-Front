@@ -103,7 +103,7 @@ const Home = () => {
 
       {/* <!-- 3rd page--> */}
 
-      <div className="card text-center purely">
+      <div className="card card1 card1 text-center purely">
         <div className="card-body">
           <h5 className="card-title serviceOriented">
             PURELY A SERVICE - ORIENTED INITIATIVE.
@@ -299,7 +299,7 @@ const Home = () => {
       </div>
 
       <div className="card-group companies" style={{ color: "white" }}>
-        <div className="card p-3 bottomRight transition1">
+        <div className="card card1 card1 p-3 bottomRight transition1">
           <h1>Lokibots Inc.</h1>
 
           <img
@@ -320,7 +320,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="card p-3 bottomLeft transition1">
+        <div className="card card1 p-3 bottomLeft transition1">
           <h1>Grey Scientific Labs</h1>
 
           <img
@@ -341,7 +341,7 @@ const Home = () => {
       </div>
 
       <div className="card-group companies" style={{ color: "white" }}>
-        <div className="card  p-3 topRight bottomRight transition1">
+        <div className="card card1  p-3 topRight bottomRight transition1">
           <h1>Atsuya Technologies</h1>
 
           <img
@@ -363,7 +363,7 @@ const Home = () => {
             </p>
           </div>
         </div>{" "}
-        <div className="card  p-3 bottomLeft topLeft transition1">
+        <div className="card card1  p-3 bottomLeft topLeft transition1">
           <h1>Vincullum</h1>
 
           <img
@@ -385,7 +385,7 @@ const Home = () => {
         </div>
       </div>
       <div className="card-group companies" style={{ color: "white" }}>
-        <div className="card  p-3 topRight transition1">
+        <div className="card card1 p-3 topRight transition1">
           <h1>BirthVenue</h1>
 
           <img
@@ -406,7 +406,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="card  p-3 topLeft transition1">
+        <div className="card card1 p-3 topLeft transition1">
           <h1>Red Apricot</h1>
 
           <img

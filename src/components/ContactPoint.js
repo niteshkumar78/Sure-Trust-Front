@@ -15,8 +15,12 @@ function useInput(initialValue) {
 const ContactPoint = () => {
   const subject = useInput("");
   const description = useInput("");
+  const submitResponse = useInput();
+  const SubmitMessage = useInput("");
+  const SubmitButtonLoader = useInput(false);
 
   function handleFormSubmit(e) {
+    SubmitButtonLoader.setValue(true);
     var raw = JSON.stringify({
       subject: subject.value,
       description: description.value,
@@ -35,8 +39,23 @@ const ContactPoint = () => {
 
     fetch(`${SourceURL}/student/contactus/`, requestOptions)
       .then((response) => response.json())
-      .then((result) => console.log(result))
-      .catch((error) => console.log("error", error));
+      .then((result) => {
+        if (result.error !== undefined) {
+          submitResponse.setValue(1);
+          SubmitMessage.setValue(result.error);
+        } else {
+          submitResponse.setValue(2);
+          SubmitMessage.setValue(result.success);
+        }
+        console.log(result);
+        setTimeout(() => {
+          SubmitButtonLoader.setValue(false);
+        }, 1000);
+      })
+      .catch((error) => {
+        SubmitButtonLoader.setValue(false);
+        console.log("error", error);
+      });
 
     e.preventDefault();
   }
@@ -45,10 +64,20 @@ const ContactPoint = () => {
     <>
       <section
         className=" container-fluid mid1"
-        style={{ paddingTop: "3rem", marginTop: "6rem", minHeight: "80vh" }}
+        style={{ paddingTop: "3rem", marginTop: "6rem", minHeight: "80.5vh" }}
       >
         <div className="boxKnowMore">
           <div className="row rowContact">
+            {submitResponse.value === 1 && (
+              <div class="alert alert-warning" role="alert">
+                {SubmitMessage.value}
+              </div>
+            )}
+            {submitResponse.value === 2 && (
+              <div class="alert alert-success" role="alert">
+                {SubmitMessage.value}
+              </div>
+            )}
             <h2 style={{ fontWeight: "800", marginBottom: "2rem" }}>
               CONTACT THE TEAM
             </h2>
@@ -99,10 +128,26 @@ const ContactPoint = () => {
                         required
                       />
                     </div>
-
-                    <button type="submit" className="btn btn-primary">
-                      Submit
-                    </button>
+                    {SubmitButtonLoader.value ? (
+                      <button
+                        type="submit"
+                        className="btn btn-secondary  "
+                        disabled
+                      >
+                        Submitting...&nbsp;&nbsp;&nbsp;&nbsp;
+                        <div
+                          className="spinner-border text-dark"
+                          role="status"
+                          style={{ height: "10px", width: "10px" }}
+                        >
+                          <span className="visually-hidden">Loading...</span>
+                        </div>
+                      </button>
+                    ) : (
+                      <button type="submit" className="btn btn-primary">
+                        Submit
+                      </button>
+                    )}
                   </form>
                 </div>
               )}

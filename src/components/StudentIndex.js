@@ -43,7 +43,7 @@ function StudentIndex(props) {
             <ul className="nav nav-pills flex-column mb-auto">
               <li className="nav-item" key="coursePost">
                 <a
-                  className="nav-link active"
+                  className="nav-link active dashboardTabsButton"
                   id="cousrepost-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#cousrepost"
@@ -59,7 +59,7 @@ function StudentIndex(props) {
 
               <li className="nav-item" key="grades">
                 <a
-                  className="nav-link"
+                  className="nav-link dashboardTabsButton"
                   id="grade-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#grade"
@@ -76,7 +76,7 @@ function StudentIndex(props) {
               </li>
               <li className="nav-item" key="recordings">
                 <a
-                  className="nav-link text-dark"
+                  className="nav-link dashboardTabsButton"
                   id="recoding-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#recording"
@@ -91,7 +91,7 @@ function StudentIndex(props) {
               </li>
               <li className="nav-item" key="discussion">
                 <a
-                  className="nav-link text-dark"
+                  className="nav-link dashboardTabsButton"
                   id="Discussion-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#Discussion"

@@ -36,7 +36,11 @@ function StudentCourses(props) {
         </div>
       ) : (
         <div>
-          <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <ul
+            className="nav nav-pills mb-3 coursesListDashboard"
+            id="pills-tab"
+            role="tablist"
+          >
             {courses.map((data) => (
               <li className="nav-item" role="presentation">
                 <button

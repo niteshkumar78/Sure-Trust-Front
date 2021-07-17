@@ -51,7 +51,7 @@ p {
   font-size: 18px;
   font-weight: 400;
 }
-.nav-link {
+.nav_link {
   color: var(--brand_color);
   font-weight: 600;
   font-size: 1rem;
@@ -60,19 +60,19 @@ p {
   position: relative;
   padding-bottom: 0;
 }
-.nav-item {
+.nav_item {
   position: relative;
   margin-left: 0.5rem;
 }
-.nav-link:hover,
-.nav-link:focus {
+.nav_link:hover,
+.nav_link:focus {
   color: var(--brand_color) !important;
 }
 
-.nav-item a {
+.nav_item a {
   font-size: 1.2rem;
 }
-.nav-item::after {
+.nav_item::after {
   content: "";
   position: absolute;
   left: 0;
@@ -84,7 +84,7 @@ p {
   transform-origin: center;
   transition: all 500ms;
 }
-.nav-item:hover::after {
+.nav_item:hover::after {
   transform: scaleX(1);
 }
 
@@ -108,7 +108,7 @@ p {
   display: flex;
   justify-content: center;
 }
-.btn hover {
+.btn:hover {
   background: var(--button_hover_color);
 }
 @-webkit-keyframes spin {
@@ -298,7 +298,7 @@ p {
 }
 
 .assignment > p > .btn:hover {
-  background-color: var(--button_hover_color);
+  background-color: var(--brand_color);
   color: white;
   border: none;
   outline: none;
@@ -356,7 +356,7 @@ button[data-bs-toggle="pill"]:hover {
 
 .dashsboard {
   width: 100%;
-  min-height: 65vh;
+  min-height: 77vh;
 }
 .trainerNav {
   width: 83%;
@@ -364,6 +364,8 @@ button[data-bs-toggle="pill"]:hover {
 
 .sideNav {
   width: 17%;
+  margin-top: -15px;
+  padding-top: 15px;
 }
 
 .teacherTopnav {
@@ -509,4 +511,21 @@ button[data-bs-toggle="pill"]:hover {
 
 .postList {
   margin-top: -25px;
+}
+
+.sideNav .active:hover {
+  color: white !important;
+}
+
+.sideNav .active {
+  background-color: var(--brand_color) !important;
+}
+
+.coursesListDashboard .active {
+  background-color: var(--brand_color) !important;
+}
+
+.coursesListDashboard .nav-link {
+  background-color: rgb(239, 239, 239);
+  margin-right: 2px;
 }

@@ -5,7 +5,10 @@ import ResearchAndGuidance from "../images/ResearchAndGuid.png";
 
 const ResearchPage = () => {
   return (
-    <div className="row researchPage" style={{ marginTop: "6rem" }}>
+    <div
+      className="row researchPage"
+      style={{ paddingTop: "3rem", marginTop: "6rem", minHeight: "80.5vh" }}
+    >
       <div
         className="column1 col-lg-6 col-md-6 col-12"
         style={{ margin: "0 auto" }}

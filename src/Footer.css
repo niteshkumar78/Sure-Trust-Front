@@ -1,0 +1,15 @@
+.footer_class {
+  box-shadow: 0 0 6px var(--brand_color);
+  color: #fff !important;
+  background: var(--brand_color);
+  margin-top: 2px;
+}
+.footer_class > div {
+  align-items: center;
+}
+.footer_class p {
+  margin: 0;
+}
+.footer_class svg {
+  cursor: pointer;
+}

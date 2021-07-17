@@ -1,12 +1,17 @@
 import React, { Component } from "react";
+import "../Footer.css";
 
 class Footer extends Component {
   render() {
     return (
-      <div className="container-fluid footer bg-light">
-        <div className="row p-5">
+      <div className="container-fluid footer footer_class">
+        <div className="row p-3">
           <div className="col">
-            <p>COPYRIGHT © 2020 SURE INITIATIVE - ALL RIGHTS RESERVED.</p>
+            <p>
+              COPYRIGHT © 2020{" "}
+              <b style={{ fontSize: "1.1rem" }}>SURE INITIATIVE</b> - ALL RIGHTS
+              RESERVED.
+            </p>
           </div>
           <div className="col-3">
             <div className="row">

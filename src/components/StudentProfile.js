@@ -87,7 +87,7 @@ function StudentProfile(props) {
 
   return (
     <div>
-      <div className="main" style={{ marginTop: "7rem", height: "70vh" }}>
+      <div className="main" style={{ marginTop: "7rem", height: "79vh" }}>
         {loader.value ? (
           <Loader2 />
         ) : (

@@ -76,6 +76,9 @@ function CoursesList(props) {
         if (result.error !== undefined) {
           error.setValue(1);
           errorMessage.setValue(result.error);
+        } else if (result.message !== undefined) {
+          error.setValue(2);
+          errorMessage.setValue(result.message);
         } else {
           error.setValue(2);
           errorMessage.setValue(result.success);

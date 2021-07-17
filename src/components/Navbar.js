@@ -135,13 +135,17 @@ class Navbar extends Component {
                     this.setState({ navToggle: !this.state.navToggle })
                   }
                 >
-                  <Link className="nav-link" aria-current="page" to="/">
+                  <Link
+                    className="nav-link nav_link"
+                    aria-current="page"
+                    to="/"
+                  >
                     HOME
                   </Link>
                 </li>
                 <li className="nav-item dropdown">
                   <a
-                    className="nav-link dropdown-toggle"
+                    className="nav-link nav_link dropdown-toggle"
                     href="#"
                     id="dropdown08"
                     data-bs-toggle="dropdown"
@@ -188,7 +192,7 @@ class Navbar extends Component {
                     this.setState({ navToggle: !this.state.navToggle })
                   }
                 >
-                  <Link to="/knowMore" className="nav-link">
+                  <Link to="/knowMore" className="nav-link nav_link">
                     KNOW MORE
                   </Link>
                 </li>
@@ -198,13 +202,13 @@ class Navbar extends Component {
                     this.setState({ navToggle: !this.state.navToggle })
                   }
                 >
-                  <Link to="/researchPage" className="nav-link">
+                  <Link to="/researchPage" className="nav-link nav_link">
                     RESEARCH GUIDANCE
                   </Link>
                 </li>
                 <li className="nav-item dropdown">
                   <a
-                    className="nav-link dropdown-toggle"
+                    className="nav-link nav_link dropdown-toggle"
                     href="#"
                     id="navbarDropdownMenuLink"
                     role="button"
@@ -271,14 +275,14 @@ class Navbar extends Component {
                           this.setState({ navToggle: !this.state.navToggle })
                         }
                       >
-                        <Link className="nav-link" to="/logout">
+                        <Link className="nav-link nav_link" to="/logout">
                           LOG OUT
                         </Link>
                       </li>
                       {loginAs == "teacher" && (
                         <li className="nav-item dropdown">
                           <a
-                            className="nav-link dropdown-toggle"
+                            className="nav-link nav_link dropdown-toggle"
                             href="#"
                             id="navbarDropdownMenuLink"
                             role="button"
@@ -322,7 +326,7 @@ class Navbar extends Component {
                       {loginAs === "student" && (
                         <li className="nav-item dropdown">
                           <a
-                            className="nav-link dropdown-toggle"
+                            className="nav-link nav_link dropdown-toggle"
                             href="#"
                             id="navbarDropdownMenuLink"
                             role="button"
@@ -374,7 +378,7 @@ class Navbar extends Component {
                           this.setState({ navToggle: !this.state.navToggle })
                         }
                       >
-                        <Link className="nav-link" to="/login">
+                        <Link className="nav-link nav_link" to="/login">
                           LOGIN
                         </Link>
                       </li>
@@ -384,7 +388,7 @@ class Navbar extends Component {
                           this.setState({ navToggle: !this.state.navToggle })
                         }
                       >
-                        <Link className="nav-link" to="/signup">
+                        <Link className="nav-link nav_link" to="/signup">
                           SIGNUP
                         </Link>
                       </li>
