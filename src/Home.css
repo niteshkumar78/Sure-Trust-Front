@@ -155,47 +155,11 @@ main {
   .popup::before {
     height: 80%;
   }
-  .arrowSvg {
-    width: 45vw;
-    display: block !important;
-    fill: var(--brand_color);
-  }
-  .svg1 {
-    margin-left: -1rem;
-  }
-  .mandatory h1,
-  .mandatory p {
-    margin-left: 4.5rem !important;
-  }
   .uniqueness {
     flex-direction: row !important;
   }
-  .uniqueness div {
-    background: transparent !important;
-  }
 }
 @media screen and (min-width: 1200px) {
-  .uniqueness h1 {
-    font-size: 1.4rem !important;
-    margin-top: -0.7rem !important;
-  }
-  .svg1 {
-    margin-left: -2.6rem !important;
-  }
-  .uniqueness p {
-    font-size: 1.2rem !important;
-    width: 400px !important;
-  }
-  .mandatory h1 {
-    margin-left: 200px !important;
-    margin-top: -1rem !important;
-    margin-bottom: 1rem !important;
-    width: 400px !important;
-  }
-  .mandatory p {
-    margin-left: 200px !important;
-    width: 400px !important;
-  }
   .learnMore {
     font-size: 1.5rem !important;
   }
@@ -250,11 +214,8 @@ main {
 }
 .uniqueness div {
   background: var(--brand_color);
-  margin: 1rem 0;
+  margin: 1rem;
   border-radius: 0.4rem;
-}
-.arrowSvg {
-  display: none;
 }
 .uniqueness h1 {
   margin: 0;
@@ -406,4 +367,38 @@ main {
 
 .CommonLayout__Inner-d1flxf-1 > a {
   display: none !important ;
+}
+
+.scrollSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--brand_color);
+  margin: 0.7rem 0;
+}
+.scrollMessages {
+  background-color: var(--brand_color);
+  padding: 0.7rem;
+  color: #fff;
+  width: 90vw;
+}
+.scrollMessages p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  margin-right: 60vw;
+  margin-left: 0.5rem;
+  padding: 0;
+  display: inline-block;
+}
+.lastScroll {
+  margin: 0 !important;
+}
+@media screen and (min-width: 800px) {
+  .scrollMessages {
+    width: 60vw;
+  }
+  .scrollMessages p {
+    margin-right: 35vw;
+  }
 }

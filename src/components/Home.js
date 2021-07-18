@@ -37,7 +37,58 @@ const Home = () => {
   return (
     <main>
       {/* <!-- 1st page-->	 */}
-      <div className="container" style={{ margin: "8rem auto 1rem auto" }}>
+      <section className="scrollSection" style={{ marginTop: "7rem" }}>
+        <marquee scrollamount="10" direction="left" className="scrollMessages">
+          <svg
+            data-ux="SVG"
+            viewBox=" 0 0 35 35"
+            dataaids="SEASONAL_WINTER_LEFT_ICON_RENDERED"
+            className="svgcls"
+          >
+            <g stroke="currentColor" fill="none" fillRule="evenodd">
+              <path d="M16.724 10.726l4.651 5.349M12.03 16.408L16.8 21.8M16.8 1.8v28M30.8 16.3h-28M15.8 1.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM30.3 16.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM1.3 16.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM15.8 30.8a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM23.05 10.05l-12.5 12.5M22.6 9.3a1 1 0 1 1 1.999-.002A1 1 0 0 1 22.6 9.3zM8.8 23.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM16.99 5.545l10.02 10.961M17 27.3l-10.7-11M27.01 16.131l-10.02 10.96M6.59 17.091l10.02-10.96M22.925 22.086L10.688 9.328M22.459 22.826a1 1 0 1 0 2 .043 1 1 0 0 0-2-.043zM8.953 8.542a1.001 1.001 0 1 0 2.002.04 1.001 1.001 0 0 0-2.002-.04z"></path>
+            </g>
+          </svg>
+          <p>Do a course and grab an Internship or a Job</p>
+          <svg
+            data-ux="SVG"
+            viewBox=" 0 0 35 35"
+            dataaids="SEASONAL_WINTER_LEFT_ICON_RENDERED"
+            className="svgcls"
+          >
+            <g stroke="currentColor" fill="none" fillRule="evenodd">
+              <path d="M16.724 10.726l4.651 5.349M12.03 16.408L16.8 21.8M16.8 1.8v28M30.8 16.3h-28M15.8 1.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM30.3 16.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM1.3 16.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM15.8 30.8a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM23.05 10.05l-12.5 12.5M22.6 9.3a1 1 0 1 1 1.999-.002A1 1 0 0 1 22.6 9.3zM8.8 23.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM16.99 5.545l10.02 10.961M17 27.3l-10.7-11M27.01 16.131l-10.02 10.96M6.59 17.091l10.02-10.96M22.925 22.086L10.688 9.328M22.459 22.826a1 1 0 1 0 2 .043 1 1 0 0 0-2-.043zM8.953 8.542a1.001 1.001 0 1 0 2.002.04 1.001 1.001 0 0 0-2.002-.04z"></path>
+            </g>
+          </svg>
+          <p>Bring an innovative business idea and become an entrepreneur</p>
+
+          <svg
+            data-ux="SVG"
+            viewBox=" 0 0 35 35"
+            dataaids="SEASONAL_WINTER_LEFT_ICON_RENDERED"
+            className="svgcls"
+          >
+            <g stroke="currentColor" fill="none" fillRule="evenodd">
+              <path d="M16.724 10.726l4.651 5.349M12.03 16.408L16.8 21.8M16.8 1.8v28M30.8 16.3h-28M15.8 1.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM30.3 16.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM1.3 16.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM15.8 30.8a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM23.05 10.05l-12.5 12.5M22.6 9.3a1 1 0 1 1 1.999-.002A1 1 0 0 1 22.6 9.3zM8.8 23.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM16.99 5.545l10.02 10.961M17 27.3l-10.7-11M27.01 16.131l-10.02 10.96M6.59 17.091l10.02-10.96M22.925 22.086L10.688 9.328M22.459 22.826a1 1 0 1 0 2 .043 1 1 0 0 0-2-.043zM8.953 8.542a1.001 1.001 0 1 0 2.002.04 1.001 1.001 0 0 0-2.002-.04z"></path>
+            </g>
+          </svg>
+          <p>Support a student or a trainer and avail 80G benefit</p>
+          <svg
+            data-ux="SVG"
+            viewBox=" 0 0 35 35"
+            dataaids="SEASONAL_WINTER_LEFT_ICON_RENDERED"
+            className="svgcls"
+          >
+            <g stroke="currentColor" fill="none" fillRule="evenodd">
+              <path d="M16.724 10.726l4.651 5.349M12.03 16.408L16.8 21.8M16.8 1.8v28M30.8 16.3h-28M15.8 1.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM30.3 16.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM1.3 16.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM15.8 30.8a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM23.05 10.05l-12.5 12.5M22.6 9.3a1 1 0 1 1 1.999-.002A1 1 0 0 1 22.6 9.3zM8.8 23.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM16.99 5.545l10.02 10.961M17 27.3l-10.7-11M27.01 16.131l-10.02 10.96M6.59 17.091l10.02-10.96M22.925 22.086L10.688 9.328M22.459 22.826a1 1 0 1 0 2 .043 1 1 0 0 0-2-.043zM8.953 8.542a1.001 1.001 0 1 0 2.002.04 1.001 1.001 0 0 0-2.002-.04z"></path>
+            </g>
+          </svg>
+          <p className="lastScroll">
+            Let us all join hands and work to give back to the society
+          </p>
+        </marquee>
+      </section>
+      <div className="container" style={{ margin: "1rem auto" }}>
         <div className="row">
           <div className="col-md-12  text-center">
             <h1 className="welcomeHeading stagger1">
@@ -231,48 +282,19 @@ const Home = () => {
       </div>
       <div className="container" style={{ color: "white" }}>
         <div className="row justify-content-evenly uniqueness">
-          <div className="col" style={{ position: "relative", zIndex: "1000" }}>
-            <svg
-              width="653"
-              height="273"
-              viewBox="0 0 653 273"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="arrowSvg svg1"
-              style={{ position: "absolute", top: "-20%", zIndex: "-1" }}
-            >
-              <path d="M647.108 128.112C653.397 131.506 653.412 140.522 647.135 143.937L413.153 271.246C407.162 274.506 399.864 270.176 399.852 263.356L399.424 9.52737C399.413 2.7067 406.697 -1.6474 412.699 1.59221L647.108 128.112Z" />
-              <rect y="32" width="400" height="200" />
-            </svg>
-
+          <div className="col p-3">
             <h1>
               <br />
               Entrepreneurship Mandatory training
             </h1>
             <br />
             <p>
-              Number of rural youth educated & certified to date: 48. An
+              Number of rural youth educated & certified to date: 48 An
               alternative channel for source of employment.{" "}
             </p>
           </div>
-          <div
-            className="col  p-3 mandatory"
-            style={{ position: "relative", zIndex: "1000" }}
-          >
-            <svg
-              width="653"
-              height="273"
-              viewBox="0 0 653 273"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="arrowSvg svg2"
-              style={{ position: "absolute", top: "-20%", zIndex: "-1" }}
-            >
-              <path d="M5.8741 144.118C-0.402558 140.703 -0.386832 131.686 5.90171 128.293L240.321 1.78718C246.323 -1.45206 253.607 2.90249 253.595 9.72316L253.152 263.552C253.14 270.372 245.841 274.701 239.85 271.441L5.8741 144.118Z" />
-              <rect x="253" y="32" width="400" height="200" />
-            </svg>
-
-            <h1>
+          <div className="col p-3">
+            <h1 style={{ marginBottom: "2rem" }}>
               <br /> Mandatory training in Education in Human Values
             </h1>
             <p>
