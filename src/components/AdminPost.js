@@ -33,6 +33,7 @@ function AdminPost(props) {
     formData.append("content", content.value);
     if (file.value !== undefined) {
       formData.append("file", file.value);
+      console.log("File Undefined 2");
     }
     // formData.append("batch", props.id);
 
@@ -76,7 +77,10 @@ function AdminPost(props) {
   }
 
   return (
-    <div className="card card-body" style={{ marginTop: "6rem" }}>
+    <div
+      className="card card-body"
+      style={{ marginTop: "7rem", minHeight: "77.5vh" }}
+    >
       {success.value && (
         <div className="alert alert-success" role="alert">
           Post submitted sucessfully
