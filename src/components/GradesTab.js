@@ -62,7 +62,7 @@ function GradesTab(props) {
 
   useEffect(() => {
     postFetch();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // function handlePagination(URL) {
   //   // loader.setValue(true);

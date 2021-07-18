@@ -63,7 +63,7 @@ const Discussion = (props) => {
 
   useEffect(() => {
     fetchComments();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleCommentChange = (e) => {
     comment.setValue(e.target.value);

@@ -146,9 +146,12 @@ class JitsiRecordingStudent extends Component {
 
   render() {
     const { isAudioMuted, isVideoMuted } = this.state;
+    console.log("loader", this.state.loader);
     return (
-      <div id="jitsi-iframe" style={{ height: "100vh" }}></div>
-      /* <header className="nav-bar">
+      <React.Fragment>
+        <div id="jitsi-iframe" style={{ height: "100vh" }}></div>
+
+        {/* <header className="nav-bar">
             <p className="item-left heading">Jitsi React</p>
           </header>
           <div id="jitsi-iframe"></div>
@@ -187,8 +190,8 @@ class JitsiRecordingStudent extends Component {
               aria-hidden="true"
               title="Share your screen"
             ></i>
-          </div>
-        </> */
+          </div> */}
+      </React.Fragment>
     );
   }
 }

@@ -44,7 +44,7 @@ function CoursesList(props) {
       .catch((error) => {
         console.log("error", error);
       });
-  }, [ParamsId]);
+  }, [ParamsId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     load.setValue(true);
@@ -58,7 +58,7 @@ function CoursesList(props) {
         }, 1000);
       })
       .catch((err) => console.log("error", err));
-  }, [ParamsId]);
+  }, [ParamsId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleApplyCourse = (e) => {
     var requestOptions = {

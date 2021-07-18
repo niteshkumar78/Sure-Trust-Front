@@ -44,7 +44,7 @@ function Student(props) {
         console.log("Course API", result);
       })
       .catch((error) => console.log("error", error));
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     // loader.setValue(true);
@@ -68,7 +68,7 @@ function Student(props) {
         // loader.setValue(false);
         console.log("error", error);
       });
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (props.login) {
     return (

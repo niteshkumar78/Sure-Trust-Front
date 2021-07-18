@@ -47,7 +47,7 @@ function GradesList(props) {
         // loader.setValue(false);
         console.log("error", error);
       });
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>

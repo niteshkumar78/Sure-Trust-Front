@@ -49,7 +49,7 @@ function StudentProfile(props) {
         loader.setValue(false);
         console.log("error", error);
       });
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   function handleEditSave(e) {
     editLoader.setValue(true);

@@ -45,7 +45,7 @@ function Teacher(props) {
         }, 1000); // console.log("batches", result);
       })
       .catch((error) => console.log("error", error));
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     // loader.setValue(true);
@@ -69,7 +69,7 @@ function Teacher(props) {
         // loader.setValue(false);
         console.log("error", error);
       });
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (props.login) {
     return (
