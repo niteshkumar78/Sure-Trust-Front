@@ -15,14 +15,33 @@ import { useState } from "react";
 
 const Home = () => {
   const [circle, setCircle] = useState(0);
+  console.log(circle, "1");
   function slide(x) {
-    setCircle(x - 1);
+    if (x < 1) {
+      setCircle(developers_Details.length);
+    } else {
+      setCircle(x - 1);
+    }
     var len = window.innerWidth * 0.8;
     if (window.innerWidth >= 768) {
       len = 800;
     }
     var slide = document.querySelector(".dev_row");
     slide.style.transform = `translateX(-${(x - 1) * len}px)`;
+  }
+
+  function slidenext(x) {
+    if (x > developers_Details.length - 2) {
+      setCircle(-1);
+    } else {
+      setCircle(x + 1);
+    }
+    var len = window.innerWidth * 0.8;
+    if (window.innerWidth >= 768) {
+      len = 800;
+    }
+    var slide = document.querySelector(".dev_row");
+    slide.style.transform = `translateX(-${(x + 1) * len}px)`;
   }
 
   useEffect(() => {
@@ -238,7 +257,8 @@ const Home = () => {
                 the number of beneficiaries, increase in the well qualified
                 trainers besides pouring in advisory and other support.
                 Beginning with three students, the initiative currently embraces
-                more than hundred students, spread
+                more than hundred students, spreading across 21 courses which
+                are in high demand in the industry sector.
               </p>
             </div>
             <div
@@ -386,7 +406,7 @@ const Home = () => {
           </div>
         </div>{" "}
         <div className="card card1  p-3 bottomLeft topLeft transition1">
-          <h1>Vincullum</h1>
+          <h1>Vinculum</h1>
 
           <img
             src={vinicullum}
@@ -459,6 +479,13 @@ const Home = () => {
         <h3 className="dev_head">Sure Trust Website Building Team</h3>
         <section className="dev_section">
           <div className="dev_indicators">
+            <button
+              onClick={() => slide(circle)}
+              className="btn btn-primary"
+              style={{ marginRight: "250px" }}
+            >
+              &#x3008;
+            </button>
             {developers_Details.map((x) => {
               return (
                 <span
@@ -470,6 +497,15 @@ const Home = () => {
                 ></span>
               );
             })}
+            <button
+              onClick={() => slidenext(circle)}
+              className="btn btn-primary"
+              style={{
+                marginLeft: "250px",
+              }}
+            >
+              &#12297;
+            </button>
           </div>
           <div className="developers">
             <div className="dev_row">
