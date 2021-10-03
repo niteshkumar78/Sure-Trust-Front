@@ -1,3 +1,5 @@
+/*eslint-disable*/
+
 import React, { Component } from "react";
 
 class JitsiRecordingTeacher extends Component {

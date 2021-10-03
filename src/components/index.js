@@ -23,6 +23,7 @@ import StudentRecording from "./StudentRecording";
 import TeacherRecording from "./TeacherRecording";
 // import StudentGrades from "./StudentGrades";
 import CoursesList from "./CoursesList";
+/*eslint-disable*/
 import StudentProfile from "./StudentProfile";
 import Loader from "./Loader";
 import KnowMore from "./KnowMore";

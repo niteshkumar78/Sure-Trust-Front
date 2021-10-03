@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React from "react";
 import "../AboutSure.css";
 import sudhamadam from "../images/sudhamadam.jpg";
@@ -101,7 +102,7 @@ const AboutSure = () => {
             style={{ color: "blue", cursor: "pointer" }}
           >
             read more....
-          </a>
+          </a>{" "}
           <a
             id="birthOfSureInitativeContent1readless"
             onClick={() => {

@@ -1,3 +1,5 @@
+/*eslint-disable*/
+
 import React, { useState, useEffect } from "react";
 import "../ContactPoint.css";
 import cookie from "react-cookies";

@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React, { useState, useEffect } from "react";
 import cookie from "react-cookies";
 import { Link } from "react-router-dom";

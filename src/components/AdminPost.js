@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React, { useState } from "react";
 import cookie from "react-cookies";
 import { AdminPostApi } from "../apis/allApis";
@@ -33,7 +34,7 @@ function AdminPost(props) {
     formData.append("content", content.value);
     if (file.value !== undefined) {
       formData.append("file", file.value);
-      console.log("File Undefined 2");
+      // console.log("File Undefined 2");
     }
     // formData.append("batch", props.id);
 
@@ -41,7 +42,7 @@ function AdminPost(props) {
       method: "POST",
       headers: {
         Authorization: `Token ${cookie.load("token")}`,
-        // "Content-Type": "application/json",
+        "Content-Type": "application/json",
       },
       body: formData,
 

@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import cookie from "react-cookies";

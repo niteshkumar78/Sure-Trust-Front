@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 // import FlashMessage from "react-flash-message";

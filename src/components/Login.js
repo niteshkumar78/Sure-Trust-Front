@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import cookie from "react-cookies";
