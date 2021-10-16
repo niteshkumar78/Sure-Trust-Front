@@ -1,6 +1,6 @@
 // const SourceURL = "https://suretrustplatform.herokuapp.com";
-// const SourceURL = "http://192.168.10.108:8001";
-const SourceURL = "http://localhost:8000";
+const SourceURL = "http://134.209.156.28:8000";
+// const SourceURL = "http://localhost:8000";
 
 // const SourceURL =
 //   "http://ec2-3-108-64-21.ap-south-1.compute.amazonaws.com:8000";
