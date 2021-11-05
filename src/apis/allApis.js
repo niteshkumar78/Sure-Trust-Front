@@ -1,5 +1,5 @@
 // const SourceURL = "https://suretrustplatform.herokuapp.com";
-const SourceURL = "http://134.209.156.28:8000";
+const SourceURL = "https://platform.suretrustforruralyouth.com";
 // const SourceURL = "http://localhost:8000";
 
 // const SourceURL =

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import cookie from "react-cookies";
 
-import { LoginApi } from "../apis/allApis";
+import { LoginApi, SourceURL } from "../apis/allApis";
 
 class Login extends Component {
   constructor(props) {
@@ -223,7 +223,7 @@ class Login extends Component {
                 <div className="form-group">
                   <div className="text-center">
                     <a
-                      href="http://suretrustplatform.herokuapp.com/users/reset_password/"
+                      href={`${SourceURL}/users/reset_password/`}
                       target="_blank"
                     >
                       forgot password
