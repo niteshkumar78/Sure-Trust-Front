@@ -229,7 +229,8 @@ const Home = () => {
             >
               <h1 className="youth">
                 <br />
-                YOUTH UNDERGOING TRAINING - 350 PER DAY IN 20 PARALLEL COURSES{" "}
+                YOUTH UNDERGOING TRAINING - 350 PER DAY IN more than 30 PARALLEL
+                COURSES{" "}
               </h1>
               <br />
               <p>
@@ -255,8 +256,8 @@ const Home = () => {
               <p>
                 <br />
                 The impact of the initiative can be gauged from the progress
-                made within a short span of 8 months in-terms of increasing in
-                the number of beneficiaries, increase in the well qualified
+                made within a over a period of one year in-terms of increasing
+                in the number of beneficiaries, increase in the well qualified
                 trainers besides pouring in advisory and other support.
                 Beginning with three students, the initiative currently embraces
                 more than hundred students, spreading across 21 courses which
