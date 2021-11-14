@@ -6,6 +6,8 @@ import jagadeeshsir from "../images/jagadeeshsir.jpg";
 import bharathsir from "../images/bharatsir.jpg";
 import kumarsir from "../images/kumarsir.jpeg";
 import baba from "../images/baba.jpg";
+import Sairam from "../images/Sairam.jpeg";
+
 const AboutSure = () => {
   return (
     <main className="mainAboutContainer" style={{ marginTop: "6rem" }}>
@@ -452,12 +454,31 @@ const AboutSure = () => {
         <div className="flex-container Aboutflex-container">
           <div className="alternate_flex">
             <section>
+              <img src={Sairam} alt="" />
+            </section>
+            <div></div>
+            <article>
+              <p>
+                <b> Advisor - Lateral Thinking Skills </b>
+                <br />
+                Undergraduate in Electronics from Bangalore University, Graduate
+                in Computer Science from IISc. Moved to US in 2000. Worked at
+                various chip / semiconductor / networking companies like AMD,
+                Nvidia, Cisco. Presently working for Nokia. Scope of work:
+                Design of processors and networking switches, Performance
+                Modeling and characterization of next generation architecture.
+              </p>
+              <a href="https://www.linkedin.com/in/ramananvaidya/">Linkedin</a>
+            </article>
+          </div>
+          <div className="alternate_flex flex-row-reverse">
+            <section>
               <img
                 src="https://img1.wsimg.com/isteam/ip/6f038646-2052-4598-8c4e-ed7fea8124d5/sir.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25"
                 alt=""
+                className="alternate_img"
               />
             </section>
-            <div></div>
             <article>
               <p>
                 <b> Advisor-Networking </b>
@@ -474,15 +495,16 @@ const AboutSure = () => {
                 Linkedin
               </a>
             </article>
+            <div></div>
           </div>
-          <div className="alternate_flex flex-row-reverse">
+          <div className="alternate_flex ">
             <section>
               <img
                 src="https://img1.wsimg.com/isteam/ip/6f038646-2052-4598-8c4e-ed7fea8124d5/Sarah%20--%20new%20(1).png/:/"
                 alt=""
-                className="alternate_img"
               />
             </section>
+            <div></div>
             <article>
               <p>
                 {" "}
@@ -500,7 +522,6 @@ const AboutSure = () => {
                 Linkedin
               </a>
             </article>
-            <div></div>
           </div>
         </div>
       </div>

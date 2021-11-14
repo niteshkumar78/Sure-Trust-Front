@@ -13,6 +13,9 @@ import lokibots from "../images/lokibots.jpg";
 import expect from "../images/expect.jpg";
 import vinicullum from "../images/vinculum.jpeg";
 import atsuya from "../images/atsuya.jpeg";
+import Actrazenica from "../images/Astrazenica.jpeg";
+import CheckIn from "../images/CheckIn.jpeg";
+
 import { useState } from "react";
 
 const Home = () => {
@@ -70,7 +73,7 @@ const Home = () => {
               <path d="M16.724 10.726l4.651 5.349M12.03 16.408L16.8 21.8M16.8 1.8v28M30.8 16.3h-28M15.8 1.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM30.3 16.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM1.3 16.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM15.8 30.8a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM23.05 10.05l-12.5 12.5M22.6 9.3a1 1 0 1 1 1.999-.002A1 1 0 0 1 22.6 9.3zM8.8 23.3a1 1 0 1 1 1.999 0 1 1 0 0 1-2 0zM16.99 5.545l10.02 10.961M17 27.3l-10.7-11M27.01 16.131l-10.02 10.96M6.59 17.091l10.02-10.96M22.925 22.086L10.688 9.328M22.459 22.826a1 1 0 1 0 2 .043 1 1 0 0 0-2-.043zM8.953 8.542a1.001 1.001 0 1 0 2.002.04 1.001 1.001 0 0 0-2.002-.04z"></path>
             </g>
           </svg>
-          <p>Do a course and grab an Internship or a Job</p>
+          <p>Do a course and Secure an Internship or a Job</p>
           <svg
             data-ux="SVG"
             viewBox=" 0 0 35 35"
@@ -229,15 +232,16 @@ const Home = () => {
             >
               <h1 className="youth">
                 <br />
-                YOUTH UNDERGOING TRAINING - 350 PER DAY IN more than 30 PARALLEL
-                COURSES{" "}
+                YOUTH UNDERGOING TRAINING - AROUND 250 PER DAY IN 40 PLUS
+                Parrellel Courses{" "}
               </h1>
               <br />
               <p>
-                "Number of rural youth educated & certified to date: 48 Number
-                of courses offered: 25 Number of faculty: 28. Number of
-                internships & jobs obtained after the training: Internships- 3
-                in ML and 3 in Blockchain Technology Jobs Obtained: 7.
+                "Number of rural youth educated & certified to date exceeds 125,
+                Trainers Number Crosses 50 Number of courses offered: 25 Number
+                of faculty: 28. Number of internships & jobs obtained after the
+                training: Students Internships - 50: Number of Trainers Securing
+                full time jobs: 15 .
               </p>
             </div>
             <div
@@ -256,12 +260,12 @@ const Home = () => {
               <p>
                 <br />
                 The impact of the initiative can be gauged from the progress
-                made within a over a period of one year in-terms of increasing
-                in the number of beneficiaries, increase in the well qualified
-                trainers besides pouring in advisory and other support.
-                Beginning with three students, the initiative currently embraces
-                more than hundred students, spreading across 21 courses which
-                are in high demand in the industry sector.
+                made within a short span of one year in-terms of increase in the
+                number of beneficiaries, well qualified trainers besides pouring
+                in advisory and other support. Beginning with three students,
+                three trainers and three courses the initiative currently
+                embraces more than two hundred students, spreading across more
+                than 40 courses which are in high demand in the industry sector.
               </p>
             </div>
             <div
@@ -308,20 +312,20 @@ const Home = () => {
           <div className="col p-3">
             <h1>
               <br />
-              Entrepreneurship Mandatory training
+              Secular Education Coupled with Education in Human Values
             </h1>
             <br />
             <p>
-              Number of rural youth educated & certified to date: 48 An
-              alternative channel for source of employment.{" "}
+              Number of rural youth educated & certified to date Excceds 125.{" "}
             </p>
           </div>
           <div className="col p-3">
             <h1 style={{ marginBottom: "2rem" }}>
-              <br /> Mandatory training in Education in Human Values
+              <br /> Mandatory training in Education in Human Values / Life
+              Skills
             </h1>
             <p>
-              EHV sessions contribute to developing students integrated
+              EHV / LST sessions contribute to developing students integrated
               personality
             </p>
           </div>
@@ -409,10 +413,10 @@ const Home = () => {
           </div>
         </div>{" "}
         <div className="card card1  p-3 bottomLeft topLeft transition1">
-          <h1>Vinculum</h1>
+          <h1>Astrazenica</h1>
 
           <img
-            src={vinicullum}
+            src={Actrazenica}
             alt="Error404"
             style={{ width: "60%", height: "100px", marginLeft: "1rem" }}
           />
@@ -421,32 +425,27 @@ const Home = () => {
               {" "}
               <br />
               <br />
-              We are a global software company enabling Omnichannel retailing.
+              A global, science-led biopharmaceutical business whose innovative
+              medicines are used by millions of patients worldwide.
               <br />
-              We help brands and retailers to easily scale, reach and delight
-              customers across channels globally.
             </p>
           </div>
         </div>
       </div>
       <div className="card-group companies" style={{ color: "white" }}>
         <div className="card card1 p-3 topRight transition1">
-          <h1>BirthVenue</h1>
+          <h1>Check.in</h1>
 
           <img
-            src={birthvenue}
+            src={CheckIn}
             alt="Error404"
             style={{ width: "60%", height: "100px", marginLeft: "1rem" }}
           />
           <div className="card-body">
             <p>
-              {" "}
-              Birthvenue Growth Solutions Private Limited is a Private
-              incorporated on 12 September 2018. It is classNameified as
-              Non-govt company. Birthvenue is a blockchain-as-a-service provider
-              and assists management teams in understanding the fundamentals of
-              blockchain technology by creating industry-specific case studies
-              as references to use cases.
+              In Chek.in We bring in the latest automation technology - water
+              and energy usage meters, sensors, alarm systems, security cameras
+              - to solve unique community needs.
             </p>
           </div>
         </div>

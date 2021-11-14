@@ -82,10 +82,10 @@ const KnowMore = () => {
                 subject{" "}
               </li>
               <li>
-                Course Learning Report prepared by each student to show case the
-                creative part of the exercises worked, innovative content
-                developed that will exhibit the perseverance of the student and
-                the patience of the trainer
+                Course Report prepared by each student to show case the creative
+                part of the exercises worked, innovative content developed that
+                will exhibit the perseverance of the student and the patience of
+                the trainer
               </li>
               <li>
                 Project report covers the procedure followed and the research

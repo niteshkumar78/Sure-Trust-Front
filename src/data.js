@@ -280,8 +280,8 @@ export const motive = [
     id: 3,
     src: require("./images/home-3.jpeg").default,
     title: "Purely a service-oriented & a non-profit initiative",
-    content:
-      "The IMPACT of the initiative can be gauged from the progress made within a short span of 8 months. Beginning with three students, the initiative currently trains hundred students in 20 categories of emerging technologies that are in high demand in the Industrial Sector.",
+    content: `The initiative is based on the dual principle of 'Giving Back to
+      the Society' and ${"Service to Youth is Service to Nation"}`,
   },
   {
     id: 4,
