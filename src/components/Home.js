@@ -238,10 +238,9 @@ const Home = () => {
               <br />
               <p>
                 "Number of rural youth educated & certified to date exceeds 125,
-                Trainers Number Crosses 50 Number of courses offered: 25 Number
-                of faculty: 28. Number of internships & jobs obtained after the
-                training: Students Internships - 50: Number of Trainers Securing
-                full time jobs: 15 .
+                Trainers Number Crosses 50 Number of courses offered. Number of
+                internships & jobs obtained after the training: Students
+                Internships - 50.
               </p>
             </div>
             <div

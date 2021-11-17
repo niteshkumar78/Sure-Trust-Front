@@ -418,6 +418,8 @@ const AboutSure = () => {
               <p>
                 <b> Mr. Jagadeesh Gajula </b>
                 <br />
+                Grey Scientific Labs from Greyslide Imaging
+                <br />
                 BCA PGD (AIML), MSc (AIML) - Liver Poole John Moores University,
                 London; Technical Manager - Grey Slide Imaging; Junior Research
                 Fellow - IIT, Hyderabad. The very first proud product of the
@@ -461,6 +463,8 @@ const AboutSure = () => {
               <p>
                 <b> Advisor - Lateral Thinking Skills </b>
                 <br />
+                Mrs. Sai Sudha Nunna
+                <br />
                 Undergraduate in Electronics from Bangalore University, Graduate
                 in Computer Science from IISc. Moved to US in 2000. Worked at
                 various chip / semiconductor / networking companies like AMD,
@@ -468,7 +472,7 @@ const AboutSure = () => {
                 Design of processors and networking switches, Performance
                 Modeling and characterization of next generation architecture.
               </p>
-              <a href="https://www.linkedin.com/in/ramananvaidya/">Linkedin</a>
+              <a href="https://www.linkedin.com/in/ramananvaidya/n">Linkedin</a>
             </article>
           </div>
           <div className="alternate_flex flex-row-reverse">
