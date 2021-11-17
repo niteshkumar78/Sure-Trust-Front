@@ -463,7 +463,7 @@ const AboutSure = () => {
               <p>
                 <b> Advisor - Lateral Thinking Skills </b>
                 <br />
-                Mrs. Sai Sudha Nunna
+                Mr. Vaidya Ramanan
                 <br />
                 Undergraduate in Electronics from Bangalore University, Graduate
                 in Computer Science from IISc. Moved to US in 2000. Worked at
